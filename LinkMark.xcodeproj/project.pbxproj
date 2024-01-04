@@ -9,20 +9,36 @@
 /* Begin PBXBuildFile section */
 		1222B95F2B46F8CA00803C59 /* LinkMarkApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1222B95E2B46F8CA00803C59 /* LinkMarkApp.swift */; };
 		1222B9612B46F8CA00803C59 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1222B9602B46F8CA00803C59 /* ContentView.swift */; };
-		1222B9632B46F8CB00803C59 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1222B9622B46F8CB00803C59 /* Assets.xcassets */; };
+		1222B9632B46F8CB00803C59 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1222B9622B46F8CB00803C59 /* Images.xcassets */; };
 		1222B9662B46F8CB00803C59 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1222B9652B46F8CB00803C59 /* Preview Assets.xcassets */; };
 		1222B9682B46F8CB00803C59 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1222B9672B46F8CB00803C59 /* Persistence.swift */; };
 		1222B96B2B46F8CB00803C59 /* LinkMark.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1222B9692B46F8CB00803C59 /* LinkMark.xcdatamodeld */; };
+		1222B9792B46FA1B00803C59 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1222B9782B46FA1B00803C59 /* GoogleService-Info.plist */; };
+		1222B97C2B46FA9800803C59 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1222B97E2B46FA9800803C59 /* Localizable.strings */; };
+		1222B9812B46FAAC00803C59 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1222B9802B46FAAC00803C59 /* Colors.xcassets */; };
+		1222B9842B46FADF00803C59 /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1222B9822B46FADF00803C59 /* Assets.swift */; };
+		1222B9852B46FADF00803C59 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1222B9832B46FADF00803C59 /* Strings.swift */; };
+		7F2BEE17A18D4463FA94A011 /* Pods_LinkMark.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BAE40D35CA5E1D19DF82288 /* Pods_LinkMark.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1222B95B2B46F8CA00803C59 /* LinkMark.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LinkMark.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1222B95E2B46F8CA00803C59 /* LinkMarkApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkMarkApp.swift; sourceTree = "<group>"; };
 		1222B9602B46F8CA00803C59 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		1222B9622B46F8CB00803C59 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1222B9622B46F8CB00803C59 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		1222B9652B46F8CB00803C59 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		1222B9672B46F8CB00803C59 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		1222B96A2B46F8CB00803C59 /* LinkMark.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LinkMark.xcdatamodel; sourceTree = "<group>"; };
+		1222B9782B46FA1B00803C59 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
+		1222B97D2B46FA9800803C59 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		1222B97F2B46FA9900803C59 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
+		1222B9802B46FAAC00803C59 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		1222B9822B46FADF00803C59 /* Assets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
+		1222B9832B46FADF00803C59 /* Strings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
+		1222B9862B46FB1200803C59 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		310D77694CE249A028E5BF92 /* Pods-LinkMark.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LinkMark.release.xcconfig"; path = "Target Support Files/Pods-LinkMark/Pods-LinkMark.release.xcconfig"; sourceTree = "<group>"; };
+		4BAE40D35CA5E1D19DF82288 /* Pods_LinkMark.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LinkMark.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DC133F7F981F41DD71F089FA /* Pods-LinkMark.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LinkMark.debug.xcconfig"; path = "Target Support Files/Pods-LinkMark/Pods-LinkMark.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -30,6 +46,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7F2BEE17A18D4463FA94A011 /* Pods_LinkMark.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -41,6 +58,8 @@
 			children = (
 				1222B95D2B46F8CA00803C59 /* LinkMark */,
 				1222B95C2B46F8CA00803C59 /* Products */,
+				DD2E9CC773F8FB56276F9F93 /* Pods */,
+				DF95A00CDF8FFB8543738531 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -55,11 +74,15 @@
 		1222B95D2B46F8CA00803C59 /* LinkMark */ = {
 			isa = PBXGroup;
 			children = (
-				1222B95E2B46F8CA00803C59 /* LinkMarkApp.swift */,
-				1222B9602B46F8CA00803C59 /* ContentView.swift */,
-				1222B9622B46F8CB00803C59 /* Assets.xcassets */,
-				1222B9672B46F8CB00803C59 /* Persistence.swift */,
-				1222B9692B46F8CB00803C59 /* LinkMark.xcdatamodeld */,
+				1222B9862B46FB1200803C59 /* Info.plist */,
+				1222B9782B46FA1B00803C59 /* GoogleService-Info.plist */,
+				1222B9752B46F9F200803C59 /* Generated */,
+				1222B9772B46FA0000803C59 /* Resources */,
+				1222B9742B46F9EB00803C59 /* Extension&Utility */,
+				1222B9722B46F9D000803C59 /* Model */,
+				1222B9712B46F9C600803C59 /* View */,
+				1222B9732B46F9DA00803C59 /* ViewModel */,
+				1222B9762B46F9F900803C59 /* Repository */,
 				1222B9642B46F8CB00803C59 /* Preview Content */,
 			);
 			path = LinkMark;
@@ -73,6 +96,81 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		1222B9712B46F9C600803C59 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1222B95E2B46F8CA00803C59 /* LinkMarkApp.swift */,
+				1222B9602B46F8CA00803C59 /* ContentView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1222B9722B46F9D000803C59 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1222B9692B46F8CB00803C59 /* LinkMark.xcdatamodeld */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		1222B9732B46F9DA00803C59 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		1222B9742B46F9EB00803C59 /* Extension&Utility */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Extension&Utility";
+			sourceTree = "<group>";
+		};
+		1222B9752B46F9F200803C59 /* Generated */ = {
+			isa = PBXGroup;
+			children = (
+				1222B9822B46FADF00803C59 /* Assets.swift */,
+				1222B9832B46FADF00803C59 /* Strings.swift */,
+			);
+			path = Generated;
+			sourceTree = "<group>";
+		};
+		1222B9762B46F9F900803C59 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				1222B9672B46F8CB00803C59 /* Persistence.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		1222B9772B46FA0000803C59 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				1222B9622B46F8CB00803C59 /* Images.xcassets */,
+				1222B9802B46FAAC00803C59 /* Colors.xcassets */,
+				1222B97E2B46FA9800803C59 /* Localizable.strings */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		DD2E9CC773F8FB56276F9F93 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DC133F7F981F41DD71F089FA /* Pods-LinkMark.debug.xcconfig */,
+				310D77694CE249A028E5BF92 /* Pods-LinkMark.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		DF95A00CDF8FFB8543738531 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4BAE40D35CA5E1D19DF82288 /* Pods_LinkMark.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -80,9 +178,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1222B96E2B46F8CB00803C59 /* Build configuration list for PBXNativeTarget "LinkMark" */;
 			buildPhases = (
+				942CF145BD106AC3C5F5C725 /* [CP] Check Pods Manifest.lock */,
 				1222B9572B46F8CA00803C59 /* Sources */,
 				1222B9582B46F8CA00803C59 /* Frameworks */,
 				1222B9592B46F8CA00803C59 /* Resources */,
+				D61795B0245B5E480061238B /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -115,6 +215,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ja,
 			);
 			mainGroup = 1222B9522B46F8CA00803C59;
 			productRefGroup = 1222B95C2B46F8CA00803C59 /* Products */;
@@ -131,12 +232,57 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1222B9812B46FAAC00803C59 /* Colors.xcassets in Resources */,
 				1222B9662B46F8CB00803C59 /* Preview Assets.xcassets in Resources */,
-				1222B9632B46F8CB00803C59 /* Assets.xcassets in Resources */,
+				1222B97C2B46FA9800803C59 /* Localizable.strings in Resources */,
+				1222B9632B46F8CB00803C59 /* Images.xcassets in Resources */,
+				1222B9792B46FA1B00803C59 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		942CF145BD106AC3C5F5C725 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-LinkMark-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D61795B0245B5E480061238B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-LinkMark/Pods-LinkMark-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-LinkMark/Pods-LinkMark-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-LinkMark/Pods-LinkMark-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		1222B9572B46F8CA00803C59 /* Sources */ = {
@@ -146,11 +292,25 @@
 				1222B9682B46F8CB00803C59 /* Persistence.swift in Sources */,
 				1222B9612B46F8CA00803C59 /* ContentView.swift in Sources */,
 				1222B96B2B46F8CB00803C59 /* LinkMark.xcdatamodeld in Sources */,
+				1222B9842B46FADF00803C59 /* Assets.swift in Sources */,
+				1222B9852B46FADF00803C59 /* Strings.swift in Sources */,
 				1222B95F2B46F8CA00803C59 /* LinkMarkApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		1222B97E2B46FA9800803C59 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1222B97D2B46FA9800803C59 /* en */,
+				1222B97F2B46FA9900803C59 /* ja */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		1222B96C2B46F8CB00803C59 /* Debug */ = {
@@ -274,6 +434,7 @@
 		};
 		1222B96F2B46F8CB00803C59 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DC133F7F981F41DD71F089FA /* Pods-LinkMark.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -282,7 +443,9 @@
 				DEVELOPMENT_ASSET_PATHS = "\"LinkMark/Preview Content\"";
 				DEVELOPMENT_TEAM = CGD79LB65H;
 				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = LinkMark/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -303,6 +466,7 @@
 		};
 		1222B9702B46F8CB00803C59 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 310D77694CE249A028E5BF92 /* Pods-LinkMark.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -311,7 +475,9 @@
 				DEVELOPMENT_ASSET_PATHS = "\"LinkMark/Preview Content\"";
 				DEVELOPMENT_TEAM = CGD79LB65H;
 				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = LinkMark/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
