@@ -11,13 +11,16 @@
 		1222B9612B46F8CA00803C59 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1222B9602B46F8CA00803C59 /* ContentView.swift */; };
 		1222B9632B46F8CB00803C59 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1222B9622B46F8CB00803C59 /* Images.xcassets */; };
 		1222B9662B46F8CB00803C59 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1222B9652B46F8CB00803C59 /* Preview Assets.xcassets */; };
-		1222B9682B46F8CB00803C59 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1222B9672B46F8CB00803C59 /* Persistence.swift */; };
 		1222B96B2B46F8CB00803C59 /* LinkMark.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1222B9692B46F8CB00803C59 /* LinkMark.xcdatamodeld */; };
 		1222B9792B46FA1B00803C59 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1222B9782B46FA1B00803C59 /* GoogleService-Info.plist */; };
 		1222B97C2B46FA9800803C59 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1222B97E2B46FA9800803C59 /* Localizable.strings */; };
 		1222B9812B46FAAC00803C59 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1222B9802B46FAAC00803C59 /* Colors.xcassets */; };
 		1222B9842B46FADF00803C59 /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1222B9822B46FADF00803C59 /* Assets.swift */; };
 		1222B9852B46FADF00803C59 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1222B9832B46FADF00803C59 /* Strings.swift */; };
+		1222B9892B47B14900803C59 /* CoreDataRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1222B9882B47B14900803C59 /* CoreDataRepository.swift */; };
+		1274ED322B4EC09600D1A926 /* Category+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1274ED312B4EC09600D1A926 /* Category+CoreDataClass.swift */; };
+		1274ED342B4EC09E00D1A926 /* Locator+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1274ED332B4EC09E00D1A926 /* Locator+CoreDataClass.swift */; };
+		1274ED362B4EC47900D1A926 /* CategoryListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1274ED352B4EC47900D1A926 /* CategoryListView.swift */; };
 		7F2BEE17A18D4463FA94A011 /* Pods_LinkMark.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BAE40D35CA5E1D19DF82288 /* Pods_LinkMark.framework */; };
 /* End PBXBuildFile section */
 
@@ -27,7 +30,6 @@
 		1222B9602B46F8CA00803C59 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		1222B9622B46F8CB00803C59 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		1222B9652B46F8CB00803C59 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		1222B9672B46F8CB00803C59 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		1222B96A2B46F8CB00803C59 /* LinkMark.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LinkMark.xcdatamodel; sourceTree = "<group>"; };
 		1222B9782B46FA1B00803C59 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		1222B97D2B46FA9800803C59 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -36,6 +38,10 @@
 		1222B9822B46FADF00803C59 /* Assets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
 		1222B9832B46FADF00803C59 /* Strings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		1222B9862B46FB1200803C59 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		1222B9882B47B14900803C59 /* CoreDataRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataRepository.swift; sourceTree = "<group>"; };
+		1274ED312B4EC09600D1A926 /* Category+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Category+CoreDataClass.swift"; sourceTree = "<group>"; };
+		1274ED332B4EC09E00D1A926 /* Locator+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Locator+CoreDataClass.swift"; path = "/Users/s/Desktop/SwiftApp/LinkMark/LinkMark/Model/Locator+CoreDataClass.swift"; sourceTree = "<absolute>"; };
+		1274ED352B4EC47900D1A926 /* CategoryListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryListView.swift; sourceTree = "<group>"; };
 		310D77694CE249A028E5BF92 /* Pods-LinkMark.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LinkMark.release.xcconfig"; path = "Target Support Files/Pods-LinkMark/Pods-LinkMark.release.xcconfig"; sourceTree = "<group>"; };
 		4BAE40D35CA5E1D19DF82288 /* Pods_LinkMark.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LinkMark.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC133F7F981F41DD71F089FA /* Pods-LinkMark.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LinkMark.debug.xcconfig"; path = "Target Support Files/Pods-LinkMark/Pods-LinkMark.debug.xcconfig"; sourceTree = "<group>"; };
@@ -101,6 +107,7 @@
 			children = (
 				1222B95E2B46F8CA00803C59 /* LinkMarkApp.swift */,
 				1222B9602B46F8CA00803C59 /* ContentView.swift */,
+				1274ED352B4EC47900D1A926 /* CategoryListView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -108,6 +115,8 @@
 		1222B9722B46F9D000803C59 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				1274ED332B4EC09E00D1A926 /* Locator+CoreDataClass.swift */,
+				1274ED312B4EC09600D1A926 /* Category+CoreDataClass.swift */,
 				1222B9692B46F8CB00803C59 /* LinkMark.xcdatamodeld */,
 			);
 			path = Model;
@@ -139,7 +148,7 @@
 		1222B9762B46F9F900803C59 /* Repository */ = {
 			isa = PBXGroup;
 			children = (
-				1222B9672B46F8CB00803C59 /* Persistence.swift */,
+				1222B9882B47B14900803C59 /* CoreDataRepository.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -289,12 +298,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1222B9682B46F8CB00803C59 /* Persistence.swift in Sources */,
 				1222B9612B46F8CA00803C59 /* ContentView.swift in Sources */,
 				1222B96B2B46F8CB00803C59 /* LinkMark.xcdatamodeld in Sources */,
+				1274ED322B4EC09600D1A926 /* Category+CoreDataClass.swift in Sources */,
+				1274ED362B4EC47900D1A926 /* CategoryListView.swift in Sources */,
 				1222B9842B46FADF00803C59 /* Assets.swift in Sources */,
 				1222B9852B46FADF00803C59 /* Strings.swift in Sources */,
 				1222B95F2B46F8CA00803C59 /* LinkMarkApp.swift in Sources */,
+				1274ED342B4EC09E00D1A926 /* Locator+CoreDataClass.swift in Sources */,
+				1222B9892B47B14900803C59 /* CoreDataRepository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
