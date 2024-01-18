@@ -18,6 +18,9 @@
 		1222B9842B46FADF00803C59 /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1222B9822B46FADF00803C59 /* Assets.swift */; };
 		1222B9852B46FADF00803C59 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1222B9832B46FADF00803C59 /* Strings.swift */; };
 		1222B9892B47B14900803C59 /* CoreDataRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1222B9882B47B14900803C59 /* CoreDataRepository.swift */; };
+		12746ACB2B58FBAA009D1473 /* SectionTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12746ACA2B58FBAA009D1473 /* SectionTitleView.swift */; };
+		12746ACD2B58FC81009D1473 /* InputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12746ACC2B58FC81009D1473 /* InputView.swift */; };
+		12746AD02B594922009D1473 /* CustomNotifyDialogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12746ACF2B594922009D1473 /* CustomNotifyDialogView.swift */; };
 		1274ED322B4EC09600D1A926 /* Category+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1274ED312B4EC09600D1A926 /* Category+CoreDataClass.swift */; };
 		1274ED342B4EC09E00D1A926 /* Locator+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1274ED332B4EC09E00D1A926 /* Locator+CoreDataClass.swift */; };
 		1274ED362B4EC47900D1A926 /* CategoryListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1274ED352B4EC47900D1A926 /* CategoryListView.swift */; };
@@ -46,6 +49,9 @@
 		1222B9832B46FADF00803C59 /* Strings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		1222B9862B46FB1200803C59 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		1222B9882B47B14900803C59 /* CoreDataRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataRepository.swift; sourceTree = "<group>"; };
+		12746ACA2B58FBAA009D1473 /* SectionTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionTitleView.swift; sourceTree = "<group>"; };
+		12746ACC2B58FC81009D1473 /* InputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputView.swift; sourceTree = "<group>"; };
+		12746ACF2B594922009D1473 /* CustomNotifyDialogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNotifyDialogView.swift; sourceTree = "<group>"; };
 		1274ED312B4EC09600D1A926 /* Category+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Category+CoreDataClass.swift"; sourceTree = "<group>"; };
 		1274ED332B4EC09E00D1A926 /* Locator+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Locator+CoreDataClass.swift"; path = "/Users/s/Desktop/SwiftApp/LinkMark/LinkMark/Model/Locator+CoreDataClass.swift"; sourceTree = "<absolute>"; };
 		1274ED352B4EC47900D1A926 /* CategoryListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryListView.swift; sourceTree = "<group>"; };
@@ -125,6 +131,7 @@
 				1274ED352B4EC47900D1A926 /* CategoryListView.swift */,
 				1274ED442B4FB91800D1A926 /* CategoryInputView.swift */,
 				1274ED3C2B4EE37D00D1A926 /* LocatorListView.swift */,
+				12746ACE2B5948B7009D1473 /* Dialog */,
 				12746AC92B58FB70009D1473 /* Components */,
 			);
 			path = View;
@@ -188,8 +195,18 @@
 		12746AC92B58FB70009D1473 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				12746ACA2B58FBAA009D1473 /* SectionTitleView.swift */,
+				12746ACC2B58FC81009D1473 /* InputView.swift */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		12746ACE2B5948B7009D1473 /* Dialog */ = {
+			isa = PBXGroup;
+			children = (
+				12746ACF2B594922009D1473 /* CustomNotifyDialogView.swift */,
+			);
+			path = Dialog;
 			sourceTree = "<group>";
 		};
 		1274ED372B4EC87300D1A926 /* DI */ = {
@@ -350,7 +367,10 @@
 				1274ED3F2B4EE3B000D1A926 /* RootView.swift in Sources */,
 				1222B95F2B46F8CA00803C59 /* LinkMarkApp.swift in Sources */,
 				1274ED342B4EC09E00D1A926 /* Locator+CoreDataClass.swift in Sources */,
+				12746ACD2B58FC81009D1473 /* InputView.swift in Sources */,
+				12746AD02B594922009D1473 /* CustomNotifyDialogView.swift in Sources */,
 				1222B9892B47B14900803C59 /* CoreDataRepository.swift in Sources */,
+				12746ACB2B58FBAA009D1473 /* SectionTitleView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

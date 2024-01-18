@@ -18,16 +18,8 @@ struct CategoryListView: View {
                 
                 Text("LINKMARK")
                 
+                SectionTitleView(title: "Category")
                 
-                HStack {
-                    Text("Category")
-                        .foregroundStyle(.exText)
-                        .opacity(0.5)
-                        .padding(.leading, 20)
-                    
-                    Spacer()
-                }
-               
                 List {
                     ForEach(viewModel.categorys) { category in
                         NavigationLink {

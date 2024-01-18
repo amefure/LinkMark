@@ -21,11 +21,11 @@ extension CategoryViewModel {
         categorys = CoreDataRepository.fetch(sorts: [NSSortDescriptor(keyPath: \Category.name, ascending: true)])
     }
     
-    public func addCategory(name: String) {
+    public func addCategory(name: String, color: String) {
         let entity: Category = CoreDataRepository.entity()
         entity.id = UUID()
         entity.name = name
-        entity.color = CategoryColor.red.rawValue
+        entity.color = color
         CoreDataRepository.insert(entity)
         CoreDataRepository.save()
     }

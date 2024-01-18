@@ -8,7 +8,7 @@
 import UIKit
 import SwiftUI
 
-enum CategoryColor: String {
+enum CategoryColor: String, CaseIterable {
     case red
     case yellow
     case green
