@@ -21,6 +21,7 @@
 		12746ACB2B58FBAA009D1473 /* SectionTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12746ACA2B58FBAA009D1473 /* SectionTitleView.swift */; };
 		12746ACD2B58FC81009D1473 /* InputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12746ACC2B58FC81009D1473 /* InputView.swift */; };
 		12746AD02B594922009D1473 /* CustomNotifyDialogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12746ACF2B594922009D1473 /* CustomNotifyDialogView.swift */; };
+		12746AD22B595518009D1473 /* LocatorInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12746AD12B595518009D1473 /* LocatorInputView.swift */; };
 		1274ED322B4EC09600D1A926 /* Category+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1274ED312B4EC09600D1A926 /* Category+CoreDataClass.swift */; };
 		1274ED342B4EC09E00D1A926 /* Locator+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1274ED332B4EC09E00D1A926 /* Locator+CoreDataClass.swift */; };
 		1274ED362B4EC47900D1A926 /* CategoryListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1274ED352B4EC47900D1A926 /* CategoryListView.swift */; };
@@ -52,6 +53,7 @@
 		12746ACA2B58FBAA009D1473 /* SectionTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionTitleView.swift; sourceTree = "<group>"; };
 		12746ACC2B58FC81009D1473 /* InputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputView.swift; sourceTree = "<group>"; };
 		12746ACF2B594922009D1473 /* CustomNotifyDialogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNotifyDialogView.swift; sourceTree = "<group>"; };
+		12746AD12B595518009D1473 /* LocatorInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocatorInputView.swift; sourceTree = "<group>"; };
 		1274ED312B4EC09600D1A926 /* Category+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Category+CoreDataClass.swift"; sourceTree = "<group>"; };
 		1274ED332B4EC09E00D1A926 /* Locator+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Locator+CoreDataClass.swift"; path = "/Users/s/Desktop/SwiftApp/LinkMark/LinkMark/Model/Locator+CoreDataClass.swift"; sourceTree = "<absolute>"; };
 		1274ED352B4EC47900D1A926 /* CategoryListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryListView.swift; sourceTree = "<group>"; };
@@ -131,6 +133,7 @@
 				1274ED352B4EC47900D1A926 /* CategoryListView.swift */,
 				1274ED442B4FB91800D1A926 /* CategoryInputView.swift */,
 				1274ED3C2B4EE37D00D1A926 /* LocatorListView.swift */,
+				12746AD12B595518009D1473 /* LocatorInputView.swift */,
 				12746ACE2B5948B7009D1473 /* Dialog */,
 				12746AC92B58FB70009D1473 /* Components */,
 			);
@@ -353,6 +356,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1222B9612B46F8CA00803C59 /* ContentView.swift in Sources */,
+				12746AD22B595518009D1473 /* LocatorInputView.swift in Sources */,
 				1274ED432B4EE45B00D1A926 /* LocatorViewModel.swift in Sources */,
 				1222B96B2B46F8CB00803C59 /* LinkMark.xcdatamodeld in Sources */,
 				1274ED392B4EC87C00D1A926 /* RepositoryDependency.swift in Sources */,

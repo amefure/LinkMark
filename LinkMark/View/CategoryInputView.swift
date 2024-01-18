@@ -24,10 +24,10 @@ struct CategoryInputView: View {
             Text("LINKMARK")
             
             SectionTitleView(title: "カテゴリ名")
-            InputView(placeholder: "カテゴリ名", value: $name)
+            InputView(placeholder: "例：レシピ・趣味など", value: $name)
             
             
-            HStack {
+            HStack(spacing: 15) {
                 ForEach(CategoryColor.allCases, id: \.self) { color in
                     Button {
                         selectColor = color
@@ -37,13 +37,11 @@ struct CategoryInputView: View {
                             .clipShape(RoundedRectangle(cornerRadius: 50))
                             .overlay {
                                 RoundedRectangle(cornerRadius: 50)
-                                    .stroke(selectColor == color ? Color.white : .clear, lineWidth: 3)
+                                    .stroke(selectColor == color ? Color.exLightGray : .clear, lineWidth: 4)
                             }
-                        
-                        
                     }
                 }
-            }
+            }.padding(.vertical)
             
             Spacer()
             
@@ -78,7 +76,7 @@ struct CategoryInputView: View {
                 message: "カテゴリ名は必須入力です。",
                 positiveButtonTitle: "OK",
                 negativeButtonTitle: "",
-                positiveAction: { dismiss() },
+                positiveAction: { showFailedDialog = false},
                 negativeAction: {}
             )
     }

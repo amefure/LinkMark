@@ -23,13 +23,15 @@ struct CategoryListView: View {
                 List {
                     ForEach(viewModel.categorys) { category in
                         NavigationLink {
-                            LocatorListView()
+                            LocatorListView(category: category)
                         } label: {
                             HStack {
                                 CategoryColor.getColor(category.wrappedColor)
                                     .frame(width: 50, height: 50)
                                     .clipShape(RoundedRectangle(cornerRadius: 50))
                                 Text(category.wrappedName)
+                                    .foregroundStyle(.exText)
+                                Text(category.wrappedId.uuidString)
                                     .foregroundStyle(.exText)
                                 
                                 Spacer()

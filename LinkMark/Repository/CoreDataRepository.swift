@@ -38,6 +38,37 @@ extension CoreDataRepository {
         return T(entity: entityDescription, insertInto: nil)
     }
     
+    static func entity<T: NSManagedObject>(in context3 : NSManagedObjectContext) -> T {
+        let entityDescription = NSEntityDescription.entity(forEntityName: String(describing: T.self), in: context3)!
+        return T(entity: entityDescription, insertInto: nil)
+    }
+    
+    /// 取得処理
+    static func fetchSingle<T: NSManagedObject>(predicate: NSPredicate? = nil, sorts: [NSSortDescriptor]? = nil) -> T? {
+        let fetchRequest = NSFetchRequest<T>(entityName: String(describing: T.self))
+        
+        // フィルタリング
+        if let predicate = predicate {
+            fetchRequest.predicate = predicate
+        }
+        
+        // ソート
+        if let sorts = sorts {
+            fetchRequest.sortDescriptors = sorts
+        }
+        
+        do {
+            let entitys = try CoreDataRepository.context.fetch(fetchRequest)
+            if let entity = entitys.first {
+                return entity
+            }
+        } catch let error as NSError {
+            print("Could not fetch. \(error), \(error.userInfo)")
+            return nil
+        }
+        return nil
+    }
+    
     /// 取得処理
     static func fetch<T: NSManagedObject>(predicate: NSPredicate? = nil, sorts: [NSSortDescriptor]? = nil) -> [T] {
         let fetchRequest = NSFetchRequest<T>(entityName: String(describing: T.self))
@@ -55,7 +86,7 @@ extension CoreDataRepository {
         do {
             return try context.fetch(fetchRequest)
         } catch let error as NSError {
-          print("Could not fetch. \(error), \(error.userInfo)")
+            print("Could not fetch. \(error), \(error.userInfo)")
             return []
         }
     }
@@ -64,6 +95,11 @@ extension CoreDataRepository {
     /// 追加処理
     static func insert(_ object: NSManagedObject) {
         context.insert(object)
+    }
+    
+    /// 更新処理
+    static func update(categoryId: String) {
+    
     }
     
     /// 削除処理
