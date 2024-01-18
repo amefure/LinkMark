@@ -80,6 +80,4 @@ extension CoreDataRepository {
             fatalError("Unresolved error \(error), \(error.userInfo)")
         }
     }
-    
-    
 }

@@ -21,6 +21,13 @@
 		1274ED322B4EC09600D1A926 /* Category+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1274ED312B4EC09600D1A926 /* Category+CoreDataClass.swift */; };
 		1274ED342B4EC09E00D1A926 /* Locator+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1274ED332B4EC09E00D1A926 /* Locator+CoreDataClass.swift */; };
 		1274ED362B4EC47900D1A926 /* CategoryListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1274ED352B4EC47900D1A926 /* CategoryListView.swift */; };
+		1274ED392B4EC87C00D1A926 /* RepositoryDependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1274ED382B4EC87C00D1A926 /* RepositoryDependency.swift */; };
+		1274ED3B2B4EC8AC00D1A926 /* CategoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1274ED3A2B4EC8AC00D1A926 /* CategoryViewModel.swift */; };
+		1274ED3D2B4EE37D00D1A926 /* LocatorListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1274ED3C2B4EE37D00D1A926 /* LocatorListView.swift */; };
+		1274ED3F2B4EE3B000D1A926 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1274ED3E2B4EE3B000D1A926 /* RootView.swift */; };
+		1274ED432B4EE45B00D1A926 /* LocatorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1274ED422B4EE45B00D1A926 /* LocatorViewModel.swift */; };
+		1274ED452B4FB91800D1A926 /* CategoryInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1274ED442B4FB91800D1A926 /* CategoryInputView.swift */; };
+		1274ED472B4FBB2E00D1A926 /* CategoryColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1274ED462B4FBB2E00D1A926 /* CategoryColor.swift */; };
 		7F2BEE17A18D4463FA94A011 /* Pods_LinkMark.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BAE40D35CA5E1D19DF82288 /* Pods_LinkMark.framework */; };
 /* End PBXBuildFile section */
 
@@ -42,6 +49,13 @@
 		1274ED312B4EC09600D1A926 /* Category+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Category+CoreDataClass.swift"; sourceTree = "<group>"; };
 		1274ED332B4EC09E00D1A926 /* Locator+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Locator+CoreDataClass.swift"; path = "/Users/s/Desktop/SwiftApp/LinkMark/LinkMark/Model/Locator+CoreDataClass.swift"; sourceTree = "<absolute>"; };
 		1274ED352B4EC47900D1A926 /* CategoryListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryListView.swift; sourceTree = "<group>"; };
+		1274ED382B4EC87C00D1A926 /* RepositoryDependency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryDependency.swift; sourceTree = "<group>"; };
+		1274ED3A2B4EC8AC00D1A926 /* CategoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewModel.swift; sourceTree = "<group>"; };
+		1274ED3C2B4EE37D00D1A926 /* LocatorListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocatorListView.swift; sourceTree = "<group>"; };
+		1274ED3E2B4EE3B000D1A926 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		1274ED422B4EE45B00D1A926 /* LocatorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocatorViewModel.swift; sourceTree = "<group>"; };
+		1274ED442B4FB91800D1A926 /* CategoryInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryInputView.swift; sourceTree = "<group>"; };
+		1274ED462B4FBB2E00D1A926 /* CategoryColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryColor.swift; sourceTree = "<group>"; };
 		310D77694CE249A028E5BF92 /* Pods-LinkMark.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LinkMark.release.xcconfig"; path = "Target Support Files/Pods-LinkMark/Pods-LinkMark.release.xcconfig"; sourceTree = "<group>"; };
 		4BAE40D35CA5E1D19DF82288 /* Pods_LinkMark.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LinkMark.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC133F7F981F41DD71F089FA /* Pods-LinkMark.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LinkMark.debug.xcconfig"; path = "Target Support Files/Pods-LinkMark/Pods-LinkMark.debug.xcconfig"; sourceTree = "<group>"; };
@@ -106,8 +120,12 @@
 			isa = PBXGroup;
 			children = (
 				1222B95E2B46F8CA00803C59 /* LinkMarkApp.swift */,
+				1274ED3E2B4EE3B000D1A926 /* RootView.swift */,
 				1222B9602B46F8CA00803C59 /* ContentView.swift */,
 				1274ED352B4EC47900D1A926 /* CategoryListView.swift */,
+				1274ED442B4FB91800D1A926 /* CategoryInputView.swift */,
+				1274ED3C2B4EE37D00D1A926 /* LocatorListView.swift */,
+				12746AC92B58FB70009D1473 /* Components */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -116,6 +134,7 @@
 			isa = PBXGroup;
 			children = (
 				1274ED332B4EC09E00D1A926 /* Locator+CoreDataClass.swift */,
+				1274ED462B4FBB2E00D1A926 /* CategoryColor.swift */,
 				1274ED312B4EC09600D1A926 /* Category+CoreDataClass.swift */,
 				1222B9692B46F8CB00803C59 /* LinkMark.xcdatamodeld */,
 			);
@@ -125,6 +144,8 @@
 		1222B9732B46F9DA00803C59 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				1274ED3A2B4EC8AC00D1A926 /* CategoryViewModel.swift */,
+				1274ED422B4EE45B00D1A926 /* LocatorViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -149,6 +170,7 @@
 			isa = PBXGroup;
 			children = (
 				1222B9882B47B14900803C59 /* CoreDataRepository.swift */,
+				1274ED372B4EC87300D1A926 /* DI */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -161,6 +183,21 @@
 				1222B97E2B46FA9800803C59 /* Localizable.strings */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		12746AC92B58FB70009D1473 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		1274ED372B4EC87300D1A926 /* DI */ = {
+			isa = PBXGroup;
+			children = (
+				1274ED382B4EC87C00D1A926 /* RepositoryDependency.swift */,
+			);
+			path = DI;
 			sourceTree = "<group>";
 		};
 		DD2E9CC773F8FB56276F9F93 /* Pods */ = {
@@ -299,11 +336,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				1222B9612B46F8CA00803C59 /* ContentView.swift in Sources */,
+				1274ED432B4EE45B00D1A926 /* LocatorViewModel.swift in Sources */,
 				1222B96B2B46F8CB00803C59 /* LinkMark.xcdatamodeld in Sources */,
+				1274ED392B4EC87C00D1A926 /* RepositoryDependency.swift in Sources */,
+				1274ED452B4FB91800D1A926 /* CategoryInputView.swift in Sources */,
 				1274ED322B4EC09600D1A926 /* Category+CoreDataClass.swift in Sources */,
 				1274ED362B4EC47900D1A926 /* CategoryListView.swift in Sources */,
 				1222B9842B46FADF00803C59 /* Assets.swift in Sources */,
+				1274ED3B2B4EC8AC00D1A926 /* CategoryViewModel.swift in Sources */,
+				1274ED3D2B4EE37D00D1A926 /* LocatorListView.swift in Sources */,
 				1222B9852B46FADF00803C59 /* Strings.swift in Sources */,
+				1274ED472B4FBB2E00D1A926 /* CategoryColor.swift in Sources */,
+				1274ED3F2B4EE3B000D1A926 /* RootView.swift in Sources */,
 				1222B95F2B46F8CA00803C59 /* LinkMarkApp.swift in Sources */,
 				1274ED342B4EC09E00D1A926 /* Locator+CoreDataClass.swift in Sources */,
 				1222B9892B47B14900803C59 /* CoreDataRepository.swift in Sources */,
