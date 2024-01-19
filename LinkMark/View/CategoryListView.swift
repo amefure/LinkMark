@@ -29,46 +29,46 @@ struct CategoryListView: View {
                         } else {
                             rootViewModel.activeEditMode()
                         }
-                       
+                        
                     } label: {
                         Image(systemName: "arrow.up.and.down.text.horizontal")
                             .foregroundStyle(.exText)
                     }
-
+                    
                     
                 }
-               
+                
                 
                 List {
                     ForEach(viewModel.categorys) { category in
-                        NavigationLink(value: ScreenPath.pathB(category: category)) {
+                        NavigationLink(value: ScreenPath.locatorList(category: category)) {
                             HStack {
                                 CategoryColor.getColor(category.wrappedColor)
                                     .frame(width: 50, height: 50)
                                     .clipShape(RoundedRectangle(cornerRadius: 50))
                                 Text(category.wrappedName)
                                     .foregroundStyle(.exText)
-
+                                
                                 Spacer()
-
+                                
                                 Text("\(category.order)")
                                     .foregroundStyle(.exText)
-
+                                
                                 Text("\(category.wrappedLocators.count)")
                                     .foregroundStyle(.exText)
                             }
                         }.listRowBackground(Color.exLightGray)
-                            
+                        
                     }.onMove { sourceSet, destination in
                         viewModel.changeOrder(list: viewModel.categorys, sourceSet: sourceSet, destination: destination)
-                    
+                        
                     }.onDelete { sourceSet in
                         
                     }.deleteDisabled(true)
                 }.scrollContentBackground(.hidden)
                     .background(Color.exThema)
             }.environment(\.editMode, .constant(rootViewModel.editSortMode))
-                
+            
             
             NavigationLink {
                 CategoryInputView()
@@ -81,10 +81,11 @@ struct CategoryListView: View {
                     .clipShape(RoundedRectangle(cornerRadius: 70))
                     .shadow(color: .exText, radius: 2, x: 1, y: 1)
             }
-
-        }.onAppear {
-            viewModel.onAppear()
-        }
+            
+        }.navigationBarBackButtonHidden()
+            .onAppear {
+                viewModel.onAppear()
+            }
         
     }
 }

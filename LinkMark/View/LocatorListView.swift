@@ -51,7 +51,7 @@ struct LocatorListView: View {
                     ForEach(viewModel.locators) { locator in
                         if let url = locator.url {
                             
-                            NavigationLink(value: ScreenPath.pathA(url: url)) {
+                            NavigationLink(value: ScreenPath.webView(url: url)) {
                                 VStack(alignment: .leading) {
                                     Text(locator.title!)
                                     

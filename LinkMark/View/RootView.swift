@@ -13,7 +13,6 @@ struct RootView: View {
     var body: some View {
         VStack {
             CategoryListView()
-                .navigationBarBackButtonHidden()
         }.background(Color.exThema)
         
             .navigationDestination(for: ScreenPath.self) { value in

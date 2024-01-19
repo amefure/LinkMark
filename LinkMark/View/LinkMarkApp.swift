@@ -21,7 +21,7 @@ class AppDelegate: NSObject, UIApplicationDelegate {
 @main
 struct LinkMarkApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
-
+    
     @ObservedObject private var viewModel = RootViewModel.shared
     
     var body: some Scene {
