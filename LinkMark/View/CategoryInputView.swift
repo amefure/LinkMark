@@ -9,7 +9,7 @@ import SwiftUI
 
 struct CategoryInputView: View {
     
-    @ObservedObject private var viewModel = CategoryViewModel.shered
+    @ObservedObject private var viewModel = CategoryViewModel.shared
     
     @State private var name = ""
     @State private var selectColor: CategoryColor = .red
@@ -64,7 +64,7 @@ struct CategoryInputView: View {
             .dialog(
                 isPresented: $showSuccessDialog,
                 title: "お知らせ",
-                message: "カテゴリ「\(name)」を\n登録しました。",
+                message: "カテゴリ「\(name.limitLength)」を\n登録しました。",
                 positiveButtonTitle: "OK",
                 negativeButtonTitle: "",
                 positiveAction: { dismiss() },

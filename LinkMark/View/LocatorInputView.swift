@@ -9,7 +9,7 @@ import SwiftUI
 
 struct LocatorInputView: View {
     
-    @ObservedObject private var viewModel = LocatorViewModel.shered
+    @ObservedObject private var viewModel = LocatorViewModel.shared
     
     public var category: Category
     
@@ -17,29 +17,65 @@ struct LocatorInputView: View {
     @State private var url = ""
     @State private var memo = ""
     
-    @State private var showFailedDialog = false
+    @State private var showValidationEmptyFlag = false
+    @State private var showValidationUrlFlag = false
     @State private var showSuccessDialog = false
     
     @Environment(\.dismiss) var dismiss
+    
+    func validationUrl(url: String) -> Bool {
+        guard let nsurl = NSURL(string: url) else {
+            return false
+        }
+        guard UIApplication.shared.canOpenURL(nsurl as URL) else {
+           return false
+       }
+        return true
+    }
+    
+    
     var body: some View {
         
         VStack {
             Text("LINKMARK")
             
-            SectionTitleView(title: "タイトル")
+            ZStack {
+                SectionTitleView(title: "タイトル")
+                if showValidationEmptyFlag {
+                    Text("・タイトルは必須入力です。")
+                        .foregroundStyle(.red)
+                }
+                
+            }
+           
             InputView(placeholder: "例：レシピ・趣味など", value: $title)
             
-            SectionTitleView(title: "URL")
+            ZStack {
+                SectionTitleView(title: "Link")
+                if showValidationUrlFlag {
+                    Text("・有効なリンクを入力してください。")
+                        .foregroundStyle(.red)
+                }
+               
+            }
+            
             InputView(placeholder: "例：https://XXX.com/", value: $url)
             
             SectionTitleView(title: "MEMO")
             InputView(placeholder: "", value: $memo)
             
+            Spacer()
+            
             Button {
-                guard !title.isEmpty else {
-                    showFailedDialog = true
-                    return
+                if title.isEmpty {
+                    showValidationEmptyFlag = true
                 }
+                if !validationUrl(url: url) {
+                    showValidationUrlFlag = true
+                }
+                
+                guard !showValidationEmptyFlag && !showValidationUrlFlag  else { return }
+                
                 viewModel.addLocator(categoryId: category.wrappedId, title: title, url: URL(string: "https://tech.amefure.com/")!, memo: memo)
                 
                 showSuccessDialog = true
@@ -56,15 +92,6 @@ struct LocatorInputView: View {
                 positiveButtonTitle: "OK",
                 negativeButtonTitle: "",
                 positiveAction: { dismiss() },
-                negativeAction: {}
-            )
-            .dialog(
-                isPresented: $showFailedDialog,
-                title: "お知らせ",
-                message: "タイトルは必須入力です。",
-                positiveButtonTitle: "OK",
-                negativeButtonTitle: "",
-                positiveAction: { showFailedDialog = false},
                 negativeAction: {}
             )
     }

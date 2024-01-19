@@ -22,6 +22,13 @@
 		12746ACD2B58FC81009D1473 /* InputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12746ACC2B58FC81009D1473 /* InputView.swift */; };
 		12746AD02B594922009D1473 /* CustomNotifyDialogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12746ACF2B594922009D1473 /* CustomNotifyDialogView.swift */; };
 		12746AD22B595518009D1473 /* LocatorInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12746AD12B595518009D1473 /* LocatorInputView.swift */; };
+		12746AD42B596D48009D1473 /* UIWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12746AD32B596D48009D1473 /* UIWebView.swift */; };
+		12746AD62B596F6E009D1473 /* DateFormatManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12746AD52B596F6E009D1473 /* DateFormatManager.swift */; };
+		12746AD82B5A2006009D1473 /* RootViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12746AD72B5A2006009D1473 /* RootViewModel.swift */; };
+		12746ADA2B5A2A8A009D1473 /* ExString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12746AD92B5A2A8A009D1473 /* ExString.swift */; };
+		12746ADC2B5A2B11009D1473 /* LocatorRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12746ADB2B5A2B11009D1473 /* LocatorRepository.swift */; };
+		12746ADE2B5A2B23009D1473 /* CategoryRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12746ADD2B5A2B23009D1473 /* CategoryRepository.swift */; };
+		12746AE02B5A588D009D1473 /* EXCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12746ADF2B5A588D009D1473 /* EXCollection.swift */; };
 		1274ED322B4EC09600D1A926 /* Category+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1274ED312B4EC09600D1A926 /* Category+CoreDataClass.swift */; };
 		1274ED342B4EC09E00D1A926 /* Locator+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1274ED332B4EC09E00D1A926 /* Locator+CoreDataClass.swift */; };
 		1274ED362B4EC47900D1A926 /* CategoryListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1274ED352B4EC47900D1A926 /* CategoryListView.swift */; };
@@ -54,6 +61,13 @@
 		12746ACC2B58FC81009D1473 /* InputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputView.swift; sourceTree = "<group>"; };
 		12746ACF2B594922009D1473 /* CustomNotifyDialogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNotifyDialogView.swift; sourceTree = "<group>"; };
 		12746AD12B595518009D1473 /* LocatorInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocatorInputView.swift; sourceTree = "<group>"; };
+		12746AD32B596D48009D1473 /* UIWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIWebView.swift; sourceTree = "<group>"; };
+		12746AD52B596F6E009D1473 /* DateFormatManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatManager.swift; sourceTree = "<group>"; };
+		12746AD72B5A2006009D1473 /* RootViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewModel.swift; sourceTree = "<group>"; };
+		12746AD92B5A2A8A009D1473 /* ExString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExString.swift; sourceTree = "<group>"; };
+		12746ADB2B5A2B11009D1473 /* LocatorRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocatorRepository.swift; sourceTree = "<group>"; };
+		12746ADD2B5A2B23009D1473 /* CategoryRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryRepository.swift; sourceTree = "<group>"; };
+		12746ADF2B5A588D009D1473 /* EXCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EXCollection.swift; sourceTree = "<group>"; };
 		1274ED312B4EC09600D1A926 /* Category+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Category+CoreDataClass.swift"; sourceTree = "<group>"; };
 		1274ED332B4EC09E00D1A926 /* Locator+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Locator+CoreDataClass.swift"; path = "/Users/s/Desktop/SwiftApp/LinkMark/LinkMark/Model/Locator+CoreDataClass.swift"; sourceTree = "<absolute>"; };
 		1274ED352B4EC47900D1A926 /* CategoryListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryListView.swift; sourceTree = "<group>"; };
@@ -134,6 +148,7 @@
 				1274ED442B4FB91800D1A926 /* CategoryInputView.swift */,
 				1274ED3C2B4EE37D00D1A926 /* LocatorListView.swift */,
 				12746AD12B595518009D1473 /* LocatorInputView.swift */,
+				12746AD32B596D48009D1473 /* UIWebView.swift */,
 				12746ACE2B5948B7009D1473 /* Dialog */,
 				12746AC92B58FB70009D1473 /* Components */,
 			);
@@ -155,6 +170,7 @@
 			isa = PBXGroup;
 			children = (
 				1274ED3A2B4EC8AC00D1A926 /* CategoryViewModel.swift */,
+				12746AD72B5A2006009D1473 /* RootViewModel.swift */,
 				1274ED422B4EE45B00D1A926 /* LocatorViewModel.swift */,
 			);
 			path = ViewModel;
@@ -163,6 +179,9 @@
 		1222B9742B46F9EB00803C59 /* Extension&Utility */ = {
 			isa = PBXGroup;
 			children = (
+				12746AD52B596F6E009D1473 /* DateFormatManager.swift */,
+				12746AD92B5A2A8A009D1473 /* ExString.swift */,
+				12746ADF2B5A588D009D1473 /* EXCollection.swift */,
 			);
 			path = "Extension&Utility";
 			sourceTree = "<group>";
@@ -180,6 +199,8 @@
 			isa = PBXGroup;
 			children = (
 				1222B9882B47B14900803C59 /* CoreDataRepository.swift */,
+				12746ADB2B5A2B11009D1473 /* LocatorRepository.swift */,
+				12746ADD2B5A2B23009D1473 /* CategoryRepository.swift */,
 				1274ED372B4EC87300D1A926 /* DI */,
 			);
 			path = Repository;
@@ -355,10 +376,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				12746AD62B596F6E009D1473 /* DateFormatManager.swift in Sources */,
 				1222B9612B46F8CA00803C59 /* ContentView.swift in Sources */,
+				12746AD82B5A2006009D1473 /* RootViewModel.swift in Sources */,
 				12746AD22B595518009D1473 /* LocatorInputView.swift in Sources */,
 				1274ED432B4EE45B00D1A926 /* LocatorViewModel.swift in Sources */,
+				12746ADE2B5A2B23009D1473 /* CategoryRepository.swift in Sources */,
 				1222B96B2B46F8CB00803C59 /* LinkMark.xcdatamodeld in Sources */,
+				12746AE02B5A588D009D1473 /* EXCollection.swift in Sources */,
 				1274ED392B4EC87C00D1A926 /* RepositoryDependency.swift in Sources */,
 				1274ED452B4FB91800D1A926 /* CategoryInputView.swift in Sources */,
 				1274ED322B4EC09600D1A926 /* Category+CoreDataClass.swift in Sources */,
@@ -366,8 +391,11 @@
 				1222B9842B46FADF00803C59 /* Assets.swift in Sources */,
 				1274ED3B2B4EC8AC00D1A926 /* CategoryViewModel.swift in Sources */,
 				1274ED3D2B4EE37D00D1A926 /* LocatorListView.swift in Sources */,
+				12746ADC2B5A2B11009D1473 /* LocatorRepository.swift in Sources */,
+				12746ADA2B5A2A8A009D1473 /* ExString.swift in Sources */,
 				1222B9852B46FADF00803C59 /* Strings.swift in Sources */,
 				1274ED472B4FBB2E00D1A926 /* CategoryColor.swift in Sources */,
+				12746AD42B596D48009D1473 /* UIWebView.swift in Sources */,
 				1274ED3F2B4EE3B000D1A926 /* RootView.swift in Sources */,
 				1222B95F2B46F8CA00803C59 /* LinkMarkApp.swift in Sources */,
 				1274ED342B4EC09E00D1A926 /* Locator+CoreDataClass.swift in Sources */,

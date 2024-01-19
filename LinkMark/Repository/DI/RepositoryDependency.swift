@@ -8,5 +8,7 @@
 import UIKit
 
 class RepositoryDependency {
-    
+    public let categoryRepository = CategoryRepository()
+    public let locatorRepository = LocatorRepository()
+//    public let userDefaultsRepository = UserDefaultsRepository()
 }

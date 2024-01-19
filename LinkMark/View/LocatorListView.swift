@@ -9,10 +9,12 @@ import SwiftUI
 
 struct LocatorListView: View {
     
-    @ObservedObject private var viewModel = LocatorViewModel.shered
+    @ObservedObject private var viewModel = LocatorViewModel.shared
     
-    
+    @State private var showDeleteDialog = false
     public var category: Category
+    
+    @Environment(\.dismiss) var dismiss
     var body: some View {
         ZStack {
             VStack {
@@ -26,15 +28,45 @@ struct LocatorListView: View {
                         .frame(width: 150, height: 40)
                         .background(CategoryColor.getColor(category.wrappedColor))
                         .clipShape(RoundedRectangle(cornerRadius: 20))
+                    
+                    HStack {
+                        
+                        Spacer()
+                        
+                        
+                        Button {
+                            showDeleteDialog = true
+                        } label: {
+                            Image(systemName: "trash")
+                                .foregroundStyle(.exRed)
+                        }
+                    }
+                    
                 }
                 
                 
                 List {
                     ForEach(viewModel.locators) { locator in
-                        Text(locator.title!)
-                            .listRowBackground(Color.exLightGray)
-                        Text(locator.category!.wrappedId.uuidString)
-                            .listRowBackground(Color.exLightGray)
+                        if let url = locator.url {
+                            
+                            NavigationLink {
+                                UIWebView(url: url)
+                            } label: {
+                                
+                                VStack(alignment: .leading) {
+                                    Text(locator.title!)
+                                    
+                                    Text(locator.wrappedMemo)
+                                    
+                                    HStack {
+                                        Text(DateFormatManager().getString(date: locator.wrappedCreatedAt))
+                                        Text(url.absoluteString)
+                                    }.opacity(5)
+                                        .font(.caption)
+                                }.foregroundStyle(.exText)
+                            } .listRowBackground(Color.exLightGray)
+                        }
+                        
                     }
                 }.scrollContentBackground(.hidden)
                     .background(Color.exThema)
@@ -56,7 +88,18 @@ struct LocatorListView: View {
         }.background(Color.exThema)
             .onAppear {
                 viewModel.onAppear(categoryId: category.wrappedId)
-            }
+            }.dialog(
+                isPresented: $showDeleteDialog,
+                title: "お知らせ",
+                message: "「\(category.wrappedName.limitLength)」を本当に削除しますか？\n削除するとリンクも全てなくなります。",
+                positiveButtonTitle: "OK",
+                negativeButtonTitle: "キャンセル",
+                positiveAction: {
+                    viewModel.deleteCategory(category: category)
+                    dismiss()
+                },
+                negativeAction: { showDeleteDialog = false }
+            )
     }
 }
 

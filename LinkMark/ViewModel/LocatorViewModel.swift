@@ -9,36 +9,52 @@ import UIKit
 
 class LocatorViewModel: ObservableObject {
     
-    static let shered = LocatorViewModel()
+    static let shared = LocatorViewModel()
     
     @Published var locators: [Locator] = []
+    
+    private var locatorRepository: LocatorRepository
+    private var categoryRepository: CategoryRepository
+    
+    init(repositoryDependency: RepositoryDependency = RepositoryDependency()) {
+        locatorRepository = repositoryDependency.locatorRepository
+        categoryRepository = repositoryDependency.categoryRepository
+    }
 }
+
 
 extension LocatorViewModel {
     
     public func fetchAllLocators(categoryId: UUID) {
-        let predicate = NSPredicate(format: "category.id == %@", categoryId as CVarArg)
-        locators = CoreDataRepository.fetch(predicate: predicate, sorts: [NSSortDescriptor(keyPath: \Locator.title, ascending: true)])
+        locators = locatorRepository.fetchAllLocators(categoryId: categoryId)
     }
     
     public func addLocator(categoryId: UUID, title: String, url: URL, memo: String) {
-        let predicate = NSPredicate(format: "id == %@", categoryId as CVarArg)
-        guard let category: Category = CoreDataRepository.fetchSingle(predicate: predicate) else { return }
-        guard let context = category.managedObjectContext  else { return }
-        
-        let entity = Locator(context: context)
-        entity.id = UUID()
-        entity.title = title
-        entity.url = url
-        entity.memo = memo
-        entity.createdAt = Date()
-        category.addToLocator(entity)
-        
-        CoreDataRepository.save()
+        locatorRepository.addLocator(categoryId: categoryId, title: title, url: url, memo: memo)
     }
     
     public func onAppear(categoryId: UUID) {
         locators.removeAll()
-        fetchAllLocators(categoryId: categoryId)
+        locators = locatorRepository.fetchAllLocators(categoryId: categoryId)
+    }
+    
+    public func deleteCategory(category: Category) {
+        let items = categoryRepository.fetchAllCategorys()
+        
+        guard items.count != 1 else {
+            categoryRepository.deleteCategory(categoryId: category.wrappedId)
+            return
+        }
+            
+        // 削除する行の行番号を取得
+        let deleteOrder = category.order
+        
+        // 削除する行の行番号より大きい行番号を全て -1 する
+        for i in (Int(deleteOrder) + 1)..<items.count {
+            if let item = items[safe: i] {
+                categoryRepository.updateOrder(categoryId: item.wrappedId, order: Int(item.order) - 1)
+            }
+        }
+        categoryRepository.deleteCategory(categoryId: category.wrappedId)
     }
 }

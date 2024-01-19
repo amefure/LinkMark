@@ -40,11 +40,12 @@ struct CustomNotifyDialogView: View {
                         .padding(.vertical, 20)
                         .background(.exRed)
                     
+                    Spacer()
+                    
                     Text(message)
                         .foregroundStyle(.exText)
                         .padding(.horizontal, 20)
-                        .lineLimit(3)
-                        .padding(.vertical, 10)
+                        .lineLimit(4)
                     
                     Spacer()
                     
@@ -65,6 +66,7 @@ struct CustomNotifyDialogView: View {
                         
                         if !negativeButtonTitle.isEmpty && !negativeButtonTitle.isEmpty {
                             Divider()
+                                .frame(height: 20)
                         }
                         
                         
@@ -80,7 +82,7 @@ struct CustomNotifyDialogView: View {
                         }
                     }.padding()
                    
-                }.frame(width: 300, height: 200)
+                }.frame(width: 300, height: 220)
                 .background(.exLightGray)
                 .clipShape(RoundedRectangle(cornerRadius: 20))
            // 画面一杯にViewを広げる

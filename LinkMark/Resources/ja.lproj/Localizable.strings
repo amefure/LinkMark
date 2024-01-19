@@ -5,3 +5,8 @@
   Created by t&a on 2024/01/04.
   
 */
+
+
+// MARK: - Loacle
+"date_locale" = "ja_JP";
+"date_format" = "yyyy年M月d日";
