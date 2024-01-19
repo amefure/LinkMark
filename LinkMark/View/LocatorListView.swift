@@ -18,7 +18,9 @@ struct LocatorListView: View {
     var body: some View {
         ZStack {
             VStack {
-                Text("LINKMARK")
+                HeaderView(leadingIcon: "arrow.backward", leadingAction: {
+                    dismiss()
+                })
                 
                 ZStack {
                     SectionTitleView(title: "Link")
@@ -49,10 +51,7 @@ struct LocatorListView: View {
                     ForEach(viewModel.locators) { locator in
                         if let url = locator.url {
                             
-                            NavigationLink {
-                                UIWebView(url: url)
-                            } label: {
-                                
+                            NavigationLink(value: ScreenPath.pathA(url: url)) {
                                 VStack(alignment: .leading) {
                                     Text(locator.title!)
                                     
@@ -64,9 +63,8 @@ struct LocatorListView: View {
                                     }.opacity(5)
                                         .font(.caption)
                                 }.foregroundStyle(.exText)
-                            } .listRowBackground(Color.exLightGray)
+                            }.listRowBackground(Color.exLightGray)
                         }
-                        
                     }
                 }.scrollContentBackground(.hidden)
                     .background(Color.exThema)
@@ -86,6 +84,7 @@ struct LocatorListView: View {
                     .shadow(color: .exText, radius: 2, x: 1, y: 1)
             }
         }.background(Color.exThema)
+            .navigationBarBackButtonHidden()
             .onAppear {
                 viewModel.onAppear(categoryId: category.wrappedId)
             }.dialog(
@@ -100,6 +99,16 @@ struct LocatorListView: View {
                 },
                 negativeAction: { showDeleteDialog = false }
             )
+    }
+}
+
+struct Test: View {
+    @Environment(\.presentationMode) var presentation
+    init() {
+        print("INSTANSS")
+    }
+    var body: some View {
+     Text("DD")
     }
 }
 

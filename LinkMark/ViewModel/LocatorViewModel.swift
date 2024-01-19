@@ -13,6 +13,8 @@ class LocatorViewModel: ObservableObject {
     
     @Published var locators: [Locator] = []
     
+
+    
     private var locatorRepository: LocatorRepository
     private var categoryRepository: CategoryRepository
     

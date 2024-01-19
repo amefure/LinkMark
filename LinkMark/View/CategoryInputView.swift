@@ -21,7 +21,7 @@ struct CategoryInputView: View {
     var body: some View {
         VStack {
             
-            Text("LINKMARK")
+            HeaderView()
             
             SectionTitleView(title: "カテゴリ名")
             InputView(placeholder: "例：レシピ・趣味など", value: $name)
@@ -45,6 +45,7 @@ struct CategoryInputView: View {
             
             Spacer()
             
+     
             
             Button {
                 guard !name.isEmpty else {

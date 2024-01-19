@@ -9,11 +9,17 @@ import UIKit
 import SwiftUI
 import WebKit
 
-struct UIWebView: UIViewRepresentable {
+// WebViewを表示するためのUikitView
+struct UICustomWebView: UIViewRepresentable {
     
-    private let webView = WKWebView()
+    private var webView: WKWebView
+    public var url: URL
     
-    let url: URL
+    init(url: URL) {
+        
+        self.url = url
+        self.webView = WKWebView()
+    }
     
     func makeUIView(context: Context) -> WKWebView {
         return webView
@@ -21,13 +27,10 @@ struct UIWebView: UIViewRepresentable {
     
     func updateUIView(_ webView: WKWebView, context: Context) {
         let request = URLRequest(url: url)
-        // あとでコメントを解除
-        // webView.navigationDelegate = context.coordinator
         webView.load(request)
     }
 }
-
-extension UIWebView {
+extension UICustomWebView {
     public func reload(){
         webView.reload()
     }

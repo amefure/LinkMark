@@ -22,9 +22,11 @@ class AppDelegate: NSObject, UIApplicationDelegate {
 struct LinkMarkApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
 
+    @ObservedObject private var viewModel = RootViewModel.shared
+    
     var body: some Scene {
         WindowGroup {
-            NavigationStack {
+            NavigationStack(path: $viewModel.navigatePath) {
                 RootView()
             }
         }

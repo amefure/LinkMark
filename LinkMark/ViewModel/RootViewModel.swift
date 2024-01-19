@@ -6,10 +6,13 @@
 //
 
 import SwiftUI
+import Combine
 
 class RootViewModel: ObservableObject {
     
     static let shared = RootViewModel()
+    
+    @Published var navigatePath: [ScreenPath] = []
     
     @Published private(set) var editSortMode: EditMode = .inactive
     
@@ -21,4 +24,8 @@ class RootViewModel: ObservableObject {
         editSortMode = .inactive
     }
 }
+
+
+
+
 

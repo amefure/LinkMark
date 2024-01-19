@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		1222B95F2B46F8CA00803C59 /* LinkMarkApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1222B95E2B46F8CA00803C59 /* LinkMarkApp.swift */; };
-		1222B9612B46F8CA00803C59 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1222B9602B46F8CA00803C59 /* ContentView.swift */; };
 		1222B9632B46F8CB00803C59 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1222B9622B46F8CB00803C59 /* Images.xcassets */; };
 		1222B9662B46F8CB00803C59 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1222B9652B46F8CB00803C59 /* Preview Assets.xcassets */; };
 		1222B96B2B46F8CB00803C59 /* LinkMark.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1222B9692B46F8CB00803C59 /* LinkMark.xcdatamodeld */; };
@@ -22,7 +21,7 @@
 		12746ACD2B58FC81009D1473 /* InputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12746ACC2B58FC81009D1473 /* InputView.swift */; };
 		12746AD02B594922009D1473 /* CustomNotifyDialogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12746ACF2B594922009D1473 /* CustomNotifyDialogView.swift */; };
 		12746AD22B595518009D1473 /* LocatorInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12746AD12B595518009D1473 /* LocatorInputView.swift */; };
-		12746AD42B596D48009D1473 /* UIWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12746AD32B596D48009D1473 /* UIWebView.swift */; };
+		12746AD42B596D48009D1473 /* UICustomWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12746AD32B596D48009D1473 /* UICustomWebView.swift */; };
 		12746AD62B596F6E009D1473 /* DateFormatManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12746AD52B596F6E009D1473 /* DateFormatManager.swift */; };
 		12746AD82B5A2006009D1473 /* RootViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12746AD72B5A2006009D1473 /* RootViewModel.swift */; };
 		12746ADA2B5A2A8A009D1473 /* ExString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12746AD92B5A2A8A009D1473 /* ExString.swift */; };
@@ -39,13 +38,15 @@
 		1274ED432B4EE45B00D1A926 /* LocatorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1274ED422B4EE45B00D1A926 /* LocatorViewModel.swift */; };
 		1274ED452B4FB91800D1A926 /* CategoryInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1274ED442B4FB91800D1A926 /* CategoryInputView.swift */; };
 		1274ED472B4FBB2E00D1A926 /* CategoryColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1274ED462B4FBB2E00D1A926 /* CategoryColor.swift */; };
+		128FC4762B5AAC4A003E3B53 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128FC4752B5AAC4A003E3B53 /* HeaderView.swift */; };
+		128FC4782B5AB609003E3B53 /* ControlWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128FC4772B5AB609003E3B53 /* ControlWebView.swift */; };
+		128FC47A2B5AB718003E3B53 /* ScreenPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128FC4792B5AB718003E3B53 /* ScreenPath.swift */; };
 		7F2BEE17A18D4463FA94A011 /* Pods_LinkMark.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BAE40D35CA5E1D19DF82288 /* Pods_LinkMark.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1222B95B2B46F8CA00803C59 /* LinkMark.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LinkMark.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1222B95E2B46F8CA00803C59 /* LinkMarkApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkMarkApp.swift; sourceTree = "<group>"; };
-		1222B9602B46F8CA00803C59 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		1222B9622B46F8CB00803C59 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		1222B9652B46F8CB00803C59 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		1222B96A2B46F8CB00803C59 /* LinkMark.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LinkMark.xcdatamodel; sourceTree = "<group>"; };
@@ -61,7 +62,7 @@
 		12746ACC2B58FC81009D1473 /* InputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputView.swift; sourceTree = "<group>"; };
 		12746ACF2B594922009D1473 /* CustomNotifyDialogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNotifyDialogView.swift; sourceTree = "<group>"; };
 		12746AD12B595518009D1473 /* LocatorInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocatorInputView.swift; sourceTree = "<group>"; };
-		12746AD32B596D48009D1473 /* UIWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIWebView.swift; sourceTree = "<group>"; };
+		12746AD32B596D48009D1473 /* UICustomWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICustomWebView.swift; sourceTree = "<group>"; };
 		12746AD52B596F6E009D1473 /* DateFormatManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatManager.swift; sourceTree = "<group>"; };
 		12746AD72B5A2006009D1473 /* RootViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewModel.swift; sourceTree = "<group>"; };
 		12746AD92B5A2A8A009D1473 /* ExString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExString.swift; sourceTree = "<group>"; };
@@ -78,6 +79,9 @@
 		1274ED422B4EE45B00D1A926 /* LocatorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocatorViewModel.swift; sourceTree = "<group>"; };
 		1274ED442B4FB91800D1A926 /* CategoryInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryInputView.swift; sourceTree = "<group>"; };
 		1274ED462B4FBB2E00D1A926 /* CategoryColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryColor.swift; sourceTree = "<group>"; };
+		128FC4752B5AAC4A003E3B53 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
+		128FC4772B5AB609003E3B53 /* ControlWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlWebView.swift; sourceTree = "<group>"; };
+		128FC4792B5AB718003E3B53 /* ScreenPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenPath.swift; sourceTree = "<group>"; };
 		310D77694CE249A028E5BF92 /* Pods-LinkMark.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LinkMark.release.xcconfig"; path = "Target Support Files/Pods-LinkMark/Pods-LinkMark.release.xcconfig"; sourceTree = "<group>"; };
 		4BAE40D35CA5E1D19DF82288 /* Pods_LinkMark.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LinkMark.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC133F7F981F41DD71F089FA /* Pods-LinkMark.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LinkMark.debug.xcconfig"; path = "Target Support Files/Pods-LinkMark/Pods-LinkMark.debug.xcconfig"; sourceTree = "<group>"; };
@@ -143,12 +147,11 @@
 			children = (
 				1222B95E2B46F8CA00803C59 /* LinkMarkApp.swift */,
 				1274ED3E2B4EE3B000D1A926 /* RootView.swift */,
-				1222B9602B46F8CA00803C59 /* ContentView.swift */,
 				1274ED352B4EC47900D1A926 /* CategoryListView.swift */,
 				1274ED442B4FB91800D1A926 /* CategoryInputView.swift */,
 				1274ED3C2B4EE37D00D1A926 /* LocatorListView.swift */,
 				12746AD12B595518009D1473 /* LocatorInputView.swift */,
-				12746AD32B596D48009D1473 /* UIWebView.swift */,
+				128FC47D2B5AB7D3003E3B53 /* WebView */,
 				12746ACE2B5948B7009D1473 /* Dialog */,
 				12746AC92B58FB70009D1473 /* Components */,
 			);
@@ -158,10 +161,8 @@
 		1222B9722B46F9D000803C59 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				1274ED332B4EC09E00D1A926 /* Locator+CoreDataClass.swift */,
-				1274ED462B4FBB2E00D1A926 /* CategoryColor.swift */,
-				1274ED312B4EC09600D1A926 /* Category+CoreDataClass.swift */,
-				1222B9692B46F8CB00803C59 /* LinkMark.xcdatamodeld */,
+				128FC47B2B5AB79B003E3B53 /* CoreData */,
+				128FC47C2B5AB7B8003E3B53 /* Navigation */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -169,8 +170,8 @@
 		1222B9732B46F9DA00803C59 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				1274ED3A2B4EC8AC00D1A926 /* CategoryViewModel.swift */,
 				12746AD72B5A2006009D1473 /* RootViewModel.swift */,
+				1274ED3A2B4EC8AC00D1A926 /* CategoryViewModel.swift */,
 				1274ED422B4EE45B00D1A926 /* LocatorViewModel.swift */,
 			);
 			path = ViewModel;
@@ -219,6 +220,7 @@
 		12746AC92B58FB70009D1473 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				128FC47E2B5AB80B003E3B53 /* Layout */,
 				12746ACA2B58FBAA009D1473 /* SectionTitleView.swift */,
 				12746ACC2B58FC81009D1473 /* InputView.swift */,
 			);
@@ -239,6 +241,42 @@
 				1274ED382B4EC87C00D1A926 /* RepositoryDependency.swift */,
 			);
 			path = DI;
+			sourceTree = "<group>";
+		};
+		128FC47B2B5AB79B003E3B53 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				1274ED312B4EC09600D1A926 /* Category+CoreDataClass.swift */,
+				1274ED332B4EC09E00D1A926 /* Locator+CoreDataClass.swift */,
+				1274ED462B4FBB2E00D1A926 /* CategoryColor.swift */,
+				1222B9692B46F8CB00803C59 /* LinkMark.xcdatamodeld */,
+			);
+			name = CoreData;
+			sourceTree = "<group>";
+		};
+		128FC47C2B5AB7B8003E3B53 /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				128FC4792B5AB718003E3B53 /* ScreenPath.swift */,
+			);
+			name = Navigation;
+			sourceTree = "<group>";
+		};
+		128FC47D2B5AB7D3003E3B53 /* WebView */ = {
+			isa = PBXGroup;
+			children = (
+				128FC4772B5AB609003E3B53 /* ControlWebView.swift */,
+				12746AD32B596D48009D1473 /* UICustomWebView.swift */,
+			);
+			path = WebView;
+			sourceTree = "<group>";
+		};
+		128FC47E2B5AB80B003E3B53 /* Layout */ = {
+			isa = PBXGroup;
+			children = (
+				128FC4752B5AAC4A003E3B53 /* HeaderView.swift */,
+			);
+			path = Layout;
 			sourceTree = "<group>";
 		};
 		DD2E9CC773F8FB56276F9F93 /* Pods */ = {
@@ -377,7 +415,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				12746AD62B596F6E009D1473 /* DateFormatManager.swift in Sources */,
-				1222B9612B46F8CA00803C59 /* ContentView.swift in Sources */,
 				12746AD82B5A2006009D1473 /* RootViewModel.swift in Sources */,
 				12746AD22B595518009D1473 /* LocatorInputView.swift in Sources */,
 				1274ED432B4EE45B00D1A926 /* LocatorViewModel.swift in Sources */,
@@ -395,10 +432,13 @@
 				12746ADA2B5A2A8A009D1473 /* ExString.swift in Sources */,
 				1222B9852B46FADF00803C59 /* Strings.swift in Sources */,
 				1274ED472B4FBB2E00D1A926 /* CategoryColor.swift in Sources */,
-				12746AD42B596D48009D1473 /* UIWebView.swift in Sources */,
+				12746AD42B596D48009D1473 /* UICustomWebView.swift in Sources */,
+				128FC4762B5AAC4A003E3B53 /* HeaderView.swift in Sources */,
 				1274ED3F2B4EE3B000D1A926 /* RootView.swift in Sources */,
+				128FC4782B5AB609003E3B53 /* ControlWebView.swift in Sources */,
 				1222B95F2B46F8CA00803C59 /* LinkMarkApp.swift in Sources */,
 				1274ED342B4EC09E00D1A926 /* Locator+CoreDataClass.swift in Sources */,
+				128FC47A2B5AB718003E3B53 /* ScreenPath.swift in Sources */,
 				12746ACD2B58FC81009D1473 /* InputView.swift in Sources */,
 				12746AD02B594922009D1473 /* CustomNotifyDialogView.swift in Sources */,
 				1222B9892B47B14900803C59 /* CoreDataRepository.swift in Sources */,

@@ -17,7 +17,7 @@ struct CategoryListView: View {
             
             VStack {
                 
-                Text("LINKMARK")
+                HeaderView()
                 
                 ZStack {
                     
@@ -41,25 +41,24 @@ struct CategoryListView: View {
                 
                 List {
                     ForEach(viewModel.categorys) { category in
-                        NavigationLink {
-                            LocatorListView(category: category)
-                        } label: {
+                        NavigationLink(value: ScreenPath.pathB(category: category)) {
                             HStack {
                                 CategoryColor.getColor(category.wrappedColor)
                                     .frame(width: 50, height: 50)
                                     .clipShape(RoundedRectangle(cornerRadius: 50))
                                 Text(category.wrappedName)
                                     .foregroundStyle(.exText)
-                                
+
                                 Spacer()
-                                
+
                                 Text("\(category.order)")
                                     .foregroundStyle(.exText)
-                                
+
                                 Text("\(category.wrappedLocators.count)")
                                     .foregroundStyle(.exText)
                             }
                         }.listRowBackground(Color.exLightGray)
+                            
                     }.onMove { sourceSet, destination in
                         viewModel.changeOrder(list: viewModel.categorys, sourceSet: sourceSet, destination: destination)
                     
@@ -69,7 +68,6 @@ struct CategoryListView: View {
                 }.scrollContentBackground(.hidden)
                     .background(Color.exThema)
             }.environment(\.editMode, .constant(rootViewModel.editSortMode))
-                
                 
             
             NavigationLink {

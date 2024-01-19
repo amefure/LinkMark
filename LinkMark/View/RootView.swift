@@ -8,10 +8,28 @@
 import SwiftUI
 
 struct RootView: View {
+    
+    @ObservedObject private var viewModel = RootViewModel.shared
     var body: some View {
         VStack {
             CategoryListView()
+                .navigationBarBackButtonHidden()
         }.background(Color.exThema)
+        
+            .navigationDestination(for: ScreenPath.self) { value in
+
+                switch value {
+
+                case .webView(let url):
+                    ControlWebView(url: url)
+                    
+
+                case .locatorList(let category):
+                    LocatorListView(category: category)
+
+
+                }
+            }
     }
 }
 
