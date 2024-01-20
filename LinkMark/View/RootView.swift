@@ -8,10 +8,6 @@
 import SwiftUI
 
 struct RootView: View {
-    
-    // MARK: - ViewModel
-    @ObservedObject private var viewModel = RootEnvironment.shared
-    
     var body: some View {
         VStack {
             CategoryListView()

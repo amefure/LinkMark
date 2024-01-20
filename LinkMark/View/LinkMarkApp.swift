@@ -23,16 +23,16 @@ struct LinkMarkApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
     
     @ObservedObject private var rootEnvironment = RootEnvironment.shared
-    private let viewModel = RootViewModel()
+
     var body: some Scene {
         WindowGroup {
             NavigationStack(path: $rootEnvironment.navigatePath) {
-                
-                if viewModel.checkAppLock() {
-                    /// キーチェーンにパスワードが保存されている場合
-                    AppLockView()
-                } else {
+                ZStack {
                     RootView()
+                    // アプリにロックがかけてあれば表示
+                    if rootEnvironment.appLocked {
+                        AppLockView()
+                    }
                 }
             }
         }

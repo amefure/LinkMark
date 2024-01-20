@@ -11,7 +11,7 @@ struct CategoryListView: View {
     
     // MARK: - ViewModel
     @ObservedObject private var viewModel = CategoryViewModel.shared
-    @ObservedObject private var rootViewModel = RootEnvironment.shared
+    @ObservedObject private var rootEnvironment = RootEnvironment.shared
     
     // 削除/更新対象のCategoryが格納される
     @State private var category: Category? = nil
@@ -40,14 +40,14 @@ struct CategoryListView: View {
                         // 並び替えボタン
                         Spacer()
                         Button {
-                            if rootViewModel.editSortMode == .active {
-                                rootViewModel.inActiveEditMode()
+                            if rootEnvironment.editSortMode == .active {
+                                rootEnvironment.inActiveEditMode()
                             } else {
-                                rootViewModel.activeEditMode()
+                                rootEnvironment.activeEditMode()
                             }
                         } label: {
                             Image(systemName: "arrow.up.and.down.text.horizontal")
-                                .foregroundStyle(rootViewModel.editSortMode == .active ? .exPositive : .exText)
+                                .foregroundStyle(rootEnvironment.editSortMode == .active ? .exPositive : .exText)
                         }.offset(x: -30)
                     }
                 }
@@ -93,7 +93,7 @@ struct CategoryListView: View {
                     }.deleteDisabled(true)
                 }.scrollContentBackground(.hidden)
                     .background(Color.exThema)
-            }.environment(\.editMode, .constant(rootViewModel.editSortMode))
+            }.environment(\.editMode, .constant(rootEnvironment.editSortMode))
             
             
             NavigationLink {

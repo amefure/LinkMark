@@ -26,7 +26,7 @@ class AppLockViewModel: ObservableObject {
         keyChainRepository = repositoryDependency.keyChainRepository
     }
 
-    public func onAppear() {
+    public func onAppear(completion: @escaping (Bool) -> Void) {
         biometricAuthRepository.biometryType.sink { [weak self] type in
             guard let self = self else { return }
             self.type = type
@@ -34,19 +34,20 @@ class AppLockViewModel: ObservableObject {
 
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.3) { [weak self] in
             guard let self = self else { return }
-            self.requestBiometricsLogin()
+            self.requestBiometricsLogin { _ in
+                completion(true)
+            }
         }
     }
 
     /// 生体認証リクエスト
-    public func requestBiometricsLogin() {
+    public func requestBiometricsLogin(completion: @escaping (Bool) -> Void) {
         biometricAuthRepository.requestBiometrics { [weak self] result in
             guard let self = self else { return }
             if result {
                 self.showProgress()
-                DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.5) { [weak self] in
-                    guard let self = self else { return }
-                    self.showApp()
+                DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.5) {
+                    completion(true)
                 }
             }
         }
@@ -58,9 +59,8 @@ class AppLockViewModel: ObservableObject {
             showProgress()
             let pass = password.joined(separator: "")
             if pass == keyChainRepository.getData() {
-                DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.5) { [weak self] in
-                    guard let self = self else { return }
-                    self.showApp()
+                DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.5) {
+                    completion(true)
                 }
 
             } else {

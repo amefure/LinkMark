@@ -14,7 +14,6 @@ struct AppLockView: View {
     @State private var password: [String] = []
 
     // MARK: - Environment
-
     @ObservedObject private var rootEnvironment = RootEnvironment.shared
 
     var body: some View {
@@ -28,6 +27,8 @@ struct AppLockView: View {
                     .onChange(of: password) { newValue in
                         viewModel.passwordLogin(password: newValue) { result in
                             if result == false {
+                                rootEnvironment.unLockAppLock()
+                            } else {
                                 password.removeAll()
                             }
                         }
@@ -38,7 +39,11 @@ struct AppLockView: View {
                         .offset(y: 60)
                 } else {
                     Button {
-                        viewModel.requestBiometricsLogin()
+                        viewModel.requestBiometricsLogin { result in
+                            if result {
+                                rootEnvironment.unLockAppLock()
+                            }
+                        }
                     } label: {
                         VStack {
                             if viewModel.type == .faceID {
@@ -65,10 +70,10 @@ struct AppLockView: View {
         }.alert("パスワードが違います。", isPresented: $viewModel.isShowFailureAlert) {
             Button("OK") {}
         }
-        .onAppear { viewModel.onAppear() }
-        .navigationDestination(isPresented: $viewModel.isShowApp) {
-            RootView()
-        }.background(.exThema)
+        .onAppear { viewModel.onAppear { result in
+            rootEnvironment.unLockAppLock()
+        }}
+        .background(.exThema)
     }
 }
 
@@ -193,6 +198,6 @@ struct NumberButton: View {
     }
 }
 
-#Preview {
-    AppLockView()
-}
+//#Preview {
+//    AppLockView()
+//}

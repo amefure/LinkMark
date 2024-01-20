@@ -7,15 +7,9 @@
 
 import UIKit
 
-class RootViewModel {
-    private let keyChainRepository: KeyChainRepository
-
-    init(repositoryDependency: RepositoryDependency = RepositoryDependency()) {
-        keyChainRepository = repositoryDependency.keyChainRepository
-    }
-
-    /// アプリにロックがかけてあるかをチェック
-    public func checkAppLock() -> Bool {
-        keyChainRepository.getData().count == 4
-    }
+class RootViewModel: ObservableObject {
+    
+    static let shared = RootViewModel()
+    
+   
 }
