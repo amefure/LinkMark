@@ -10,15 +10,19 @@ import SwiftUI
 // Swift UIでWebViewを操作するための枠View
 struct ControlWebView: View {
     
+    // MARK: - Receive
     public var url: URL
     private let uICustomWebView: UICustomWebView!
     
+    // MARK: - Initializa
     init(url: URL) {
         self.url = url
         uICustomWebView = UICustomWebView(url: url)
     }
     
+    // MARK: - Environment
     @Environment(\.dismiss) var dismiss
+    
     var body: some View {
         VStack {
             HeaderView(leadingIcon: "arrow.backward", leadingAction: {
@@ -43,6 +47,22 @@ struct ControlWebView: View {
                 }.frame(width: 40)
                 
                 Spacer()
+                
+                Button {
+                    uICustomWebView.shareUrl()
+                } label: {
+                    Image(systemName: "square.and.arrow.up")
+                        .font(.system(size: 18))
+                }.frame(width: 40)
+                
+                
+                Button {
+                    uICustomWebView.openBrowser()
+                } label: {
+                    Image(systemName: "network")
+                        .font(.system(size: 18))
+                }.frame(width: 40)
+
                 
                 Button {
                     uICustomWebView.reload()

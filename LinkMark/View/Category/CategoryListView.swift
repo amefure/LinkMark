@@ -9,15 +9,16 @@ import SwiftUI
 
 struct CategoryListView: View {
     
+    // MARK: - ViewModel
     @ObservedObject private var viewModel = CategoryViewModel.shared
     @ObservedObject private var rootViewModel = RootViewModel.shared
     
-    // 削除対象のCategoryが格納される
+    // 削除/更新対象のCategoryが格納される
     @State private var category: Category? = nil
     
+    // MARK: - View
     @State private var showEditInputView = false
     @State private var showDeleteDialog = false
-   
     
     var body: some View {
         ZStack(alignment: .bottomTrailing) {
@@ -27,28 +28,22 @@ struct CategoryListView: View {
                 HeaderView()
                 
                 ZStack {
-                    
                     SectionTitleView(title: "Category")
                     
                     HStack {
-                        
+                        // 並び替えボタン
                         Spacer()
-                        
-                        
                         Button {
                             if rootViewModel.editSortMode == .active {
                                 rootViewModel.inActiveEditMode()
                             } else {
                                 rootViewModel.activeEditMode()
                             }
-                            
                         } label: {
                             Image(systemName: "arrow.up.and.down.text.horizontal")
                                 .foregroundStyle(rootViewModel.editSortMode == .active ? .exPositive : .exText)
                         }.offset(x: -30)
                     }
-                    
-                    
                 }
                 
                 

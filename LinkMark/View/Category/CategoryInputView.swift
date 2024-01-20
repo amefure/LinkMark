@@ -9,23 +9,29 @@ import SwiftUI
 
 struct CategoryInputView: View {
     
+    // MARK: - ViewModel
     @ObservedObject private var viewModel = CategoryViewModel.shared
     
+    // MARK: - Receive
     public var category: Category? = nil
     
+    // MARK: - Input
     @State private var name = ""
     @State private var selectColor: CategoryColor = .red
     
+    // MARK: - View
     @State private var showFailedDialog = false
     @State private var showSuccessDialog = false
     
+    // MARK: - Environment
     @Environment(\.dismiss) var dismiss
+    
     var body: some View {
         VStack {
             
             HeaderView(
                 leadingIcon: "arrow.backward",
-                trailingIcon: "checkmark", 
+                trailingIcon: "checkmark",
                 leadingAction: { dismiss() },
                 trailingAction: {
                     guard !name.isEmpty else {
@@ -40,9 +46,6 @@ struct CategoryInputView: View {
                         // 新規
                         viewModel.addCategory(name: name, color: selectColor.rawValue)
                     }
-                    
-                   
-                    
                     showSuccessDialog = true
                 }
             )
@@ -66,7 +69,6 @@ struct CategoryInputView: View {
                     }
                 }
             }.padding(.vertical)
-        
             
             Spacer()
             

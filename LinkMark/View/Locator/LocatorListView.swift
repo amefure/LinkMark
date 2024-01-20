@@ -9,17 +9,21 @@ import SwiftUI
 
 struct LocatorListView: View {
     
+    // MARK: - View
     @ObservedObject private var viewModel = LocatorViewModel.shared
     @ObservedObject private var rootViewModel = RootViewModel.shared
     
+    // MARK: - Receive
     public var category: Category
     
     // 削除対象のLocatorが格納される
     @State private var locator: Locator? = nil
     
+    // MARK: - Environment
     @State private var showEditInputView = false
     @State private var showDeleteDialog = false
     
+    // MARK: - Environment
     @Environment(\.dismiss) var dismiss
     
     var body: some View {
@@ -41,7 +45,6 @@ struct LocatorListView: View {
                     HStack {
                         
                         Spacer()
-                        
                         
                         Button {
                             if rootViewModel.editSortMode == .active {
