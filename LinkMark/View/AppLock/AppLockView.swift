@@ -54,7 +54,7 @@ struct AppLockView: View {
                             }
                         }
                     }.offset(y: 80)
-                        .foregroundStyle(.white)
+                        .foregroundStyle(.exText)
                 }
             }
 
@@ -148,7 +148,7 @@ struct NumberKeyboardView: View {
                 } label: {
                     Image(systemName: "delete.backward")
                         .frame(width: DeviceSizeManager.deviceWidth / 3, height: height)
-                        .background(.exLightGray)
+                        .background(.exText)
                 }
             }
         }.foregroundStyle(.white)
@@ -166,7 +166,7 @@ struct DisplayPasswordView: View {
             Text(password[safe: 1] == nil ? "ー" : "⚫︎")
             Text(password[safe: 2] == nil ? "ー" : "⚫︎")
             Text(password[safe: 3] == nil ? "ー" : "⚫︎")
-        }.foregroundStyle(.white)
+        }.foregroundStyle(.exText)
             .fontWeight(.bold)
     }
 }
@@ -188,7 +188,7 @@ struct NumberButton: View {
         } label: {
             Text(number)
                 .frame(width: DeviceSizeManager.deviceWidth / 3, height: height)
-                .background(.exLightGray)
+                .background(.exText)
         }
     }
 }

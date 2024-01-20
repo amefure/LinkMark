@@ -47,15 +47,6 @@ struct HeaderView: View {
             }
             
             Spacer()
-            
-            
-            NavigationLink {
-                SettingView()
-            } label: {
-                Image(systemName: "gear")
-                    .font(.system(size: 18))
-            }.padding(.trailing, 5)
-                .frame(width: 50)
 
             if !trailingIcon.isEmpty {
                 Button {

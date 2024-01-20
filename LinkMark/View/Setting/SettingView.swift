@@ -18,12 +18,17 @@ struct SettingView: View {
     @State private var isLock: Bool = false
     @State private var isDaysLaterFlag: Bool = false
     @State private var isAgeMonthFlag: Bool = false
+    
+    // MARK: - Environment
+    @Environment(\.dismiss) var dismiss
 
     var body: some View {
         VStack(spacing: 0) {
             // MARK: - ViewComponent
 
-            HeaderView()
+            HeaderView(leadingIcon: "arrow.backward", leadingAction: {
+                dismiss()
+            })
 
             // List ここから
             List {
@@ -44,11 +49,12 @@ struct SettingView: View {
                             } else {
                                 viewModel.deletePassword()
                             }
-                        }).tint(.exRed)
+                        }).tint(.exBlue)
                     }.sheet(isPresented: $viewModel.isShowPassInput, content: {
                         AppLockInputView(isLock: $isLock)
                     })
-                }.listRowBackground(Color.exThema)
+                    .foregroundStyle(.white)
+                }.listRowBackground(Color.exRed)
 
                 // MARK: - (3)
 
@@ -72,22 +78,24 @@ struct SettingView: View {
                                 Image(systemName: "hand.thumbsup")
                                 Text("アプリをレビューする")
                             }
-                        }).listRowBackground(Color.exLightGray)
+                        }).listRowBackground(Color.exRed)
+                            .foregroundStyle(.white)
                     }
 
                     // 2:シェアボタン
                     Button(action: {
                         viewModel.shareApp(
-                            shareText: "友達の誕生日をメモできるアプリ「みんなの誕生日」を使ってみてね♪",
-                            shareLink: "https://apps.apple.com/jp/app/%E3%81%BF%E3%82%93%E3%81%AA%E3%81%AE%E8%AA%95%E7%94%9F%E6%97%A5/id1673431227"
+                            shareText: "",
+                            shareLink: ""
                         )
                     }) {
                         HStack {
                             Image(systemName: "star.bubble")
                                 
-                            Text("「みんなの誕生日」をオススメする")
+                            Text("「LINKMARK」をオススメする")
                         }
-                    }.listRowBackground(Color.exLightGray)
+                    }.listRowBackground(Color.exRed)
+                        .foregroundStyle(.white)
 
                     if let url = URL(string: "https://tech.amefure.com/contact") {
                         // 3:お問い合わせフォーム
@@ -97,7 +105,8 @@ struct SettingView: View {
                                 Text("アプリの不具合はこちら")
                                 Image(systemName: "link").font(.caption)
                             }
-                        }).listRowBackground(Color.exLightGray)
+                        }).listRowBackground(Color.exRed)
+                            .foregroundStyle(.white)
                     }
 
                     if let url = URL(string: "https://tech.amefure.com/app-terms-of-service") {
@@ -108,14 +117,15 @@ struct SettingView: View {
                                 Text("利用規約とプライバシーポリシー")
                                 Image(systemName: "link").font(.caption)
                             }
-                        }).listRowBackground(Color.exLightGray)
+                        }).listRowBackground(Color.exRed)
+                            .foregroundStyle(.white)
                     }
                 }
 
             }.listStyle(GroupedListStyle())
                 .scrollContentBackground(.hidden)
-                .background(.exLightGray)
-                .foregroundColor(.white)
+                .background(.exThema)
+                .foregroundColor(.exText)
             // List ここまで
 
             Spacer()

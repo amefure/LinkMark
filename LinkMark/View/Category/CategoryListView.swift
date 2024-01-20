@@ -19,13 +19,19 @@ struct CategoryListView: View {
     // MARK: - View
     @State private var showEditInputView = false
     @State private var showDeleteDialog = false
+    @State private var showSettingView = false
     
     var body: some View {
         ZStack(alignment: .bottomTrailing) {
             
             VStack {
                 
-                HeaderView()
+                HeaderView(
+                    trailingIcon: "gearshape.fill",
+                    trailingAction: {
+                        showSettingView = true
+                    }
+                )
                 
                 ZStack {
                     SectionTitleView(title: "Category")
@@ -120,6 +126,9 @@ struct CategoryListView: View {
                 negativeAction: { showDeleteDialog = false }
             ).navigationDestination(isPresented: $showEditInputView) {
                 CategoryInputView(category: category)
+            }
+            .navigationDestination(isPresented: $showSettingView) {
+                SettingView()
             }
         
     }
