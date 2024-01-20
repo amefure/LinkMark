@@ -24,6 +24,11 @@ class RootEnvironment: ObservableObject {
     public func inActiveEditMode() {
         editSortMode = .inactive
     }
+    
+    public func onAppear() {
+        print("")
+        navigatePath = []
+    }
 }
 
 

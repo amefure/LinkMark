@@ -43,7 +43,7 @@ extension LocatorViewModel {
     
     public func onAppear(categoryId: UUID) {
         locators.removeAll()
-        locators = locatorRepository.fetchAllLocators(categoryId: categoryId)
+        fetchAllLocators(categoryId: categoryId)
     }
     
     public func changeOrder(categoryId: UUID, list: [Locator], sourceSet: IndexSet, destination: Int) {
