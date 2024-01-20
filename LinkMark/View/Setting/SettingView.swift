@@ -49,7 +49,7 @@ struct SettingView: View {
                             } else {
                                 viewModel.deletePassword()
                             }
-                        }).tint(.exBlue)
+                        }).tint(.exGreen)
                     }.sheet(isPresented: $viewModel.isShowPassInput, content: {
                         AppLockInputView(isLock: $isLock)
                     })
@@ -130,7 +130,8 @@ struct SettingView: View {
 
             Spacer()
 
-//            AdMobBannerView().frame(height: 50)
+            AdMobBannerView()
+                .frame(height: 50)
         }
         .onAppear {
             viewModel.onAppear()

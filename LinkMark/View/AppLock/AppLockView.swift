@@ -9,8 +9,10 @@ import SwiftUI
 
 
 struct AppLockView: View {
+    // MARK: - ViewModel
     @StateObject private var viewModel = AppLockViewModel()
 
+    // MARK: - View
     @State private var password: [String] = []
 
     // MARK: - Environment
@@ -26,7 +28,7 @@ struct AppLockView: View {
                 DisplayPasswordView(password: password)
                     .onChange(of: password) { newValue in
                         viewModel.passwordLogin(password: newValue) { result in
-                            if result == false {
+                            if result {
                                 rootEnvironment.unLockAppLock()
                             } else {
                                 password.removeAll()
@@ -153,7 +155,7 @@ struct NumberKeyboardView: View {
                 } label: {
                     Image(systemName: "delete.backward")
                         .frame(width: DeviceSizeManager.deviceWidth / 3, height: height)
-                        .background(.exText)
+                        .background(.exRed)
                 }
             }
         }.foregroundStyle(.white)
@@ -193,11 +195,11 @@ struct NumberButton: View {
         } label: {
             Text(number)
                 .frame(width: DeviceSizeManager.deviceWidth / 3, height: height)
-                .background(.exText)
+                .background(.exRed)
         }
     }
 }
 
-//#Preview {
-//    AppLockView()
-//}
+#Preview {
+    AppLockView()
+}

@@ -72,6 +72,9 @@ struct CategoryInputView: View {
             
             Spacer()
             
+            AdMobBannerView()
+                .frame(height: 60)
+            
         }.background(Color.exThema)
             .navigationBarBackButtonHidden()
             .dialog(

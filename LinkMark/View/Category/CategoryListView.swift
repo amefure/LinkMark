@@ -93,6 +93,10 @@ struct CategoryListView: View {
                     }.deleteDisabled(true)
                 }.scrollContentBackground(.hidden)
                     .background(Color.exThema)
+                
+                AdMobBannerView()
+                    .frame(height: 60)
+                
             }.environment(\.editMode, .constant(rootEnvironment.editSortMode))
             
             
@@ -106,7 +110,7 @@ struct CategoryListView: View {
                     .background(Color.exRed)
                     .clipShape(RoundedRectangle(cornerRadius: 70))
                     .shadow(color: .exText, radius: 2, x: 1, y: 1)
-            }.offset(x: -30, y: -30)
+            }.offset(x: -30, y: -90)
             
         }.navigationBarBackButtonHidden()
             .onAppear {
