@@ -13,8 +13,10 @@ struct LocatorInputView: View {
     
     public var category: Category
     
+    public var locator: Locator? = nil
+    
     @State private var title = ""
-    @State private var url = ""
+    @State private var urlStr = ""
     @State private var memo = ""
     
     @State private var showValidationEmptyFlag = false
@@ -23,21 +25,51 @@ struct LocatorInputView: View {
     
     @Environment(\.dismiss) var dismiss
     
-    func validationUrl(url: String) -> Bool {
+    func validationGetUrl(url: String) -> URL? {
         guard let nsurl = NSURL(string: url) else {
-            return false
+            return nil
         }
         guard UIApplication.shared.canOpenURL(nsurl as URL) else {
-           return false
+           return nil
        }
-        return true
+        return nsurl as URL
     }
     
     
     var body: some View {
         
         VStack {
-            Text("LINKMARK")
+            HeaderView(
+                leadingIcon: "arrow.backward",
+                trailingIcon: "checkmark",
+                leadingAction: { dismiss() },
+                trailingAction: {
+                    showValidationEmptyFlag = false
+                    showValidationUrlFlag = false
+                    if title.isEmpty {
+                        showValidationEmptyFlag = true
+                    }
+            
+                    guard let url = validationGetUrl(url: urlStr) else {
+                        showValidationUrlFlag = true
+                        return
+                    }
+                    
+                    guard !showValidationEmptyFlag && !showValidationUrlFlag  else { return }
+                    
+                    
+                    if let locator = locator {
+                        // 更新
+                        viewModel.updateLocator(id: locator.wrappedId, title: title, url: url, memo: memo)
+                    } else {
+                        // 登録
+                        viewModel.addLocator(categoryId: category.wrappedId, title: title, url: url, memo: memo)
+                    }
+                    
+                    
+                    showSuccessDialog = true
+                }
+            )
             
             ZStack {
                 SectionTitleView(title: "タイトル")
@@ -59,41 +91,31 @@ struct LocatorInputView: View {
                
             }
             
-            InputView(placeholder: "例：https://XXX.com/", value: $url)
+            InputView(placeholder: "例：https://XXX.com/", value: $urlStr)
             
             SectionTitleView(title: "MEMO")
             InputView(placeholder: "", value: $memo)
             
             Spacer()
             
-            Button {
-                if title.isEmpty {
-                    showValidationEmptyFlag = true
-                }
-                if !validationUrl(url: url) {
-                    showValidationUrlFlag = true
-                }
-                
-                guard !showValidationEmptyFlag && !showValidationUrlFlag  else { return }
-                
-                viewModel.addLocator(categoryId: category.wrappedId, title: title, url: URL(string: "https://tech.amefure.com/")!, memo: memo)
-                
-                showSuccessDialog = true
-            } label: {
-                Text("登録")
-            }
-            
             
         }.background(Color.exThema)
+            .navigationBarBackButtonHidden()
             .dialog(
                 isPresented: $showSuccessDialog,
                 title: "お知らせ",
-                message: "リンク「\(title)」を\n登録しました。",
+                message: locator == nil ? "リンク「\(title)」を\n登録しました。" : "リンク「\(title)」を\n更新しました。",
                 positiveButtonTitle: "OK",
                 negativeButtonTitle: "",
                 positiveAction: { dismiss() },
                 negativeAction: {}
-            )
+            ).onAppear {
+                if let locator = locator {
+                    title = locator.wrappedTitle
+                    urlStr = locator.url?.absoluteString ?? ""
+                    memo = locator.wrappedMemo
+                }
+            }
     }
 }
 

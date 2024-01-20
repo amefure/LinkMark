@@ -26,7 +26,8 @@ struct CustomNotifyDialogView: View {
                Color.black
                    .opacity(0.5)
                    .onTapGesture {
-                       isPresented = false
+                       // ダイアログ周りタップで閉じる
+                       // isPresented = false
                    }
                 
                 // ダイアログコンテンツ部分

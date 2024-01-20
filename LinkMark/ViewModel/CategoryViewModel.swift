@@ -30,6 +30,10 @@ extension CategoryViewModel {
         categoryRepository.addCategory(name: name, color: color, order: categorys.count)
     }
     
+    public func updateCategory(id: UUID, name: String, color: String) {
+        categoryRepository.updateCategory(categoryId: id, name: name, color: color)
+    }
+    
     private func updateOrder(id: UUID, order: Int) {
         categoryRepository.updateOrder(categoryId: id, order: order)
     }
@@ -65,5 +69,23 @@ extension CategoryViewModel {
             updateOrder(id: moveId, order: destination)
         }
         fetchAllCategorys()
+    }
+    
+    public func deleteCategory(category: Category) {
+        guard categorys.count != 1 else {
+            categoryRepository.deleteCategory(categoryId: category.wrappedId)
+            return
+        }
+            
+        // 削除する行の行番号を取得
+        let deleteOrder = category.order
+        
+        // 削除する行の行番号より大きい行番号を全て -1 する
+        for i in (Int(deleteOrder) + 1)..<categorys.count {
+            if let item = categorys[safe: i] {
+                categoryRepository.updateOrder(categoryId: item.wrappedId, order: Int(item.order) - 1)
+            }
+        }
+        categoryRepository.deleteCategory(categoryId: category.wrappedId)
     }
 }

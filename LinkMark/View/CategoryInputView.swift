@@ -11,6 +11,8 @@ struct CategoryInputView: View {
     
     @ObservedObject private var viewModel = CategoryViewModel.shared
     
+    public var category: Category? = nil
+    
     @State private var name = ""
     @State private var selectColor: CategoryColor = .red
     
@@ -21,7 +23,29 @@ struct CategoryInputView: View {
     var body: some View {
         VStack {
             
-            HeaderView()
+            HeaderView(
+                leadingIcon: "arrow.backward",
+                trailingIcon: "checkmark", 
+                leadingAction: { dismiss() },
+                trailingAction: {
+                    guard !name.isEmpty else {
+                        showFailedDialog = true
+                        return
+                    }
+                    
+                    if let category = category {
+                        // 新規
+                        viewModel.updateCategory(id: category.wrappedId, name: name, color: selectColor.rawValue)
+                    } else {
+                        // 新規
+                        viewModel.addCategory(name: name, color: selectColor.rawValue)
+                    }
+                    
+                   
+                    
+                    showSuccessDialog = true
+                }
+            )
             
             SectionTitleView(title: "カテゴリ名")
             InputView(placeholder: "例：レシピ・趣味など", value: $name)
@@ -42,30 +66,16 @@ struct CategoryInputView: View {
                     }
                 }
             }.padding(.vertical)
-            
-            Spacer()
-            
-     
-            
-            Button {
-                guard !name.isEmpty else {
-                    showFailedDialog = true
-                    return
-                }
-                viewModel.addCategory(name: name, color: selectColor.rawValue)
-                
-                showSuccessDialog = true
-            } label: {
-                Text("登録")
-            }
+        
             
             Spacer()
             
         }.background(Color.exThema)
+            .navigationBarBackButtonHidden()
             .dialog(
                 isPresented: $showSuccessDialog,
                 title: "お知らせ",
-                message: "カテゴリ「\(name.limitLength)」を\n登録しました。",
+                message: category == nil ? "カテゴリ「\(name.limitLength)」を\n登録しました。" : "カテゴリ「\(name.limitLength)」を\n更新しました。",
                 positiveButtonTitle: "OK",
                 negativeButtonTitle: "",
                 positiveAction: { dismiss() },
@@ -79,10 +89,15 @@ struct CategoryInputView: View {
                 negativeButtonTitle: "",
                 positiveAction: { showFailedDialog = false},
                 negativeAction: {}
-            )
+            ).onAppear {
+                if let category = category {
+                    name = category.wrappedName
+                    selectColor = CategoryColor(rawValue: category.wrappedColor) ?? .red
+                }
+            }
     }
 }
 
-#Preview {
-    CategoryInputView()
-}
+//#Preview {
+//    CategoryInputView()
+//}

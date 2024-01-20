@@ -10,13 +10,20 @@ import SwiftUI
 struct LocatorListView: View {
     
     @ObservedObject private var viewModel = LocatorViewModel.shared
+    @ObservedObject private var rootViewModel = RootViewModel.shared
     
-    @State private var showDeleteDialog = false
     public var category: Category
     
+    // 削除対象のLocatorが格納される
+    @State private var locator: Locator? = nil
+    
+    @State private var showEditInputView = false
+    @State private var showDeleteDialog = false
+    
     @Environment(\.dismiss) var dismiss
+    
     var body: some View {
-        ZStack {
+        ZStack(alignment: .bottomTrailing) {
             VStack {
                 HeaderView(leadingIcon: "arrow.backward", leadingAction: {
                     dismiss()
@@ -37,11 +44,16 @@ struct LocatorListView: View {
                         
                         
                         Button {
-                            showDeleteDialog = true
+                            if rootViewModel.editSortMode == .active {
+                                rootViewModel.inActiveEditMode()
+                            } else {
+                                rootViewModel.activeEditMode()
+                            }
+                            
                         } label: {
-                            Image(systemName: "trash")
-                                .foregroundStyle(.exRed)
-                        }
+                            Image(systemName: "arrow.up.and.down.text.horizontal")
+                                .foregroundStyle(rootViewModel.editSortMode == .active ? .exPositive : .exText)
+                        }.offset(x: -30)
                     }
                     
                 }
@@ -50,12 +62,13 @@ struct LocatorListView: View {
                 List {
                     ForEach(viewModel.locators) { locator in
                         if let url = locator.url {
-                            
                             NavigationLink(value: ScreenPath.webView(url: url)) {
                                 VStack(alignment: .leading) {
                                     Text(locator.title!)
                                     
                                     Text(locator.wrappedMemo)
+                                        .font(.caption)
+                                        .frame(height: 30)
                                     
                                     HStack {
                                         Text(DateFormatManager().getString(date: locator.wrappedCreatedAt))
@@ -64,9 +77,31 @@ struct LocatorListView: View {
                                         .font(.caption)
                                 }.foregroundStyle(.exText)
                             }.listRowBackground(Color.exLightGray)
+                                .swipeActions(edge: .trailing, allowsFullSwipe: false) {
+                                    // 右スワイプ：削除アクション
+                                    Button(role: .none) {
+                                        self.locator = locator
+                                        showDeleteDialog = true
+                                    } label: {
+                                        Image(systemName: "trash")
+                                    }.tint(.exNegative)
+                                }
+                                .swipeActions(edge: .leading, allowsFullSwipe: false) {
+                                    // 左スワイプ：編集アクション
+                                    Button(role: .none) {
+                                        self.locator = locator
+                                        showEditInputView = true
+                                    } label: {
+                                        Image(systemName: "square.and.pencil")
+                                    }.tint(.exPositive)
+                                }
                         }
-                    }
-                }.scrollContentBackground(.hidden)
+                    }.onMove { sourceSet, destination in
+                        viewModel.changeOrder(categoryId: category.wrappedId, list: viewModel.locators, sourceSet: sourceSet, destination: destination)
+                        
+                    }.deleteDisabled(true)
+                }.environment(\.editMode, .constant(rootViewModel.editSortMode))
+                    .scrollContentBackground(.hidden)
                     .background(Color.exThema)
                 
                 Spacer()
@@ -82,7 +117,8 @@ struct LocatorListView: View {
                     .background(Color.exLightGray)
                     .clipShape(RoundedRectangle(cornerRadius: 70))
                     .shadow(color: .exText, radius: 2, x: 1, y: 1)
-            }
+            }.offset(x: -30, y: -30)
+            
         }.background(Color.exThema)
             .navigationBarBackButtonHidden()
             .onAppear {
@@ -90,25 +126,18 @@ struct LocatorListView: View {
             }.dialog(
                 isPresented: $showDeleteDialog,
                 title: "お知らせ",
-                message: "「\(category.wrappedName.limitLength)」を本当に削除しますか？\n削除するとリンクも全てなくなります。",
+                message: "「\(category.wrappedName.limitLength)」を本当に削除しますか？",
                 positiveButtonTitle: "OK",
                 negativeButtonTitle: "キャンセル",
                 positiveAction: {
-                    viewModel.deleteCategory(category: category)
-                    dismiss()
+                    guard let locator = locator else { return }
+                    viewModel.deleteCategory(locator: locator)
+                    viewModel.fetchAllLocators(categoryId: category.wrappedId)
                 },
                 negativeAction: { showDeleteDialog = false }
-            )
-    }
-}
-
-struct Test: View {
-    @Environment(\.presentationMode) var presentation
-    init() {
-        print("INSTANSS")
-    }
-    var body: some View {
-     Text("DD")
+            ).navigationDestination(isPresented: $showEditInputView) {
+                LocatorInputView(category: category, locator: locator)
+            }
     }
 }
 

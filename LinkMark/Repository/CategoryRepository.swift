@@ -23,6 +23,17 @@ class CategoryRepository {
         CoreDataRepository.save()
     }
     
+    public func updateCategory(categoryId id : UUID, name: String, color: String) {
+        let predicate = NSPredicate(format: "id == %@", id as CVarArg)
+        guard let category: Category = CoreDataRepository.fetchSingle(predicate: predicate) else { return }
+        
+        category.name = name
+        category.color = color
+        
+        CoreDataRepository.save()
+    }
+
+    
     public func updateOrder(categoryId id : UUID, order: Int) {
         let predicate = NSPredicate(format: "id == %@", id as CVarArg)
         guard let category: Category = CoreDataRepository.fetchSingle(predicate: predicate) else { return }
