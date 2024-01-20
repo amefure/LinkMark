@@ -100,10 +100,10 @@ struct CategoryListView: View {
                 CategoryInputView()
             } label: {
                 Image(systemName: "plus")
-                    .foregroundStyle(.exText)
+                    .foregroundStyle(.white)
                     .fontWeight(.bold)
                     .frame(width: 70, height: 70)
-                    .background(Color.exLightGray)
+                    .background(Color.exRed)
                     .clipShape(RoundedRectangle(cornerRadius: 70))
                     .shadow(color: .exText, radius: 2, x: 1, y: 1)
             }.offset(x: -30, y: -30)

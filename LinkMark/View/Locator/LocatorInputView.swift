@@ -106,7 +106,7 @@ struct LocatorInputView: View {
             .dialog(
                 isPresented: $showSuccessDialog,
                 title: "お知らせ",
-                message: locator == nil ? "リンク「\(title)」を\n登録しました。" : "リンク「\(title)」を\n更新しました。",
+                message: locator == nil ? "リンク「\(title.limitLength)」を\n登録しました。" : "リンク「\(title.limitLength)」を\n更新しました。",
                 positiveButtonTitle: "OK",
                 negativeButtonTitle: "",
                 positiveAction: { dismiss() },

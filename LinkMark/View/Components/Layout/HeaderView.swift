@@ -44,6 +44,9 @@ struct HeaderView: View {
             
             if isShowLogo {
                 Text("LINKMARK")
+                    .fontWeight(.bold)
+                    .fontDesign(.monospaced)
+                    .opacity(0.8)
             }
             
             Spacer()
@@ -66,5 +69,5 @@ struct HeaderView: View {
 }
 
 #Preview {
-    HeaderView(leadingIcon: "", trailingIcon: "", leadingAction: {}, trailingAction: {})
+    HeaderView(leadingIcon: "swift", trailingIcon: "iphone", leadingAction: {}, trailingAction: {})
 }

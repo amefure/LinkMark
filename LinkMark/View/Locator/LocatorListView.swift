@@ -68,16 +68,20 @@ struct LocatorListView: View {
                             NavigationLink(value: ScreenPath.webView(url: url)) {
                                 VStack(alignment: .leading) {
                                     Text(locator.title!)
+                                        .lineLimit(2)
                                     
                                     Text(locator.wrappedMemo)
                                         .font(.caption)
-                                        .frame(height: 30)
+                                        .lineLimit(2)
+                                        .padding([.leading, .vertical], 10)
                                     
                                     HStack {
                                         Text(DateFormatManager().getString(date: locator.wrappedCreatedAt))
                                         Text(url.absoluteString)
-                                    }.opacity(5)
+                                            .lineLimit(1)
+                                    }.opacity(0.8)
                                         .font(.caption)
+                                    
                                 }.foregroundStyle(.exText)
                             }.listRowBackground(Color.exLightGray)
                                 .swipeActions(edge: .trailing, allowsFullSwipe: false) {
@@ -114,10 +118,10 @@ struct LocatorListView: View {
                 LocatorInputView(category: category)
             } label: {
                 Image(systemName: "plus")
-                    .foregroundStyle(.exText)
+                    .foregroundStyle(.white)
                     .fontWeight(.bold)
                     .frame(width: 70, height: 70)
-                    .background(Color.exLightGray)
+                    .background(CategoryColor.getColor(category.wrappedColor))
                     .clipShape(RoundedRectangle(cornerRadius: 70))
                     .shadow(color: .exText, radius: 2, x: 1, y: 1)
             }.offset(x: -30, y: -30)
