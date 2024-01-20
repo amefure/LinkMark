@@ -134,7 +134,6 @@ struct SettingView: View {
                 .frame(height: 50)
         }
         .onAppear {
-            viewModel.onAppear()
             isLock = viewModel.isLock
         }
         .navigationBarBackButtonHidden(true)

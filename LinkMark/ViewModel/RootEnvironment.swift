@@ -13,15 +13,53 @@ class RootEnvironment: ObservableObject {
     
     static let shared = RootEnvironment()
     
+    private let keyChainRepository: KeyChainRepository
+    private let userDefaultsRepository: UserDefaultsRepository
+    
     @Published var navigatePath: [ScreenPath] = []
+    @Published private(set) var showInterstitial = false
     @Published private(set) var appLocked = false
     @Published private(set) var editSortMode: EditMode = .inactive
     
-    private let keyChainRepository: KeyChainRepository
+    private var oldNavigatePath: [ScreenPath] = []
+    private var countInterstitial: Int = 0
+    
+    private var cancellables: Set<AnyCancellable> = []
 
-    init(repositoryDependency: RepositoryDependency = RepositoryDependency()) {
+    private init(repositoryDependency: RepositoryDependency = RepositoryDependency()) {
         keyChainRepository = repositoryDependency.keyChainRepository
+        userDefaultsRepository = repositoryDependency.userDefaultsRepository
         setAppLock()
+        
+        getCountInterstitial()
+        
+        observeNavigatePath()
+    }
+    
+    /// ナビゲーションを観測してインタースティシャルをカウント
+    private func observeNavigatePath() {
+        $navigatePath
+            .sink { [weak self] (newPath) in
+                guard let self = self else { return }
+                // カテゴリリストからLocatorリストに遷移した場合のみ
+                if newPath.count == 1 && self.oldNavigatePath.count == 0 {
+                    if let path = newPath.first {
+                        switch path {
+                        case .webView(url: _):
+                            break
+                        case .locatorList(category: _):
+                            addCountInterstitial()
+                            if self.countInterstitial >= AdsConfig.COUNT_INTERSTITIAL {
+                                self.showInterstitial = true
+                                resetCountInterstitial()
+                                getCountInterstitial()
+                            }
+                        }
+                    }
+                }
+                self.oldNavigatePath = newPath
+            }
+            .store(in: &cancellables)
     }
 
     /// アプリにロックがかけてあるかをチェック
@@ -34,9 +72,6 @@ class RootEnvironment: ObservableObject {
         appLocked = false
     }
     
-    
-    
-    
     public func activeEditMode() {
         editSortMode = .active
     }
@@ -45,11 +80,29 @@ class RootEnvironment: ObservableObject {
         editSortMode = .inactive
     }
     
-    public func onAppear() {
-        print("")
-        navigatePath = []
+    /// インタースティシャル広告表示完了済みにする
+    public func resetShowInterstitial() {
+        showInterstitial = false
+    }
+    
+    /// インタースティシャルリセット
+    private func resetCountInterstitial() {
+        userDefaultsRepository.setIntData(key: UserDefaultsKey.COUNT_INTERSTITIAL, value: 0)
+    }
+    
+    /// インタースティシャルカウント
+    private func addCountInterstitial() {
+        countInterstitial += 1
+        userDefaultsRepository.setIntData(key: UserDefaultsKey.COUNT_INTERSTITIAL, value: countInterstitial)
+    }
+    
+    /// インタースティシャル取得
+    private func getCountInterstitial() {
+        countInterstitial = userDefaultsRepository.getIntData(key: UserDefaultsKey.COUNT_INTERSTITIAL
+        )
     }
 }
+
 
 
 

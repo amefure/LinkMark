@@ -6,12 +6,14 @@
 //
 
 import SwiftUI
+import Combine
 
 struct CategoryListView: View {
     
     // MARK: - ViewModel
     @ObservedObject private var viewModel = CategoryViewModel.shared
     @ObservedObject private var rootEnvironment = RootEnvironment.shared
+    @ObservedObject private var interstitial = AdmobInterstitialView()
     
     // 削除/更新対象のCategoryが格納される
     @State private var category: Category? = nil
@@ -20,6 +22,9 @@ struct CategoryListView: View {
     @State private var showEditInputView = false
     @State private var showDeleteDialog = false
     @State private var showSettingView = false
+    
+    // MARK: - Combine
+    @State private var cancellables: Set<AnyCancellable> = []
     
     var body: some View {
         ZStack(alignment: .bottomTrailing) {
@@ -114,7 +119,16 @@ struct CategoryListView: View {
             
         }.navigationBarBackButtonHidden()
             .onAppear {
+                interstitial.loadInterstitial()
                 viewModel.onAppear()
+                
+                rootEnvironment.$showInterstitial.sink { result in
+                    if result {
+                        interstitial.presentInterstitial()
+                        rootEnvironment.resetShowInterstitial()
+                    }
+                }.store(in: &cancellables)
+                
             }
             .dialog(
                 isPresented: $showDeleteDialog,

@@ -9,9 +9,7 @@ import UIKit
 
 class UserDefaultsKey {
     /// 容量制限
-    static let LIMIT_CAPACITY = "LimitCapacity"
-    /// 最終視聴日
-    static let LAST_ACQUISITION_DATE = "LastAcquisitionDate"
+    static let COUNT_INTERSTITIAL = "CountInterstitial"
 }
 
 /// UserDefaultsの基底クラス
