@@ -2,30 +2,20 @@
 //  RootViewModel.swift
 //  LinkMark
 //
-//  Created by t&a on 2024/01/19.
+//  Created by t&a on 2024/01/20.
 //
 
-import SwiftUI
-import Combine
+import UIKit
 
-class RootViewModel: ObservableObject {
-    
-    static let shared = RootViewModel()
-    
-    @Published var navigatePath: [ScreenPath] = []
-    
-    @Published private(set) var editSortMode: EditMode = .inactive
-    
-    public func activeEditMode() {
-        editSortMode = .active
+class RootViewModel {
+    private let keyChainRepository: KeyChainRepository
+
+    init(repositoryDependency: RepositoryDependency = RepositoryDependency()) {
+        keyChainRepository = repositoryDependency.keyChainRepository
     }
-    
-    public func inActiveEditMode() {
-        editSortMode = .inactive
+
+    /// アプリにロックがかけてあるかをチェック
+    public func checkAppLock() -> Bool {
+        keyChainRepository.getData().count == 4
     }
 }
-
-
-
-
-

@@ -11,7 +11,7 @@ struct CategoryListView: View {
     
     // MARK: - ViewModel
     @ObservedObject private var viewModel = CategoryViewModel.shared
-    @ObservedObject private var rootViewModel = RootViewModel.shared
+    @ObservedObject private var rootViewModel = RootEnvironment.shared
     
     // 削除/更新対象のCategoryが格納される
     @State private var category: Category? = nil

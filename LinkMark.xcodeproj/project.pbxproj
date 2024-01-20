@@ -23,7 +23,7 @@
 		12746AD22B595518009D1473 /* LocatorInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12746AD12B595518009D1473 /* LocatorInputView.swift */; };
 		12746AD42B596D48009D1473 /* UICustomWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12746AD32B596D48009D1473 /* UICustomWebView.swift */; };
 		12746AD62B596F6E009D1473 /* DateFormatManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12746AD52B596F6E009D1473 /* DateFormatManager.swift */; };
-		12746AD82B5A2006009D1473 /* RootViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12746AD72B5A2006009D1473 /* RootViewModel.swift */; };
+		12746AD82B5A2006009D1473 /* RootEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12746AD72B5A2006009D1473 /* RootEnvironment.swift */; };
 		12746ADA2B5A2A8A009D1473 /* ExString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12746AD92B5A2A8A009D1473 /* ExString.swift */; };
 		12746ADC2B5A2B11009D1473 /* LocatorRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12746ADB2B5A2B11009D1473 /* LocatorRepository.swift */; };
 		12746ADE2B5A2B23009D1473 /* CategoryRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12746ADD2B5A2B23009D1473 /* CategoryRepository.swift */; };
@@ -42,6 +42,16 @@
 		128FC4782B5AB609003E3B53 /* ControlWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128FC4772B5AB609003E3B53 /* ControlWebView.swift */; };
 		128FC47A2B5AB718003E3B53 /* ScreenPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128FC4792B5AB718003E3B53 /* ScreenPath.swift */; };
 		128FC4832B5B9396003E3B53 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128FC4822B5B9396003E3B53 /* SettingView.swift */; };
+		128FC4862B5B9C26003E3B53 /* AppLockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128FC4852B5B9C26003E3B53 /* AppLockView.swift */; };
+		128FC4882B5B9C4C003E3B53 /* AppLockViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128FC4872B5B9C4C003E3B53 /* AppLockViewModel.swift */; };
+		128FC48A2B5B9C64003E3B53 /* BiometricAuthRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128FC4892B5B9C64003E3B53 /* BiometricAuthRepository.swift */; };
+		128FC48C2B5B9C78003E3B53 /* KeyChainRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128FC48B2B5B9C78003E3B53 /* KeyChainRepository.swift */; };
+		128FC48E2B5B9CD6003E3B53 /* DeviceSizeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128FC48D2B5B9CD6003E3B53 /* DeviceSizeManager.swift */; };
+		128FC4902B5B9D29003E3B53 /* RootViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128FC48F2B5B9D29003E3B53 /* RootViewModel.swift */; };
+		128FC4922B5B9E0C003E3B53 /* SettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128FC4912B5B9E0C003E3B53 /* SettingViewModel.swift */; };
+		128FC4942B5B9E34003E3B53 /* UserDefaultsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128FC4932B5B9E34003E3B53 /* UserDefaultsRepository.swift */; };
+		128FC4982B5B9F65003E3B53 /* AppLockInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128FC4972B5B9F65003E3B53 /* AppLockInputView.swift */; };
+		128FC49B2B5B9F7B003E3B53 /* AppLockInputViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128FC49A2B5B9F7B003E3B53 /* AppLockInputViewModel.swift */; };
 		7F2BEE17A18D4463FA94A011 /* Pods_LinkMark.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BAE40D35CA5E1D19DF82288 /* Pods_LinkMark.framework */; };
 /* End PBXBuildFile section */
 
@@ -65,7 +75,7 @@
 		12746AD12B595518009D1473 /* LocatorInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocatorInputView.swift; sourceTree = "<group>"; };
 		12746AD32B596D48009D1473 /* UICustomWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICustomWebView.swift; sourceTree = "<group>"; };
 		12746AD52B596F6E009D1473 /* DateFormatManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatManager.swift; sourceTree = "<group>"; };
-		12746AD72B5A2006009D1473 /* RootViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewModel.swift; sourceTree = "<group>"; };
+		12746AD72B5A2006009D1473 /* RootEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootEnvironment.swift; sourceTree = "<group>"; };
 		12746AD92B5A2A8A009D1473 /* ExString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExString.swift; sourceTree = "<group>"; };
 		12746ADB2B5A2B11009D1473 /* LocatorRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocatorRepository.swift; sourceTree = "<group>"; };
 		12746ADD2B5A2B23009D1473 /* CategoryRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryRepository.swift; sourceTree = "<group>"; };
@@ -84,6 +94,16 @@
 		128FC4772B5AB609003E3B53 /* ControlWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlWebView.swift; sourceTree = "<group>"; };
 		128FC4792B5AB718003E3B53 /* ScreenPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenPath.swift; sourceTree = "<group>"; };
 		128FC4822B5B9396003E3B53 /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
+		128FC4852B5B9C26003E3B53 /* AppLockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLockView.swift; sourceTree = "<group>"; };
+		128FC4872B5B9C4C003E3B53 /* AppLockViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLockViewModel.swift; sourceTree = "<group>"; };
+		128FC4892B5B9C64003E3B53 /* BiometricAuthRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BiometricAuthRepository.swift; sourceTree = "<group>"; };
+		128FC48B2B5B9C78003E3B53 /* KeyChainRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyChainRepository.swift; sourceTree = "<group>"; };
+		128FC48D2B5B9CD6003E3B53 /* DeviceSizeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceSizeManager.swift; sourceTree = "<group>"; };
+		128FC48F2B5B9D29003E3B53 /* RootViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewModel.swift; sourceTree = "<group>"; };
+		128FC4912B5B9E0C003E3B53 /* SettingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewModel.swift; sourceTree = "<group>"; };
+		128FC4932B5B9E34003E3B53 /* UserDefaultsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsRepository.swift; sourceTree = "<group>"; };
+		128FC4972B5B9F65003E3B53 /* AppLockInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLockInputView.swift; sourceTree = "<group>"; };
+		128FC49A2B5B9F7B003E3B53 /* AppLockInputViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLockInputViewModel.swift; sourceTree = "<group>"; };
 		310D77694CE249A028E5BF92 /* Pods-LinkMark.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LinkMark.release.xcconfig"; path = "Target Support Files/Pods-LinkMark/Pods-LinkMark.release.xcconfig"; sourceTree = "<group>"; };
 		4BAE40D35CA5E1D19DF82288 /* Pods_LinkMark.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LinkMark.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC133F7F981F41DD71F089FA /* Pods-LinkMark.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LinkMark.debug.xcconfig"; path = "Target Support Files/Pods-LinkMark/Pods-LinkMark.debug.xcconfig"; sourceTree = "<group>"; };
@@ -153,6 +173,7 @@
 				128FC4802B5B9356003E3B53 /* Locator */,
 				128FC47D2B5AB7D3003E3B53 /* WebView */,
 				128FC4812B5B937F003E3B53 /* Setting */,
+				128FC4842B5B9C18003E3B53 /* AppLock */,
 				12746ACE2B5948B7009D1473 /* Dialog */,
 				12746AC92B58FB70009D1473 /* Components */,
 			);
@@ -171,9 +192,12 @@
 		1222B9732B46F9DA00803C59 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				12746AD72B5A2006009D1473 /* RootViewModel.swift */,
+				12746AD72B5A2006009D1473 /* RootEnvironment.swift */,
+				128FC4912B5B9E0C003E3B53 /* SettingViewModel.swift */,
 				1274ED3A2B4EC8AC00D1A926 /* CategoryViewModel.swift */,
 				1274ED422B4EE45B00D1A926 /* LocatorViewModel.swift */,
+				128FC4992B5B9F70003E3B53 /* AppLock */,
+				128FC48F2B5B9D29003E3B53 /* RootViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -182,6 +206,7 @@
 			isa = PBXGroup;
 			children = (
 				12746AD52B596F6E009D1473 /* DateFormatManager.swift */,
+				128FC48D2B5B9CD6003E3B53 /* DeviceSizeManager.swift */,
 				12746AD92B5A2A8A009D1473 /* ExString.swift */,
 				12746ADF2B5A588D009D1473 /* EXCollection.swift */,
 			);
@@ -200,10 +225,10 @@
 		1222B9762B46F9F900803C59 /* Repository */ = {
 			isa = PBXGroup;
 			children = (
-				1222B9882B47B14900803C59 /* CoreDataRepository.swift */,
-				12746ADB2B5A2B11009D1473 /* LocatorRepository.swift */,
-				12746ADD2B5A2B23009D1473 /* CategoryRepository.swift */,
 				1274ED372B4EC87300D1A926 /* DI */,
+				128FC4952B5B9E40003E3B53 /* AppModel */,
+				128FC4962B5B9E56003E3B53 /* DB */,
+				128FC4892B5B9C64003E3B53 /* BiometricAuthRepository.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -304,6 +329,43 @@
 				128FC4822B5B9396003E3B53 /* SettingView.swift */,
 			);
 			path = Setting;
+			sourceTree = "<group>";
+		};
+		128FC4842B5B9C18003E3B53 /* AppLock */ = {
+			isa = PBXGroup;
+			children = (
+				128FC4852B5B9C26003E3B53 /* AppLockView.swift */,
+				128FC4972B5B9F65003E3B53 /* AppLockInputView.swift */,
+			);
+			path = AppLock;
+			sourceTree = "<group>";
+		};
+		128FC4952B5B9E40003E3B53 /* AppModel */ = {
+			isa = PBXGroup;
+			children = (
+				12746ADD2B5A2B23009D1473 /* CategoryRepository.swift */,
+				12746ADB2B5A2B11009D1473 /* LocatorRepository.swift */,
+			);
+			path = AppModel;
+			sourceTree = "<group>";
+		};
+		128FC4962B5B9E56003E3B53 /* DB */ = {
+			isa = PBXGroup;
+			children = (
+				1222B9882B47B14900803C59 /* CoreDataRepository.swift */,
+				128FC4932B5B9E34003E3B53 /* UserDefaultsRepository.swift */,
+				128FC48B2B5B9C78003E3B53 /* KeyChainRepository.swift */,
+			);
+			path = DB;
+			sourceTree = "<group>";
+		};
+		128FC4992B5B9F70003E3B53 /* AppLock */ = {
+			isa = PBXGroup;
+			children = (
+				128FC4872B5B9C4C003E3B53 /* AppLockViewModel.swift */,
+				128FC49A2B5B9F7B003E3B53 /* AppLockInputViewModel.swift */,
+			);
+			path = AppLock;
 			sourceTree = "<group>";
 		};
 		DD2E9CC773F8FB56276F9F93 /* Pods */ = {
@@ -442,13 +504,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				12746AD62B596F6E009D1473 /* DateFormatManager.swift in Sources */,
-				12746AD82B5A2006009D1473 /* RootViewModel.swift in Sources */,
+				12746AD82B5A2006009D1473 /* RootEnvironment.swift in Sources */,
 				12746AD22B595518009D1473 /* LocatorInputView.swift in Sources */,
 				1274ED432B4EE45B00D1A926 /* LocatorViewModel.swift in Sources */,
+				128FC49B2B5B9F7B003E3B53 /* AppLockInputViewModel.swift in Sources */,
 				12746ADE2B5A2B23009D1473 /* CategoryRepository.swift in Sources */,
 				1222B96B2B46F8CB00803C59 /* LinkMark.xcdatamodeld in Sources */,
 				12746AE02B5A588D009D1473 /* EXCollection.swift in Sources */,
+				128FC4882B5B9C4C003E3B53 /* AppLockViewModel.swift in Sources */,
+				128FC4862B5B9C26003E3B53 /* AppLockView.swift in Sources */,
 				1274ED392B4EC87C00D1A926 /* RepositoryDependency.swift in Sources */,
+				128FC4922B5B9E0C003E3B53 /* SettingViewModel.swift in Sources */,
 				1274ED452B4FB91800D1A926 /* CategoryInputView.swift in Sources */,
 				1274ED322B4EC09600D1A926 /* Category+CoreDataClass.swift in Sources */,
 				1274ED362B4EC47900D1A926 /* CategoryListView.swift in Sources */,
@@ -462,6 +528,7 @@
 				12746AD42B596D48009D1473 /* UICustomWebView.swift in Sources */,
 				128FC4762B5AAC4A003E3B53 /* HeaderView.swift in Sources */,
 				1274ED3F2B4EE3B000D1A926 /* RootView.swift in Sources */,
+				128FC4942B5B9E34003E3B53 /* UserDefaultsRepository.swift in Sources */,
 				128FC4832B5B9396003E3B53 /* SettingView.swift in Sources */,
 				128FC4782B5AB609003E3B53 /* ControlWebView.swift in Sources */,
 				1222B95F2B46F8CA00803C59 /* LinkMarkApp.swift in Sources */,
@@ -470,7 +537,12 @@
 				12746ACD2B58FC81009D1473 /* InputView.swift in Sources */,
 				12746AD02B594922009D1473 /* CustomNotifyDialogView.swift in Sources */,
 				1222B9892B47B14900803C59 /* CoreDataRepository.swift in Sources */,
+				128FC4982B5B9F65003E3B53 /* AppLockInputView.swift in Sources */,
 				12746ACB2B58FBAA009D1473 /* SectionTitleView.swift in Sources */,
+				128FC48A2B5B9C64003E3B53 /* BiometricAuthRepository.swift in Sources */,
+				128FC48C2B5B9C78003E3B53 /* KeyChainRepository.swift in Sources */,
+				128FC4902B5B9D29003E3B53 /* RootViewModel.swift in Sources */,
+				128FC48E2B5B9CD6003E3B53 /* DeviceSizeManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

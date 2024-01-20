@@ -18,12 +18,12 @@ class DateFormatManager {
         df.calendar = Calendar(identifier: .gregorian)
     }
     
-    /// yyyy年M月d日
+    /// JP：yyyy年M月d日  String 
     public func getString(date: Date) -> String {
         return df.string(from: date)
     }
     
-    /// yyyy年M月d日 Date
+    /// JP：yyyy年M月d日 Date
     public func getDate(str: String) -> Date {
         return df.date(from: str) ?? Date()
     }

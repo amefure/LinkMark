@@ -11,7 +11,7 @@ struct LocatorListView: View {
     
     // MARK: - View
     @ObservedObject private var viewModel = LocatorViewModel.shared
-    @ObservedObject private var rootViewModel = RootViewModel.shared
+    @ObservedObject private var rootViewModel = RootEnvironment.shared
     
     // MARK: - Receive
     public var category: Category
