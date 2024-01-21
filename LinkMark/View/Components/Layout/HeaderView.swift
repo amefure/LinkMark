@@ -45,7 +45,7 @@ struct HeaderView: View {
             if isShowLogo {
                 Text("LINKMARK")
                     .fontWeight(.bold)
-                    .fontDesign(.monospaced)
+                    .font(.system(size: 18).monospaced())
                     .opacity(0.8)
             }
             
