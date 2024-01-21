@@ -10,7 +10,11 @@ import UIKit
 class DeviceSizeManager {
     static var deviceWidth: CGFloat {
         guard let window = UIApplication.shared.connectedScenes.first as? UIWindowScene else { return 0 }
-        return window.screen.bounds.width
+        if DeviceSizeManager.isiPadSize {
+            return window.screen.bounds.width / 1.4
+        } else {
+            return window.screen.bounds.width
+        }
     }
 
     static var deviceHeight: CGFloat {
