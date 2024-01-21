@@ -55,5 +55,28 @@ extension Category {
         
         return categorys
     }
+    
+    /// デモリスト
+    static var demoCategorysEn : [Category] {
+        
+        var categorys: [Category]  = []
+        
+        let category1 = Category.new(name: "Cooking", color: "red", order: 0)
+        categorys.append(category1)
+        
+        let category2 = Category.new(name: "Hobby", color: "yellow", order: 1)
+        categorys.append(category2)
+        
+        let category3 = Category.new(name: "Study", color: "blue", order: 2)
+        categorys.append(category3)
+        
+        let category4 = Category.new(name: "Child", color: "green", order: 3)
+        categorys.append(category4)
+        
+        let category5 = Category.new(name: "Tennis", color: "purple", order: 4)
+        categorys.append(category5)
+        
+        return categorys
+    }
 }
 
