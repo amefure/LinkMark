@@ -24,7 +24,7 @@ extension CategoryViewModel {
     
     public func fetchAllCategorys() {
         categorys = categoryRepository.fetchAllCategorys()
-        categorys = Category.demoCategorys
+        // categorys = Category.demoCategorys
     }
     
     public func addCategory(name: String, color: String) {
