@@ -12,6 +12,9 @@
 "date_format" = "M/d/yyyy";
 
 "webview_network_unavailable" = "Not connected to network. \nPlease use it in a place with a good communication environment.";
+"category_no_data" = "Please register the category♪";
+"locator_no_data" = "Please register the link♪";
+
 "category_input_placeholder" = "Recipe・Sports...";
 
 "locator_input_placeholder_title" = "Link Title";

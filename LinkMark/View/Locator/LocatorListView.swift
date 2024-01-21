@@ -61,55 +61,59 @@ struct LocatorListView: View {
                     
                 }
                 
-                
-                List {
-                    ForEach(viewModel.locators) { locator in
-                        if let url = locator.url {
-                            NavigationLink(value: ScreenPath.webView(url: url)) {
-                                VStack(alignment: .leading) {
-                                    Text(locator.title!)
-                                        .lineLimit(2)
-                                    
-                                    Text(locator.wrappedMemo)
-                                        .font(.caption)
-                                        .lineLimit(2)
-                                        .padding([.leading, .vertical], 10)
-                                    
-                                    HStack {
-                                        Text(DateFormatManager().getString(date: locator.wrappedCreatedAt))
-                                        Text(url.absoluteString)
-                                            .lineLimit(1)
-                                    }.opacity(0.8)
-                                        .font(.caption)
-                                    
-                                }.foregroundStyle(.exText)
-                            }.listRowBackground(Color.exLightGray)
-                                .swipeActions(edge: .trailing, allowsFullSwipe: false) {
-                                    // 右スワイプ：削除アクション
-                                    Button(role: .none) {
-                                        self.locator = locator
-                                        showDeleteDialog = true
-                                    } label: {
-                                        Image(systemName: "trash")
-                                    }.tint(.exNegative)
-                                }
-                                .swipeActions(edge: .leading, allowsFullSwipe: false) {
-                                    // 左スワイプ：編集アクション
-                                    Button(role: .none) {
-                                        self.locator = locator
-                                        showEditInputView = true
-                                    } label: {
-                                        Image(systemName: "square.and.pencil")
-                                    }.tint(.exPositive)
-                                }
-                        }
-                    }.onMove { sourceSet, destination in
-                        viewModel.changeOrder(categoryId: category.wrappedId, list: viewModel.locators, sourceSet: sourceSet, destination: destination)
-                        
-                    }.deleteDisabled(true)
-                }.environment(\.editMode, .constant(rootViewModel.editSortMode))
-                    .scrollContentBackground(.hidden)
-                    .background(Color.exThema)
+                if viewModel.locators.count == 0 {
+                    FoundationImageView(title: "NO DATA", msg: L10n.locatorNoData)
+                } else {
+                    
+                    List {
+                        ForEach(viewModel.locators) { locator in
+                            if let url = locator.url {
+                                NavigationLink(value: ScreenPath.webView(url: url)) {
+                                    VStack(alignment: .leading) {
+                                        Text(locator.title!)
+                                            .lineLimit(2)
+                                        
+                                        Text(locator.wrappedMemo)
+                                            .font(.caption)
+                                            .lineLimit(2)
+                                            .padding([.leading, .vertical], 10)
+                                        
+                                        HStack {
+                                            Text(DateFormatManager().getString(date: locator.wrappedCreatedAt))
+                                            Text(url.absoluteString)
+                                                .lineLimit(1)
+                                        }.opacity(0.8)
+                                            .font(.caption)
+                                        
+                                    }.foregroundStyle(.exText)
+                                }.listRowBackground(Color.exLightGray)
+                                    .swipeActions(edge: .trailing, allowsFullSwipe: false) {
+                                        // 右スワイプ：削除アクション
+                                        Button(role: .none) {
+                                            self.locator = locator
+                                            showDeleteDialog = true
+                                        } label: {
+                                            Image(systemName: "trash")
+                                        }.tint(.exNegative)
+                                    }
+                                    .swipeActions(edge: .leading, allowsFullSwipe: false) {
+                                        // 左スワイプ：編集アクション
+                                        Button(role: .none) {
+                                            self.locator = locator
+                                            showEditInputView = true
+                                        } label: {
+                                            Image(systemName: "square.and.pencil")
+                                        }.tint(.exPositive)
+                                    }
+                            }
+                        }.onMove { sourceSet, destination in
+                            viewModel.changeOrder(categoryId: category.wrappedId, list: viewModel.locators, sourceSet: sourceSet, destination: destination)
+                            
+                        }.deleteDisabled(true)
+                    }.environment(\.editMode, .constant(rootViewModel.editSortMode))
+                        .scrollContentBackground(.hidden)
+                        .background(Color.exThema)
+                }
                 
                 Spacer()
             }

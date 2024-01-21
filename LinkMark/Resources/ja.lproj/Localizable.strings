@@ -12,6 +12,8 @@
 "date_format" = "yyyy年M月d日";
 
 "webview_network_unavailable" = "ネットワークに接続されていません。\n通信環境の整った場所でご利用ください。";
+"category_no_data" = "カテゴリを登録してね♪";
+"locator_no_data" = "Linkを登録してね♪";
 
 "category_input_placeholder" = "例：レシピ・趣味など";
 

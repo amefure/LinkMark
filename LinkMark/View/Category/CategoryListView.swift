@@ -57,48 +57,51 @@ struct CategoryListView: View {
                     }
                 }
                 
-                
-                List {
-                    ForEach(viewModel.categorys) { category in
-                        
-                        NavigationLink(value: ScreenPath.locatorList(category: category)) {
-                            HStack {
-                                CategoryColor.getColor(category.wrappedColor)
-                                    .frame(width: 40, height: 40)
-                                    .clipShape(RoundedRectangle(cornerRadius: 40))
-                                Text(category.wrappedName)
-                                    .foregroundStyle(.exText)
-                                
-                                Spacer()
-                                
-                                Text("\(category.wrappedLocators.count)")
-                                    .foregroundStyle(.exText)
-                            }
-                        }.listRowBackground(Color.exLightGray)
+                if viewModel.categorys.count == 0 {
+                    FoundationImageView(title: "NO DATA", msg: L10n.categoryNoData)
+                } else {
+                    List {
+                        ForEach(viewModel.categorys) { category in
+                            
+                            NavigationLink(value: ScreenPath.locatorList(category: category)) {
+                                HStack {
+                                    CategoryColor.getColor(category.wrappedColor)
+                                        .frame(width: 40, height: 40)
+                                        .clipShape(RoundedRectangle(cornerRadius: 40))
+                                    Text(category.wrappedName)
+                                        .foregroundStyle(.exText)
+                                    
+                                    Spacer()
+                                    
+                                    Text("\(category.wrappedLocators.count)")
+                                        .foregroundStyle(.exText)
+                                }
+                            }.listRowBackground(Color.exLightGray)
 
-                            .swipeActions(edge: .trailing, allowsFullSwipe: false) {
-                                // 右スワイプ：削除アクション
-                                Button(role: .none) {
-                                    self.category = category
-                                    showDeleteDialog = true
-                                } label: {
-                                    Image(systemName: "trash")
-                                }.tint(.exNegative)
-                            }.swipeActions(edge: .leading, allowsFullSwipe: false) {
-                                // 左スワイプ：編集アクション
-                                Button(role: .none) {
-                                    self.category = category
-                                    showEditInputView = true
-                                } label: {
-                                    Image(systemName: "square.and.pencil")
-                                }.tint(.exPositive)
-                            }
-                    }.onMove { sourceSet, destination in
-                        viewModel.changeOrder(list: viewModel.categorys, sourceSet: sourceSet, destination: destination)
-                        
-                    }.deleteDisabled(true)
-                }.scrollContentBackground(.hidden)
-                    .background(Color.exThema)
+                                .swipeActions(edge: .trailing, allowsFullSwipe: false) {
+                                    // 右スワイプ：削除アクション
+                                    Button(role: .none) {
+                                        self.category = category
+                                        showDeleteDialog = true
+                                    } label: {
+                                        Image(systemName: "trash")
+                                    }.tint(.exNegative)
+                                }.swipeActions(edge: .leading, allowsFullSwipe: false) {
+                                    // 左スワイプ：編集アクション
+                                    Button(role: .none) {
+                                        self.category = category
+                                        showEditInputView = true
+                                    } label: {
+                                        Image(systemName: "square.and.pencil")
+                                    }.tint(.exPositive)
+                                }
+                        }.onMove { sourceSet, destination in
+                            viewModel.changeOrder(list: viewModel.categorys, sourceSet: sourceSet, destination: destination)
+                            
+                        }.deleteDisabled(true)
+                    }.scrollContentBackground(.hidden)
+                        .background(Color.exThema)
+                }
                 
                 AdMobBannerView()
                     .frame(height: 60)

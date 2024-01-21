@@ -22,6 +22,8 @@ internal enum L10n {
   internal static let appLockTouchId = L10n.tr("Localizable", "app_lock_touch_id", fallback: "Touch IDでログインする")
   /// 例：レシピ・趣味など
   internal static let categoryInputPlaceholder = L10n.tr("Localizable", "category_input_placeholder", fallback: "例：レシピ・趣味など")
+  /// カテゴリを登録してね♪
+  internal static let categoryNoData = L10n.tr("Localizable", "category_no_data", fallback: "カテゴリを登録してね♪")
   /// yyyy年M月d日
   internal static let dateFormat = L10n.tr("Localizable", "date_format", fallback: "yyyy年M月d日")
   /// Localizable.strings
@@ -74,6 +76,8 @@ internal enum L10n {
   internal static let locatorInputValidationTitle = L10n.tr("Localizable", "locator_input_validation_title", fallback: "・タイトルは必須入力です。")
   /// ・有効なリンクを入力してください。
   internal static let locatorInputValidationUrl = L10n.tr("Localizable", "locator_input_validation_url", fallback: "・有効なリンクを入力してください。")
+  /// Linkを登録してね♪
+  internal static let locatorNoData = L10n.tr("Localizable", "locator_no_data", fallback: "Linkを登録してね♪")
   /// ・アプリにパスワードを設定してロックをかけることができます。
   internal static let settingSectionAppDesc = L10n.tr("Localizable", "setting_section_app_desc", fallback: "・アプリにパスワードを設定してロックをかけることができます。")
   /// アプリをロックする
