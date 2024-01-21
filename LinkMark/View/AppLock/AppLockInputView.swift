@@ -25,7 +25,7 @@ struct AppLockInputView: View {
         VStack(spacing: 0) {
             Spacer()
 
-            Text("パスワード登録")
+            Text(L10n.appLockInputTitle)
                 .fontWeight(.bold)
                 .foregroundStyle(.exText)
 
@@ -41,7 +41,7 @@ struct AppLockInputView: View {
                     dismiss()
                 }
             } label: {
-                Text("登録")
+                Text(L10n.appLockInputEntryButton)
                     .fontWeight(.bold)
                     .padding(10)
                     .frame(width: 100)

@@ -10,3 +10,42 @@
 // MARK: - Loacle
 "date_locale" = "en_US";
 "date_format" = "M/d/yyyy";
+
+"category_input_placeholder" = "Recipe・Sports...";
+"locator_input_placeholder_title" = "Link Title";
+"locator_input_placeholder_url" = "例：https://XXX.com/";
+
+"locator_input_validation_title" = "・Title is required.";
+"locator_input_validation_url" = "・Please enter a valid link.";
+
+"dialog_title" = "Notice";
+
+"dialog_delete_category_%@" = "Are you sure you want to remove 「%@」? \nIf you delete it, all links will also be deleted.";
+"dialog_delete_locator_%@" = "Are you sure you want to remove 「%@」?";
+"dialog_validation_category" = "Category name is required.";
+"dialog_entry_category_%@" = "Category 「%@」 has been\nregistered.";
+"dialog_update_category_%@" = "Category 「%@」 has been\nupdated.";
+
+"dialog_entry_locator_%@" = "Link 「%@」 has been\nregistered.";
+"dialog_update_locator_%@" = "Link 「%@」 has been\nupdated.";
+
+"dialog_button_ok" = "OK";
+"dialog_button_cancel" = "Cansell";
+
+
+"setting_section_app_title" = "App Settings";
+"setting_section_app_desc" = "・You can lock the app by setting a password.";
+"setting_section_app_lock" = "Lock the app";
+
+"setting_section_link_desc" = "・ If you have any problems with the app, please contact us from 「Click here for app problems」.";
+"setting_section_link_review" = "Review the app";
+"setting_section_link_recommend" = "Recommend 「LINKMARK」";
+"setting_section_link_contact" = "Click here for app problems";
+"setting_section_link_terms" = "Terms of Use and Privacy Policy";
+
+
+"app_lock_face_id" = "Log in with Face ID";
+"app_lock_touch_id" = "Log in with Touch ID";
+"app_lock_failed_password" = "Password is incorrect.";
+"app_lock_input_title" = "Password registration";
+"app_lock_input_entry_button" = "Registration";

@@ -37,7 +37,7 @@ struct CustomNotifyDialogView: View {
                         .frame(width: 300)
                         .font(.system(size: 22))
                         .fontWeight(.bold)
-                        .foregroundStyle(.exLightGray)
+                        .foregroundStyle(.white)
                         .padding(.vertical, 20)
                         .background(.exRed)
                     
@@ -84,7 +84,7 @@ struct CustomNotifyDialogView: View {
                     }.padding()
                    
                 }.frame(width: 300, height: 220)
-                .background(.exLightGray)
+                .background(.white)
                 .clipShape(RoundedRectangle(cornerRadius: 20))
            // 画面一杯にViewを広げる
            }.ignoresSafeArea()

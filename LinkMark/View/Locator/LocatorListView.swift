@@ -132,10 +132,10 @@ struct LocatorListView: View {
                 viewModel.onAppear(categoryId: category.wrappedId)
             }.dialog(
                 isPresented: $showDeleteDialog,
-                title: "お知らせ",
-                message: "「\(category.wrappedName.limitLength)」を本当に削除しますか？",
-                positiveButtonTitle: "OK",
-                negativeButtonTitle: "キャンセル",
+                title: L10n.dialogTitle,
+                message: L10n.dialogDeleteLocator(category.wrappedName.limitLength),
+                positiveButtonTitle: L10n.dialogButtonOk,
+                negativeButtonTitle: L10n.dialogButtonCancel,
                 positiveAction: {
                     guard let locator = locator else { return }
                     viewModel.deleteCategory(locator: locator)

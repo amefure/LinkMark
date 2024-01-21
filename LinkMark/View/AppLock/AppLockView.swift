@@ -52,12 +52,12 @@ struct AppLockView: View {
                                 Image(systemName: "faceid")
                                     .resizable()
                                     .frame(width: 20, height: 20)
-                                Text("Face IDでログインする")
+                                Text(L10n.appLockFaceId)
                             } else if viewModel.type == .touchID {
                                 Image(systemName: "touchid")
                                     .resizable()
                                     .frame(width: 20, height: 20)
-                                Text("Touch IDでログインする")
+                                Text(L10n.appLockTouchId)
                             }
                         }
                     }.offset(y: 80)
@@ -69,7 +69,7 @@ struct AppLockView: View {
 
             NumberKeyboardView(password: $password)
                 .ignoresSafeArea(.all)
-        }.alert("パスワードが違います。", isPresented: $viewModel.isShowFailureAlert) {
+        }.alert(L10n.appLockFailedPassword, isPresented: $viewModel.isShowFailureAlert) {
             Button("OK") {}
         }
         .onAppear { viewModel.onAppear { result in

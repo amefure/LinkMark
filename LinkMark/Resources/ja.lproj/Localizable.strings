@@ -10,3 +10,43 @@
 // MARK: - Loacle
 "date_locale" = "ja_JP";
 "date_format" = "yyyy年M月d日";
+
+
+"category_input_placeholder" = "例：レシピ・趣味など";
+"locator_input_placeholder_title" = "リンクタイトル";
+"locator_input_placeholder_url" = "https://XXX.com/";
+
+"locator_input_validation_title" = "・タイトルは必須入力です。";
+"locator_input_validation_url" = "・有効なリンクを入力してください。";
+
+"dialog_title" = "お知らせ";
+
+"dialog_delete_category_%@" = "「%@」を本当に削除しますか？\n削除するとリンクも全てなくなります。";
+"dialog_delete_locator_%@" = "「%@」を本当に削除しますか？";
+"dialog_validation_category" = "カテゴリ名は必須入力です。";
+"dialog_entry_category_%@" = "カテゴリ「%@」を\n登録しました。";
+"dialog_update_category_%@" = "カテゴリ「%@」を\n更新しました。";
+
+"dialog_entry_locator_%@" = "リンク「%@」を\n登録しました。";
+"dialog_update_locator_%@" = "リンク「%@」を\n更新しました。";
+
+"dialog_button_ok" = "OK";
+"dialog_button_cancel" = "キャンセル";
+
+
+"setting_section_app_title" = "アプリ設定";
+"setting_section_app_desc" = "・アプリにパスワードを設定してロックをかけることができます。";
+"setting_section_app_lock" = "アプリをロックする";
+
+"setting_section_link_desc" = "・アプリに不具合がございましたら「アプリの不具合はこちら」よりお問い合わせください。";
+"setting_section_link_review" = "アプリをレビューする";
+"setting_section_link_recommend" = "「LINKMARK」をオススメする";
+"setting_section_link_contact" = "アプリの不具合はこちら";
+"setting_section_link_terms" = "利用規約とプライバシーポリシー";
+
+
+"app_lock_face_id" = "Face IDでログインする";
+"app_lock_touch_id" = "Touch IDでログインする";
+"app_lock_failed_password" = "パスワードが違います。";
+"app_lock_input_title" = "パスワード登録";
+"app_lock_input_entry_button" = "登録";

@@ -76,24 +76,24 @@ struct LocatorInputView: View {
             )
             
             ZStack {
-                SectionTitleView(title: "タイトル")
+                SectionTitleView(title: "Title")
                 if showValidationEmptyFlag {
-                    Text("・タイトルは必須入力です。")
+                    Text(L10n.locatorInputValidationTitle)
                         .foregroundStyle(.red)
                 }
             }
            
-            InputView(placeholder: "例：レシピ・趣味など", value: $title)
+            InputView(placeholder: L10n.locatorInputPlaceholderTitle, value: $title)
             
             ZStack {
                 SectionTitleView(title: "Link")
                 if showValidationUrlFlag {
-                    Text("・有効なリンクを入力してください。")
+                    Text(L10n.locatorInputValidationUrl)
                         .foregroundStyle(.red)
                 }  
             }
             
-            InputView(placeholder: "例：https://XXX.com/", value: $urlStr)
+            InputView(placeholder: L10n.locatorInputPlaceholderUrl, value: $urlStr)
             
             SectionTitleView(title: "MEMO")
             InputView(placeholder: "", value: $memo)
@@ -108,9 +108,9 @@ struct LocatorInputView: View {
             .navigationBarBackButtonHidden()
             .dialog(
                 isPresented: $showSuccessDialog,
-                title: "お知らせ",
-                message: locator == nil ? "リンク「\(title.limitLength)」を\n登録しました。" : "リンク「\(title.limitLength)」を\n更新しました。",
-                positiveButtonTitle: "OK",
+                title: L10n.dialogTitle,
+                message: locator == nil ? L10n.dialogEntryLocator(title.limitLength) : L10n.dialogUpdateLocator(title.limitLength),
+                positiveButtonTitle: L10n.dialogButtonOk,
                 negativeButtonTitle: "",
                 positiveAction: { dismiss() },
                 negativeAction: {}
@@ -124,6 +124,6 @@ struct LocatorInputView: View {
     }
 }
 
-//#Preview {
-//    LocatorInputView(category: <#T##Category#>)
-//}
+#Preview {
+    LocatorInputView(category: Category.demoCategorys.first!)
+}

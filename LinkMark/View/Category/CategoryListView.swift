@@ -75,6 +75,7 @@ struct CategoryListView: View {
                                     .foregroundStyle(.exText)
                             }
                         }.listRowBackground(Color.exLightGray)
+
                             .swipeActions(edge: .trailing, allowsFullSwipe: false) {
                                 // 右スワイプ：削除アクション
                                 Button(role: .none) {
@@ -132,10 +133,10 @@ struct CategoryListView: View {
             }
             .dialog(
                 isPresented: $showDeleteDialog,
-                title: "お知らせ",
-                message: "「\(category?.wrappedName.limitLength ?? "")」を本当に削除しますか？\n削除するとリンクも全てなくなります。",
-                positiveButtonTitle: "OK",
-                negativeButtonTitle: "キャンセル",
+                title: L10n.dialogTitle,
+                message: L10n.dialogDeleteCategory(category?.wrappedName.limitLength ?? ""),
+                positiveButtonTitle: L10n.dialogButtonOk,
+                negativeButtonTitle: L10n.dialogButtonCancel,
                 positiveAction: {
                     guard let category = category else { return }
                     viewModel.deleteCategory(category: category)

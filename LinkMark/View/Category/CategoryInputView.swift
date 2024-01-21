@@ -50,8 +50,8 @@ struct CategoryInputView: View {
                 }
             )
             
-            SectionTitleView(title: "カテゴリ名")
-            InputView(placeholder: "例：レシピ・趣味など", value: $name)
+            SectionTitleView(title: "Category Name")
+            InputView(placeholder: L10n.categoryInputPlaceholder, value: $name)
             
             
             HStack(spacing: 15) {
@@ -79,18 +79,18 @@ struct CategoryInputView: View {
             .navigationBarBackButtonHidden()
             .dialog(
                 isPresented: $showSuccessDialog,
-                title: "お知らせ",
-                message: category == nil ? "カテゴリ「\(name.limitLength)」を\n登録しました。" : "カテゴリ「\(name.limitLength)」を\n更新しました。",
-                positiveButtonTitle: "OK",
+                title: L10n.dialogTitle,
+                message: category == nil ? L10n.dialogEntryCategory(name.limitLength) : L10n.dialogUpdateCategory(name.limitLength),
+                positiveButtonTitle: L10n.dialogButtonOk,
                 negativeButtonTitle: "",
                 positiveAction: { dismiss() },
                 negativeAction: {}
             )
             .dialog(
                 isPresented: $showFailedDialog,
-                title: "お知らせ",
-                message: "カテゴリ名は必須入力です。",
-                positiveButtonTitle: "OK",
+                title: L10n.dialogTitle,
+                message:  L10n.dialogValidationCategory,
+                positiveButtonTitle:  L10n.dialogButtonOk,
                 negativeButtonTitle: "",
                 positiveAction: { showFailedDialog = false},
                 negativeAction: {}

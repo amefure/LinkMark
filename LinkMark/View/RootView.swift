@@ -13,6 +13,8 @@ struct RootView: View {
             CategoryListView()
         }.background(Color.exThema)
             .navigationDestination(for: ScreenPath.self) { value in
+                // WebViewへのトグル形式の設計だとフリーズするため(インスタンスが複数生成されるため)
+                // navigationDestination(for: )で遷移させる
                 switch value {
                 case .webView(let url):
                     ControlWebView(url: url)

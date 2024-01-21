@@ -34,15 +34,15 @@ struct SettingView: View {
             List {
                 // MARK: - (1)
 
-                Section(header: Text("アプリ設定"),
-                        footer: Text("・アプリにパスワードを設定してロックをかけることができます。"))
+                Section(header: Text(L10n.settingSectionAppTitle),
+                        footer: Text(L10n.settingSectionAppDesc))
                 {
 
                     HStack {
                         Image(systemName: "lock.iphone")
                             
                         Toggle(isOn: $isLock) {
-                            Text("アプリをロックする")
+                            Text(L10n.settingSectionAppLock)
                         }.onChange(of: isLock, perform: { newValue in
                             if newValue {
                                 viewModel.showPassInput()
@@ -56,65 +56,54 @@ struct SettingView: View {
                     .foregroundStyle(.white)
                 }.listRowBackground(Color.exRed)
 
-                // MARK: - (3)
+                // MARK: - (2)
 
-//                Section(header: Text("広告"),
-//                        footer: Text("・追加される容量は\(AdsConfig.ADD_CAPACITY)個です。\n・容量の追加は1日に1回までです。"))
-//                {
-//                    RewardButtonView(viewModel: viewModel)
-//                    HStack {
-//                        Image(systemName: "bag")
-//                        Text("現在の容量:\(viewModel.getCapacity())人")
+
+                Section(header: Text("Link"), footer: Text(L10n.settingSectionLinkDesc)) {
+//                    if let url = URL(string: UrlLinkConfig.APP_REVIEW_URL) {
+//                        // 1:レビューページ
+//                        Link(destination: url, label: {
+//                            HStack {
+//                                Image(systemName: "hand.thumbsup")
+//                                Text(L10n.settingSectionLinkReview)
+//                            }
+//                        }).listRowBackground(Color.exRed)
+//                            .foregroundStyle(.white)
 //                    }
-//                }.listRowBackground(.exLightGray)
-
-                // MARK: - (4)
-
-                Section(header: Text("Link"), footer: Text("・アプリに不具合がございましたら「アプリの不具合はこちら」よりお問い合わせください。")) {
-                    if let url = URL(string: "https://apps.apple.com/jp/app/%E3%81%BF%E3%82%93%E3%81%AA%E3%81%AE%E8%AA%95%E7%94%9F%E6%97%A5/id1673431227?action=write-review") {
-                        // 1:レビューページ
-                        Link(destination: url, label: {
-                            HStack {
-                                Image(systemName: "hand.thumbsup")
-                                Text("アプリをレビューする")
-                            }
-                        }).listRowBackground(Color.exRed)
-                            .foregroundStyle(.white)
-                    }
 
                     // 2:シェアボタン
-                    Button(action: {
-                        viewModel.shareApp(
-                            shareText: "",
-                            shareLink: ""
-                        )
-                    }) {
-                        HStack {
-                            Image(systemName: "star.bubble")
-                                
-                            Text("「LINKMARK」をオススメする")
-                        }
-                    }.listRowBackground(Color.exRed)
-                        .foregroundStyle(.white)
+//                    Button(action: {
+//                        viewModel.shareApp(
+//                            shareText: "",
+//                            shareLink: ""
+//                        )
+//                    }) {
+//                        HStack {
+//                            Image(systemName: "star.bubble")
+//                                
+//                            Text(L10n.settingSectionLinkRecommend)
+//                        }
+//                    }.listRowBackground(Color.exRed)
+//                        .foregroundStyle(.white)
 
-                    if let url = URL(string: "https://tech.amefure.com/contact") {
+                    if let url = URL(string: UrlLinkConfig.APP_CONTACT_URL) {
                         // 3:お問い合わせフォーム
                         Link(destination: url, label: {
                             HStack {
                                 Image(systemName: "paperplane")
-                                Text("アプリの不具合はこちら")
+                                Text(L10n.settingSectionLinkContact)
                                 Image(systemName: "link").font(.caption)
                             }
                         }).listRowBackground(Color.exRed)
                             .foregroundStyle(.white)
                     }
 
-                    if let url = URL(string: "https://tech.amefure.com/app-terms-of-service") {
+                    if let url = URL(string: UrlLinkConfig.APP_TERMS_OF_SERVICE_URL) {
                         // 4:利用規約とプライバシーポリシー
                         Link(destination: url, label: {
                             HStack {
                                 Image(systemName: "note.text")
-                                Text("利用規約とプライバシーポリシー")
+                                Text(L10n.settingSectionLinkTerms)
                                 Image(systemName: "link").font(.caption)
                             }
                         }).listRowBackground(Color.exRed)
