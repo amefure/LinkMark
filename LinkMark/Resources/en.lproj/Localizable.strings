@@ -53,4 +53,4 @@
 "app_lock_touch_id" = "Log in with Touch ID";
 "app_lock_failed_password" = "Password is incorrect.";
 "app_lock_input_title" = "Password registration";
-"app_lock_input_entry_button" = "Registration";
+"app_lock_input_entry_button" = "Register";

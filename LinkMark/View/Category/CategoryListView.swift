@@ -115,9 +115,9 @@ struct CategoryListView: View {
                 Image(systemName: "plus")
                     .foregroundStyle(.white)
                     .fontWeight(.bold)
-                    .frame(width: 70, height: 70)
+                    .frame(width: 55, height: 55)
                     .background(Color.exRed)
-                    .clipShape(RoundedRectangle(cornerRadius: 70))
+                    .clipShape(RoundedRectangle(cornerRadius: 55))
                     .shadow(color: .exText, radius: 2, x: 1, y: 1)
             }.offset(x: -30, y: -90)
             

@@ -27,6 +27,7 @@ extension LocatorViewModel {
     
     public func fetchAllLocators(categoryId: UUID) {
         locators = locatorRepository.fetchAllLocators(categoryId: categoryId)
+        locators = Locator.demoLocators
     }
     
     public func addLocator(categoryId: UUID, title: String, url: URL, memo: String) {
