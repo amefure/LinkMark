@@ -15,11 +15,13 @@ struct InputView: View {
     var body: some View {
         
         TextField(placeholder, text: $value)
+            .fontWeight(.bold)
             .padding([.horizontal], 10)
-            .frame(height: 65)
+            .frame(height: DeviceSizeManager.isSESize ? 40 :  65)
             .background(Color.exLightGray)
             .clipShape(RoundedRectangle(cornerRadius: 10))
             .padding([.horizontal], 20)
+            .foregroundStyle(.exText)   
     }
 }
 

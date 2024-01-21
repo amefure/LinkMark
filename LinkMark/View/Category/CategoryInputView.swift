@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import UIKit
 
 struct CategoryInputView: View {
     
@@ -34,6 +35,9 @@ struct CategoryInputView: View {
                 trailingIcon: "checkmark",
                 leadingAction: { dismiss() },
                 trailingAction: {
+                    // キーボードを閉じる
+                    UIApplication.shared.closeKeyboard()
+                    
                     guard !name.isEmpty else {
                         showFailedDialog = true
                         return
@@ -76,6 +80,7 @@ struct CategoryInputView: View {
                 .frame(height: 60)
             
         }.background(Color.exThema)
+            .ignoresSafeArea(.keyboard)
             .navigationBarBackButtonHidden()
             .dialog(
                 isPresented: $showSuccessDialog,

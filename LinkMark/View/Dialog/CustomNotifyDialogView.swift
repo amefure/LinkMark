@@ -35,7 +35,7 @@ struct CustomNotifyDialogView: View {
                     
                     Text(title)
                         .frame(width: 300)
-                        .font(.system(size: 22))
+                        .font(.system(size: 20))
                         .fontWeight(.bold)
                         .foregroundStyle(.white)
                         .padding(.vertical, 20)
@@ -46,6 +46,7 @@ struct CustomNotifyDialogView: View {
                     Text(message)
                         .foregroundStyle(.exText)
                         .padding(.horizontal, 20)
+                        .fontWeight(.bold)
                         .lineLimit(4)
                     
                     Spacer()
@@ -60,7 +61,7 @@ struct CustomNotifyDialogView: View {
                                 negativeAction()
                             } label: {
                                 Text(negativeButtonTitle)
-                                    .frame(width: 150, height: 20)
+                                    .frame(width: positiveButtonTitle.isEmpty ? 300 : 150, height: 20)
                                     .foregroundStyle(.exText)
                             }
                         }
@@ -77,7 +78,7 @@ struct CustomNotifyDialogView: View {
                                 positiveAction()
                             } label: {
                                 Text(positiveButtonTitle)
-                                    .frame(width: 150, height: 20)
+                                    .frame(width: negativeButtonTitle.isEmpty ? 300 : 150, height: 20)
                                     .foregroundStyle(.exText)
                             }
                         }

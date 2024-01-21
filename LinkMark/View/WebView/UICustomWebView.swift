@@ -45,8 +45,8 @@ extension UICustomWebView {
             self.webView = webView
         }
         
-        // target_blankでも開けるようにする：WKUIDelegate
         func webView(_ webView: WKWebView, createWebViewWith configuration: WKWebViewConfiguration, for navigationAction: WKNavigationAction, windowFeatures: WKWindowFeatures) -> WKWebView? {
+            // target_blankでも開けるようにする：WKUIDelegate
             if navigationAction.targetFrame == nil {
                 webView.load(navigationAction.request)
             }
@@ -54,18 +54,10 @@ extension UICustomWebView {
         }
         
         
-        func webView(_ webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: Error) {
-            print("------")
-            print(error)
-        }
+        func webView(_ webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: Error) { }
         
-        // 表示しているページ情報
-        func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
-            // 表示しているページのURL
-            print(webView.url?.absoluteString ?? "")
-            // 表示しているページのタイトル
-            print(webView.title ?? "")
-        }
+        // ページ表示が完了するたびに呼ばれる
+        func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {}
     }
 }
 
@@ -81,7 +73,11 @@ extension UICustomWebView {
     
     public func openBrowser(){
         guard let url = webView.url else { return }
-        UIApplication.shared .open(url)
+//        let url2 = URL(string: "googlechrome://tech.amefure.com/")
+//        if UIApplication.shared.canOpenURL(url2!) {
+//            UIApplication.shared.open(url2!)
+//        }
+        UIApplication.shared.open(url)
     }
     
     public func reload(){
@@ -91,7 +87,7 @@ extension UICustomWebView {
     // シェアロジック
     public func shareUrl(){
         guard let url = webView.url else { return }
-        let items = [webView.title, url] as [Any]
+        let items = [webView.title ?? "", url] as [Any]
         let activityVC = UIActivityViewController(activityItems: items, applicationActivities: nil)
         if UIDevice.current.userInterfaceIdiom == .pad {
             if let popPC = activityVC.popoverPresentationController {

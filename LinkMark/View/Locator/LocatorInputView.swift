@@ -49,6 +49,9 @@ struct LocatorInputView: View {
                 trailingIcon: "checkmark",
                 leadingAction: { dismiss() },
                 trailingAction: {
+                    // キーボードを閉じる
+                    UIApplication.shared.closeKeyboard()
+                    
                     showValidationEmptyFlag = false
                     showValidationUrlFlag = false
                     if title.isEmpty {
@@ -103,8 +106,8 @@ struct LocatorInputView: View {
             AdMobBannerView()
                 .frame(height: 60)
             
-            
         }.background(Color.exThema)
+            .ignoresSafeArea(.keyboard)
             .navigationBarBackButtonHidden()
             .dialog(
                 isPresented: $showSuccessDialog,
