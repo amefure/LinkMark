@@ -90,6 +90,9 @@ internal enum L10n {
   internal static let settingSectionLinkReview = L10n.tr("Localizable", "setting_section_link_review", fallback: "アプリをレビューする")
   /// 利用規約とプライバシーポリシー
   internal static let settingSectionLinkTerms = L10n.tr("Localizable", "setting_section_link_terms", fallback: "利用規約とプライバシーポリシー")
+  /// ネットワークに接続されていません。
+  /// 通信環境の整った場所でご利用ください。
+  internal static let webviewNetworkUnavailable = L10n.tr("Localizable", "webview_network_unavailable", fallback: "ネットワークに接続されていません。\n通信環境の整った場所でご利用ください。")
 }
 // swiftlint:enable explicit_type_interface function_parameter_count identifier_name line_length
 // swiftlint:enable nesting type_body_length type_name vertical_whitespace_opening_braces

@@ -11,8 +11,10 @@
 "date_locale" = "ja_JP";
 "date_format" = "yyyy年M月d日";
 
+"webview_network_unavailable" = "ネットワークに接続されていません。\n通信環境の整った場所でご利用ください。";
 
 "category_input_placeholder" = "例：レシピ・趣味など";
+
 "locator_input_placeholder_title" = "リンクタイトル";
 "locator_input_placeholder_url" = "https://XXX.com/";
 

@@ -11,7 +11,9 @@
 "date_locale" = "en_US";
 "date_format" = "M/d/yyyy";
 
+"webview_network_unavailable" = "Not connected to network. \nPlease use it in a place with a good communication environment.";
 "category_input_placeholder" = "Recipe・Sports...";
+
 "locator_input_placeholder_title" = "Link Title";
 "locator_input_placeholder_url" = "例：https://XXX.com/";
 

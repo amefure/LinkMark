@@ -54,6 +54,7 @@
 		128FC49D2B5BA949003E3B53 /* AdMobView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128FC49C2B5BA949003E3B53 /* AdMobView.swift */; };
 		128FC4A02B5BF283003E3B53 /* AdsConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128FC49F2B5BF283003E3B53 /* AdsConfig.swift */; };
 		128FC4A22B5CAFC1003E3B53 /* UrlLinkConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128FC4A12B5CAFC1003E3B53 /* UrlLinkConfig.swift */; };
+		128FC4A42B5CB608003E3B53 /* ReachabilityUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128FC4A32B5CB608003E3B53 /* ReachabilityUtility.swift */; };
 		7F2BEE17A18D4463FA94A011 /* Pods_LinkMark.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BAE40D35CA5E1D19DF82288 /* Pods_LinkMark.framework */; };
 /* End PBXBuildFile section */
 
@@ -108,6 +109,7 @@
 		128FC49C2B5BA949003E3B53 /* AdMobView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdMobView.swift; sourceTree = "<group>"; };
 		128FC49F2B5BF283003E3B53 /* AdsConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdsConfig.swift; sourceTree = "<group>"; };
 		128FC4A12B5CAFC1003E3B53 /* UrlLinkConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlLinkConfig.swift; sourceTree = "<group>"; };
+		128FC4A32B5CB608003E3B53 /* ReachabilityUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReachabilityUtility.swift; sourceTree = "<group>"; };
 		310D77694CE249A028E5BF92 /* Pods-LinkMark.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LinkMark.release.xcconfig"; path = "Target Support Files/Pods-LinkMark/Pods-LinkMark.release.xcconfig"; sourceTree = "<group>"; };
 		4BAE40D35CA5E1D19DF82288 /* Pods_LinkMark.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LinkMark.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC133F7F981F41DD71F089FA /* Pods-LinkMark.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LinkMark.debug.xcconfig"; path = "Target Support Files/Pods-LinkMark/Pods-LinkMark.debug.xcconfig"; sourceTree = "<group>"; };
@@ -213,6 +215,7 @@
 				128FC48D2B5B9CD6003E3B53 /* DeviceSizeManager.swift */,
 				12746AD92B5A2A8A009D1473 /* ExString.swift */,
 				12746ADF2B5A588D009D1473 /* EXCollection.swift */,
+				128FC4A32B5CB608003E3B53 /* ReachabilityUtility.swift */,
 			);
 			path = "Extension&Utility";
 			sourceTree = "<group>";
@@ -536,6 +539,7 @@
 				1274ED3B2B4EC8AC00D1A926 /* CategoryViewModel.swift in Sources */,
 				1274ED3D2B4EE37D00D1A926 /* LocatorListView.swift in Sources */,
 				12746ADC2B5A2B11009D1473 /* LocatorRepository.swift in Sources */,
+				128FC4A42B5CB608003E3B53 /* ReachabilityUtility.swift in Sources */,
 				12746ADA2B5A2A8A009D1473 /* ExString.swift in Sources */,
 				1222B9852B46FADF00803C59 /* Strings.swift in Sources */,
 				128FC4A02B5BF283003E3B53 /* AdsConfig.swift in Sources */,

@@ -8,5 +8,6 @@ target 'LinkMark' do
   # Pods for LinkMark
   pod 'Google-Mobile-Ads-SDK'
   pod 'FirebaseAnalytics'
+  pod 'ReachabilitySwift'
 
 end

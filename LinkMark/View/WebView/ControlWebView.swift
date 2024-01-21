@@ -29,7 +29,31 @@ struct ControlWebView: View {
                 dismiss()
             })
             
-            uICustomWebView
+            if ReachabilityUtility().isAvailable {
+                uICustomWebView
+            } else {
+                VStack {
+                    
+                    Spacer()
+                    
+                    Text("NETWORK ERROR")
+                        .font(.title)
+                        .opacity(0.7)
+                    
+                    Spacer()
+                    
+                    Text(L10n.webviewNetworkUnavailable)
+                    
+                    Spacer()
+                    
+                    Asset.Images.unavailable.swiftUIImage
+                        .resizable()
+                        .frame(width: 300, height: 300)
+                    
+                    Spacer()
+                }.foregroundStyle(.exText)
+                
+            }
             
             HStack(spacing: 0) {
                 Button {
