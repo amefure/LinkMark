@@ -23,6 +23,9 @@ struct HeaderView: View {
     public var trailingAction: () -> Void = {}
     public var isShowLogo: Bool = true
     
+    // MARK: - Environment
+    @ObservedObject private var rootEnvironment = RootEnvironment.shared
+    
     var body: some View {
         HStack {
             
@@ -59,6 +62,7 @@ struct HeaderView: View {
                         .font(.system(size: 18))
                 }.padding(.trailing, 5)
                     .frame(width: 50)
+                    .foregroundStyle(rootEnvironment.appColor.color)
             } else if !leadingIcon.isEmpty {
                 Spacer()
                     .frame(width: 50)

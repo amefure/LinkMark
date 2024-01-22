@@ -52,7 +52,7 @@ struct SettingView: View {
                         
                         Spacer()
                         
-                        Text(rootEnvironment.getAppColor().name)
+                        Text(rootEnvironment.appColor.name)
                         
                     }.sheet(isPresented: $showAppColorView, content: {
                         SelectAppColorView()
@@ -93,7 +93,7 @@ struct SettingView: View {
                         AppLockInputView(isLock: $isLock)
                     })
                     .foregroundStyle(.white)
-                }.listRowBackground(rootEnvironment.appColor)
+                }.listRowBackground(rootEnvironment.appColor.color)
 
                 // MARK: - (2)
 
@@ -106,7 +106,7 @@ struct SettingView: View {
 //                                Image(systemName: "hand.thumbsup")
 //                                Text(L10n.settingSectionLinkReview)
 //                            }
-//                        }).listRowBackground(rootEnvironment.appColor)
+//                        }).listRowBackground(rootEnvironment.appColor.color)
 //                            .foregroundStyle(.white)
 //                    }
 
@@ -122,7 +122,7 @@ struct SettingView: View {
 //                                
 //                            Text(L10n.settingSectionLinkRecommend)
 //                        }
-//                    }.listRowBackground(rootEnvironment.appColor)
+//                    }.listRowBackground(rootEnvironment.appColor.color)
 //                        .foregroundStyle(.white)
 
                     if let url = URL(string: UrlLinkConfig.APP_CONTACT_URL) {
@@ -133,7 +133,7 @@ struct SettingView: View {
                                 Text(L10n.settingSectionLinkContact)
                                 Image(systemName: "link").font(.caption)
                             }
-                        }).listRowBackground(rootEnvironment.appColor)
+                        }).listRowBackground(rootEnvironment.appColor.color)
                             .foregroundStyle(.white)
                     }
 
@@ -145,7 +145,7 @@ struct SettingView: View {
                                 Text(L10n.settingSectionLinkTerms)
                                 Image(systemName: "link").font(.caption)
                             }
-                        }).listRowBackground(rootEnvironment.appColor)
+                        }).listRowBackground(rootEnvironment.appColor.color)
                             .foregroundStyle(.white)
                     }
                 }

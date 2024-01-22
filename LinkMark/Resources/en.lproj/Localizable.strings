@@ -50,9 +50,17 @@
 "setting_section_link_contact" = "Click here for app problems";
 "setting_section_link_terms" = "Terms of Use and Privacy Policy";
 
+"select_color_text" = "You can select a theme color for the app.";
+"select_browser_text" = "You can open the URL in the browser of your choice.";
 
 "app_lock_face_id" = "Log in with Face ID";
 "app_lock_touch_id" = "Log in with Touch ID";
 "app_lock_failed_password" = "Password is incorrect.";
 "app_lock_input_title" = "Password registration";
 "app_lock_input_entry_button" = "Register";
+
+"app_thema_color_red" = "Rose Pink";
+"app_thema_color_yellow" = "Light Yellow";
+"app_thema_color_green" = "Mint Green";
+"app_thema_color_blue" = "Sky Blue";
+"app_thema_color_purple" = "Lavender";

@@ -67,7 +67,7 @@ struct AppLockView: View {
 
             Spacer()
 
-            NumberKeyboardView(password: $password, color: rootEnvironment.appColor)
+            NumberKeyboardView(password: $password, color: rootEnvironment.appColor.color)
                 .ignoresSafeArea(.all)
         }.alert(L10n.appLockFailedPassword, isPresented: $viewModel.isShowFailureAlert) {
             Button("OK") {}

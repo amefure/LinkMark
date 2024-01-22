@@ -12,7 +12,6 @@ struct CategoryListView: View {
     
     // MARK: - ViewModel
     @ObservedObject private var viewModel = CategoryViewModel.shared
-    @ObservedObject private var rootEnvironment = RootEnvironment.shared
     @ObservedObject private var interstitial = AdmobInterstitialView()
     
     // 削除/更新対象のCategoryが格納される
@@ -25,6 +24,9 @@ struct CategoryListView: View {
     
     // MARK: - Combine
     @State private var cancellables: Set<AnyCancellable> = []
+    
+    // MARK: - Environment
+    @ObservedObject private var rootEnvironment = RootEnvironment.shared
     
     // MARK: - Size & Padding
     /// カテゴリ行の右カラーアイコンサイズ
@@ -62,7 +64,7 @@ struct CategoryListView: View {
                             }
                         } label: {
                             Image(systemName: "arrow.up.and.down.text.horizontal")
-                                .foregroundStyle(rootEnvironment.editSortMode == .active ? .exPositive : .exText)
+                                .foregroundStyle(rootEnvironment.editSortMode == .active ? rootEnvironment.appColor.color : .exText)
                         }.offset(x: -30)
                     }
                 }
@@ -126,7 +128,7 @@ struct CategoryListView: View {
                     .foregroundStyle(.white)
                     .fontWeight(.bold)
                     .frame(width: 55, height: 55)
-                    .background(Color.exRed)
+                    .background(rootEnvironment.appColor.color)
                     .clipShape(RoundedRectangle(cornerRadius: 55))
                     .shadow(color: .exText, radius: 2, x: 1, y: 1)
             }.offset(x: -30, y: -90)

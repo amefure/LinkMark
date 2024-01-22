@@ -50,9 +50,17 @@
 "setting_section_link_contact" = "アプリの不具合はこちら";
 "setting_section_link_terms" = "利用規約とプライバシーポリシー";
 
+"select_color_text" = "アプリのテーマカラーを選択することができます。";
+"select_browser_text" = "選択したブラウザでURLを開くことができます。";
 
 "app_lock_face_id" = "Face IDでログインする";
 "app_lock_touch_id" = "Touch IDでログインする";
 "app_lock_failed_password" = "パスワードが違います。";
 "app_lock_input_title" = "パスワード登録";
 "app_lock_input_entry_button" = "登録";
+
+"app_thema_color_red" = "ローズピンク";
+"app_thema_color_yellow" = "ライトイエロー";
+"app_thema_color_green" = "ミントグリーン";
+"app_thema_color_blue" = "スカイブルー";
+"app_thema_color_purple" = "ラベンダー";

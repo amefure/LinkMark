@@ -21,7 +21,7 @@ struct SelectBrowserView: View {
                 .foregroundStyle(.exText)
                 .padding(.top, 70)
             
-            Text("選択したブラウザでURLを開くことができます。")
+            Text(L10n.selectBrowserText)
                 .foregroundStyle(.exText)
                 .padding(.top, 10)
                 .font(.caption)
@@ -29,7 +29,6 @@ struct SelectBrowserView: View {
             List(BrowserConfig.allCases, id: \.self) { browser in
                 Button {
                     rootEnvironment.setSelectBrowser(browser: browser)
-                    rootEnvironment.changeSelectBrowser(browser: browser)
                 } label: {
                     HStack {
                         Text(browser.rawValue)
@@ -37,7 +36,7 @@ struct SelectBrowserView: View {
                         Spacer()
                         
                         if rootEnvironment.selectBrowser == browser {
-                            rootEnvironment.appColor
+                            rootEnvironment.appColor.color
                                 .frame(width: 20, height: 20)
                                 .clipShape(RoundedRectangle(cornerRadius: 20))
                         }

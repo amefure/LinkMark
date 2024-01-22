@@ -32,18 +32,33 @@ enum AppThemaColor: String, CaseIterable {
         }
     }
     
-    var name: String {
+    public var color: Color {
         return switch self {
         case .red:
-            "ローズピンク"
+                .exRed
         case .yellow:
-            "ライトイエロー"
+                .exYellow
         case .green:
-            "ミントグリーン"
+                .exGreen
         case .blue:
-            "スカイブルー"
+                .exBlue
         case .purple:
-            "ラベンダー"
+                .exPurple
+        }
+    }
+    
+    public var name: String {
+        return switch self {
+        case .red:
+            L10n.appThemaColorRed
+        case .yellow:
+            L10n.appThemaColorYellow
+        case .green:
+            L10n.appThemaColorGreen
+        case .blue:
+            L10n.appThemaColorBlue
+        case .purple:
+            L10n.appThemaColorPurple
         }
     }
 }

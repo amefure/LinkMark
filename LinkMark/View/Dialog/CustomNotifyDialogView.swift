@@ -18,6 +18,9 @@ struct CustomNotifyDialogView: View {
     public let positiveAction: () -> Void
     public let negativeAction: () -> Void
     
+    // MARK: - Environment
+    @ObservedObject private var rootEnvironment = RootEnvironment.shared
+    
     var body: some View {        
         if isPresented {
             
@@ -39,7 +42,7 @@ struct CustomNotifyDialogView: View {
                         .fontWeight(.bold)
                         .foregroundStyle(.white)
                         .padding(.vertical, 20)
-                        .background(.exRed)
+                        .background(rootEnvironment.appColor.color)
                     
                     Spacer()
                     

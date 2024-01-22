@@ -20,6 +20,16 @@ internal enum L10n {
   internal static let appLockInputTitle = L10n.tr("Localizable", "app_lock_input_title", fallback: "パスワード登録")
   /// Touch IDでログインする
   internal static let appLockTouchId = L10n.tr("Localizable", "app_lock_touch_id", fallback: "Touch IDでログインする")
+  /// スカイブルー
+  internal static let appThemaColorBlue = L10n.tr("Localizable", "app_thema_color_blue", fallback: "スカイブルー")
+  /// ミントグリーン
+  internal static let appThemaColorGreen = L10n.tr("Localizable", "app_thema_color_green", fallback: "ミントグリーン")
+  /// ラベンダー
+  internal static let appThemaColorPurple = L10n.tr("Localizable", "app_thema_color_purple", fallback: "ラベンダー")
+  /// ローズピンク
+  internal static let appThemaColorRed = L10n.tr("Localizable", "app_thema_color_red", fallback: "ローズピンク")
+  /// ライトイエロー
+  internal static let appThemaColorYellow = L10n.tr("Localizable", "app_thema_color_yellow", fallback: "ライトイエロー")
   /// 例：レシピ・趣味など
   internal static let categoryInputPlaceholder = L10n.tr("Localizable", "category_input_placeholder", fallback: "例：レシピ・趣味など")
   /// カテゴリを登録してね♪
@@ -78,6 +88,10 @@ internal enum L10n {
   internal static let locatorInputValidationUrl = L10n.tr("Localizable", "locator_input_validation_url", fallback: "・有効なリンクを入力してください。")
   /// Linkを登録してね♪
   internal static let locatorNoData = L10n.tr("Localizable", "locator_no_data", fallback: "Linkを登録してね♪")
+  /// 選択したブラウザでURLを開くことができます。
+  internal static let selectBrowserText = L10n.tr("Localizable", "select_browser_text", fallback: "選択したブラウザでURLを開くことができます。")
+  /// アプリのテーマカラーを選択することができます。
+  internal static let selectColorText = L10n.tr("Localizable", "select_color_text", fallback: "アプリのテーマカラーを選択することができます。")
   /// 起動するブラウザを変更する
   internal static let settingSectionAppBrowser = L10n.tr("Localizable", "setting_section_app_browser", fallback: "起動するブラウザを変更する")
   /// アプリのテーマカラーを変更する

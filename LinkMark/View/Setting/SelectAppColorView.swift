@@ -26,12 +26,12 @@ struct SelectAppColorView: View {
         VStack {
             Spacer()
 
-            Text("Browser")
+            Text("ThemaColor")
                 .fontWeight(.bold)
                 .foregroundStyle(.exText)
                 .padding(.top, 70)
             
-            Text("選択したブラウザでURLを開くことができます。")
+            Text(L10n.selectColorText)
                 .foregroundStyle(.exText)
                 .padding(.top, 10)
                 .font(.caption)
@@ -39,7 +39,6 @@ struct SelectAppColorView: View {
             List(AppThemaColor.allCases, id: \.self) { color in
                 Button {
                     rootEnvironment.setAppColor(color: color)
-                    rootEnvironment.changeAppColor(color: color)
                 } label: {
                     HStack {
                         
@@ -51,7 +50,7 @@ struct SelectAppColorView: View {
                         
                         Spacer()
                         
-                        if rootEnvironment.appColor == AppThemaColor.getColor(color.rawValue) {
+                        if rootEnvironment.appColor == color {
                             Image(systemName: "checkmark")
                                 .foregroundStyle(.exText)
                         }

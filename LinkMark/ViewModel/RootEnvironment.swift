@@ -18,7 +18,7 @@ class RootEnvironment: ObservableObject {
     @Published private(set) var appLocked = false
     @Published private(set) var editSortMode: EditMode = .inactive
     @Published private(set) var selectBrowser: BrowserConfig = .safari
-    @Published private(set) var appColor: Color = .exRed
+    @Published private(set) var appColor: AppThemaColor = .red
     
     private var oldNavigatePath: [ScreenPath] = []
     private var countInterstitial: Int = 0
@@ -31,14 +31,13 @@ class RootEnvironment: ObservableObject {
     private init(repositoryDependency: RepositoryDependency = RepositoryDependency()) {
         keyChainRepository = repositoryDependency.keyChainRepository
         userDefaultsRepository = repositoryDependency.userDefaultsRepository
-        setAppLock()
         
+        getAppLock()
+        getAppColor()
+        getSelectBrowser()
         getCountInterstitial()
         
         observeNavigatePath()
-        
-        changeAppColor(color: getAppColor())
-        changeSelectBrowser(browser: getSelectBrowser())
     }
 }
 
@@ -70,7 +69,7 @@ extension RootEnvironment {
     }
 
     /// アプリにロックがかけてあるかをチェック
-    private func setAppLock() {
+    private func getAppLock() {
         appLocked = keyChainRepository.getData().count == 4
     }
     
@@ -115,34 +114,26 @@ extension RootEnvironment {
     }
     
     /// ブラウザを取得
-    public func getSelectBrowser() -> BrowserConfig {
+    private func getSelectBrowser() {
         let browser = userDefaultsRepository.getStringData(key: UserDefaultsKey.SELECT_BROWSER)
-        return BrowserConfig(rawValue: browser) ?? BrowserConfig.safari
+        selectBrowser = BrowserConfig(rawValue: browser) ?? BrowserConfig.safari
     }
 
     /// ブラウザを登録
     public func setSelectBrowser(browser: BrowserConfig) {
+        selectBrowser = browser
         userDefaultsRepository.setStringData(key: UserDefaultsKey.SELECT_BROWSER, value: browser.rawValue)
     }
     
-    /// ブラウザを反映
-    public func changeSelectBrowser(browser: BrowserConfig) {
-        selectBrowser = browser
-    }
-    
     /// アプリカラーを取得
-    public func getAppColor() -> AppThemaColor {
+    private func getAppColor() {
         let color = userDefaultsRepository.getStringData(key: UserDefaultsKey.APP_COLOR)
-        return AppThemaColor(rawValue: color) ?? AppThemaColor.red
+        appColor = AppThemaColor(rawValue: color) ?? AppThemaColor.red
     }
 
     /// アプリカラーを登録
     public func setAppColor(color: AppThemaColor) {
+        appColor = color
         userDefaultsRepository.setStringData(key: UserDefaultsKey.APP_COLOR, value: color.rawValue)
-    }
-    
-    /// アプリカラーを反映
-    public func changeAppColor(color: AppThemaColor) {
-        appColor = AppThemaColor.getColor(color.rawValue)
     }
 }

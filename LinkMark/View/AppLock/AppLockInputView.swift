@@ -48,14 +48,14 @@ struct AppLockInputView: View {
                     .fontWeight(.bold)
                     .padding(10)
                     .frame(width: 100)
-                    .background(password.count != 4 ? .exLightGray : .exPositive)
+                    .background(password.count != 4 ? .exLightGray : rootEnvironment.appColor.color)
                     .foregroundStyle(password.count != 4 ? .gray : .white)
                     .clipShape(RoundedRectangle(cornerRadius: 8))
                     .overlay {
                         RoundedRectangle(cornerRadius: 8)
                             .stroke(style: StrokeStyle(lineWidth: 2))
                             .frame(width: 100)
-                            .foregroundStyle(password.count != 4 ? .exLightGray : .exPositive)
+                            .foregroundStyle(password.count != 4 ? .exLightGray : rootEnvironment.appColor.color)
                     }.padding(.vertical, 20)
                     .shadow(color: password.count != 4 ? .clear : .gray, radius: 3, x: 4, y: 4)
 
@@ -63,7 +63,7 @@ struct AppLockInputView: View {
 
             Spacer()
 
-            NumberKeyboardView(password: $password, color: rootEnvironment.appColor)
+            NumberKeyboardView(password: $password, color: rootEnvironment.appColor.color)
                 .ignoresSafeArea(.all)
         }.onDisappear {
             if viewModel.entryFlag {
