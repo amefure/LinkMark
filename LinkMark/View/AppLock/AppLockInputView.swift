@@ -9,15 +9,18 @@ import SwiftUI
 
 /// 設定ページからモーダルとして呼び出される
 struct AppLockInputView: View {
-    // MARK: - Receive
-
-    @Binding var isLock: Bool
-
-    // MARK: - View
-
-    @State private var password: [String] = []
-
+    
+    // MARK: - ViewModel
     @StateObject private var viewModel = AppLockInputViewModel()
+    
+    // MARK: - Receive
+    @Binding var isLock: Bool
+    
+    // MARK: - View
+    @State private var password: [String] = []
+    
+    // MARK: - Environment
+    @ObservedObject private var rootEnvironment = RootEnvironment.shared
 
     @Environment(\.dismiss) private var dismiss
 
@@ -60,7 +63,7 @@ struct AppLockInputView: View {
 
             Spacer()
 
-            NumberKeyboardView(password: $password)
+            NumberKeyboardView(password: $password, color: rootEnvironment.appColor)
                 .ignoresSafeArea(.all)
         }.onDisappear {
             if viewModel.entryFlag {

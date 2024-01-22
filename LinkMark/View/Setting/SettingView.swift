@@ -18,9 +18,12 @@ struct SettingView: View {
     @State private var isLock: Bool = false
     @State private var isDaysLaterFlag: Bool = false
     @State private var isAgeMonthFlag: Bool = false
-    @State private var show: Bool = false
+    @State private var showSelectBrowserView: Bool = false
+    @State private var showAppColorView: Bool = false
     
     // MARK: - Environment
+    @ObservedObject private var rootEnvironment = RootEnvironment.shared
+    
     @Environment(\.dismiss) var dismiss
 
     var body: some View {
@@ -36,23 +39,40 @@ struct SettingView: View {
                 // MARK: - (1)
 
                 Section(header: Text(L10n.settingSectionAppTitle),
-                        footer: Text(L10n.settingSectionAppDesc))
-                {
+                        footer: Text(L10n.settingSectionAppDesc)) {
+                    
+                    HStack {
+                        Image(systemName: "paintpalette")
+                            
+                        Button {
+                            showAppColorView = true
+                        } label: {
+                            Text(L10n.settingSectionAppColor)
+                        }
+                        
+                        Spacer()
+                        
+                        Text(rootEnvironment.getAppColor().name)
+                        
+                    }.sheet(isPresented: $showAppColorView, content: {
+                        SelectAppColorView()
+                    })
+                    .foregroundStyle(.white)
                     
                     HStack {
                         Image(systemName: "network")
                             
                         Button {
-                            show = true
+                            showSelectBrowserView = true
                         } label: {
                             Text(L10n.settingSectionAppBrowser)
                         }
                         
                         Spacer()
                         
-                        Text(viewModel.getSelectBrowser().rawValue)
+                        Text(rootEnvironment.selectBrowser.rawValue)
                         
-                    }.sheet(isPresented: $show, content: {
+                    }.sheet(isPresented: $showSelectBrowserView, content: {
                         SelectBrowserView()
                     })
                     .foregroundStyle(.white)
@@ -73,7 +93,7 @@ struct SettingView: View {
                         AppLockInputView(isLock: $isLock)
                     })
                     .foregroundStyle(.white)
-                }.listRowBackground(Color.exRed)
+                }.listRowBackground(rootEnvironment.appColor)
 
                 // MARK: - (2)
 
@@ -86,7 +106,7 @@ struct SettingView: View {
 //                                Image(systemName: "hand.thumbsup")
 //                                Text(L10n.settingSectionLinkReview)
 //                            }
-//                        }).listRowBackground(Color.exRed)
+//                        }).listRowBackground(rootEnvironment.appColor)
 //                            .foregroundStyle(.white)
 //                    }
 
@@ -102,7 +122,7 @@ struct SettingView: View {
 //                                
 //                            Text(L10n.settingSectionLinkRecommend)
 //                        }
-//                    }.listRowBackground(Color.exRed)
+//                    }.listRowBackground(rootEnvironment.appColor)
 //                        .foregroundStyle(.white)
 
                     if let url = URL(string: UrlLinkConfig.APP_CONTACT_URL) {
@@ -113,7 +133,7 @@ struct SettingView: View {
                                 Text(L10n.settingSectionLinkContact)
                                 Image(systemName: "link").font(.caption)
                             }
-                        }).listRowBackground(Color.exRed)
+                        }).listRowBackground(rootEnvironment.appColor)
                             .foregroundStyle(.white)
                     }
 
@@ -125,7 +145,7 @@ struct SettingView: View {
                                 Text(L10n.settingSectionLinkTerms)
                                 Image(systemName: "link").font(.caption)
                             }
-                        }).listRowBackground(Color.exRed)
+                        }).listRowBackground(rootEnvironment.appColor)
                             .foregroundStyle(.white)
                     }
                 }

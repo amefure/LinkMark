@@ -12,15 +12,11 @@ import UIKit
 class SettingViewModel: ObservableObject {
     @Published var isShowPassInput: Bool = false
     @Published private(set) var isLock: Bool = false
-    /// リワードボタン用
-    @Published var isAlertReward: Bool = false
 
     private let keyChainRepository: KeyChainRepository
-    private let userDefaultsRepository: UserDefaultsRepository
 
     init(repositoryDependency: RepositoryDependency = RepositoryDependency()) {
         keyChainRepository = repositoryDependency.keyChainRepository
-        userDefaultsRepository = repositoryDependency.userDefaultsRepository
         
         checkAppLock()
     }
@@ -39,17 +35,6 @@ class SettingViewModel: ObservableObject {
     /// アプリロックパスワードをリセット
     public func deletePassword() {
         keyChainRepository.delete()
-    }
-    
-    /// ブラウザを取得
-    public func getSelectBrowser() -> BrowserConfig {
-        let browser = userDefaultsRepository.getStringData(key: UserDefaultsKey.SELECT_BROWSER)
-        return BrowserConfig(rawValue: browser) ?? BrowserConfig.safari
-    }
-
-    /// ブラウザを登録
-    public func setSelectBrowser(browser: BrowserConfig) {
-        userDefaultsRepository.setStringData(key: UserDefaultsKey.SELECT_BROWSER, value: browser.rawValue)
     }
     
     // MARK: - Share Logic

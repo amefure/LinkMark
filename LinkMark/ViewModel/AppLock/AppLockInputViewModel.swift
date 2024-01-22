@@ -8,7 +8,7 @@
 import UIKit
 
 class AppLockInputViewModel: ObservableObject {
-    @Published var entryFlag: Bool = false
+    @Published private(set) var entryFlag: Bool = false
 
     private let keyChainRepository: KeyChainRepository
 

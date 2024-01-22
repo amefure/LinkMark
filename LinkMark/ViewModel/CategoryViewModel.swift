@@ -11,7 +11,7 @@ class CategoryViewModel: ObservableObject {
     
     static let shared = CategoryViewModel()
     
-    @Published var categorys: [Category] = []
+    @Published private(set) var categorys: [Category] = []
 
     private var categoryRepository: CategoryRepository
     

@@ -9,8 +9,8 @@ import SwiftUI
 
 struct SelectBrowserView: View {
     
-    @StateObject private var viewModel = SettingViewModel()
-    @State private var selectBrowser: BrowserConfig = .safari
+    // MARK: - Environment
+    @ObservedObject private var rootEnvironment = RootEnvironment.shared
     
     var body: some View {
         VStack {
@@ -28,16 +28,16 @@ struct SelectBrowserView: View {
             
             List(BrowserConfig.allCases, id: \.self) { browser in
                 Button {
-                    selectBrowser = browser
-                    viewModel.setSelectBrowser(browser: browser)
+                    rootEnvironment.setSelectBrowser(browser: browser)
+                    rootEnvironment.changeSelectBrowser(browser: browser)
                 } label: {
                     HStack {
                         Text(browser.rawValue)
                         
                         Spacer()
                         
-                        if selectBrowser == browser {
-                            Color.exRed
+                        if rootEnvironment.selectBrowser == browser {
+                            rootEnvironment.appColor
                                 .frame(width: 20, height: 20)
                                 .clipShape(RoundedRectangle(cornerRadius: 20))
                         }
@@ -45,9 +45,6 @@ struct SelectBrowserView: View {
                 }.foregroundStyle(.exText)
             }
         }.background(.exThema)
-            .onAppear {
-                selectBrowser = viewModel.getSelectBrowser()
-            }
     }
 }
 

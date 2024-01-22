@@ -5,9 +5,9 @@
 //  Created by t&a on 2024/01/20.
 //
 
+import UIKit
 import Combine
 import LocalAuthentication
-import UIKit
 
 class AppLockViewModel: ObservableObject {
     @Published var isShowApp = false // アプリメイン画面遷移

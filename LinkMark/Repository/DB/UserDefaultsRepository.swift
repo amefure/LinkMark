@@ -12,6 +12,8 @@ class UserDefaultsKey {
     static let COUNT_INTERSTITIAL = "CountInterstitial"
     /// 規定ブラウザ
     static let SELECT_BROWSER = "SELECT_BROWSER"
+    /// アプリカラー
+    static let APP_COLOR = "APP_COLOR"
 }
 
 /// UserDefaultsの基底クラス

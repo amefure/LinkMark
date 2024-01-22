@@ -39,6 +39,7 @@
 
 
 "setting_section_app_title" = "App Settings";
+"setting_section_app_color" = "Change app theme color";
 "setting_section_app_browser" = "Change the browser to start";
 "setting_section_app_desc" = "・You can lock the app by setting a password.";
 "setting_section_app_lock" = "Lock the app";

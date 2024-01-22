@@ -11,7 +11,7 @@ class LocatorViewModel: ObservableObject {
     
     static let shared = LocatorViewModel()
     
-    @Published var locators: [Locator] = []
+    @Published private(set) var locators: [Locator] = []
     
     private var locatorRepository: LocatorRepository
     private var categoryRepository: CategoryRepository

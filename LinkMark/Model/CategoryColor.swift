@@ -31,4 +31,19 @@ enum CategoryColor: String, CaseIterable {
                 .exRed
         }
     }
+    
+    var name: String {
+        return switch self {
+        case .red:
+            "ローズピンク"
+        case .yellow:
+            "ライトイエロー"
+        case .green:
+            "ミントグリーン"
+        case .blue:
+            "スカイブルー"
+        case .purple:
+            "ラベンダー"
+        }
+    }
 }

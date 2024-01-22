@@ -13,16 +13,18 @@ class RootEnvironment: ObservableObject {
     
     static let shared = RootEnvironment()
     
-    private let keyChainRepository: KeyChainRepository
-    private let userDefaultsRepository: UserDefaultsRepository
-    
     @Published var navigatePath: [ScreenPath] = []
     @Published private(set) var showInterstitial = false
     @Published private(set) var appLocked = false
     @Published private(set) var editSortMode: EditMode = .inactive
+    @Published private(set) var selectBrowser: BrowserConfig = .safari
+    @Published private(set) var appColor: Color = .exRed
     
     private var oldNavigatePath: [ScreenPath] = []
     private var countInterstitial: Int = 0
+    
+    private let keyChainRepository: KeyChainRepository
+    private let userDefaultsRepository: UserDefaultsRepository
     
     private var cancellables: Set<AnyCancellable> = []
 
@@ -34,8 +36,14 @@ class RootEnvironment: ObservableObject {
         getCountInterstitial()
         
         observeNavigatePath()
+        
+        changeAppColor(color: getAppColor())
+        changeSelectBrowser(browser: getSelectBrowser())
     }
-    
+}
+
+// MARK: - Status
+extension RootEnvironment {
     /// ナビゲーションを観測してインタースティシャルをカウント
     private func observeNavigatePath() {
         $navigatePath
@@ -58,8 +66,7 @@ class RootEnvironment: ObservableObject {
                     }
                 }
                 self.oldNavigatePath = newPath
-            }
-            .store(in: &cancellables)
+            }.store(in: &cancellables)
     }
 
     /// アプリにロックがかけてあるかをチェック
@@ -79,6 +86,11 @@ class RootEnvironment: ObservableObject {
     public func inActiveEditMode() {
         editSortMode = .inactive
     }
+}
+
+
+// MARK: - UserDefaultsRepository
+extension RootEnvironment {
     
     /// インタースティシャル広告表示完了済みにする
     public func resetShowInterstitial() {
@@ -101,10 +113,36 @@ class RootEnvironment: ObservableObject {
         countInterstitial = userDefaultsRepository.getIntData(key: UserDefaultsKey.COUNT_INTERSTITIAL
         )
     }
+    
+    /// ブラウザを取得
+    public func getSelectBrowser() -> BrowserConfig {
+        let browser = userDefaultsRepository.getStringData(key: UserDefaultsKey.SELECT_BROWSER)
+        return BrowserConfig(rawValue: browser) ?? BrowserConfig.safari
+    }
+
+    /// ブラウザを登録
+    public func setSelectBrowser(browser: BrowserConfig) {
+        userDefaultsRepository.setStringData(key: UserDefaultsKey.SELECT_BROWSER, value: browser.rawValue)
+    }
+    
+    /// ブラウザを反映
+    public func changeSelectBrowser(browser: BrowserConfig) {
+        selectBrowser = browser
+    }
+    
+    /// アプリカラーを取得
+    public func getAppColor() -> CategoryColor {
+        let color = userDefaultsRepository.getStringData(key: UserDefaultsKey.APP_COLOR)
+        return CategoryColor(rawValue: color) ?? CategoryColor.red
+    }
+
+    /// アプリカラーを登録
+    public func setAppColor(color: CategoryColor) {
+        userDefaultsRepository.setStringData(key: UserDefaultsKey.APP_COLOR, value: color.rawValue)
+    }
+    
+    /// アプリカラーを反映
+    public func changeAppColor(color: CategoryColor) {
+        appColor = CategoryColor.getColor(color.rawValue)
+    }
 }
-
-
-
-
-
-

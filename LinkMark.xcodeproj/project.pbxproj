@@ -60,6 +60,7 @@
 		128FC4AA2B5E243E003E3B53 /* BrowserConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128FC4A92B5E243E003E3B53 /* BrowserConfig.swift */; };
 		128FC4AC2B5E2481003E3B53 /* SelectBrowserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128FC4AB2B5E2481003E3B53 /* SelectBrowserView.swift */; };
 		128FC4AE2B5E2BFD003E3B53 /* ControlWebViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128FC4AD2B5E2BFD003E3B53 /* ControlWebViewModel.swift */; };
+		128FC4B02B5E307D003E3B53 /* SelectAppColorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128FC4AF2B5E307D003E3B53 /* SelectAppColorView.swift */; };
 		7F2BEE17A18D4463FA94A011 /* Pods_LinkMark.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BAE40D35CA5E1D19DF82288 /* Pods_LinkMark.framework */; };
 /* End PBXBuildFile section */
 
@@ -120,6 +121,7 @@
 		128FC4A92B5E243E003E3B53 /* BrowserConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowserConfig.swift; sourceTree = "<group>"; };
 		128FC4AB2B5E2481003E3B53 /* SelectBrowserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectBrowserView.swift; sourceTree = "<group>"; };
 		128FC4AD2B5E2BFD003E3B53 /* ControlWebViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlWebViewModel.swift; sourceTree = "<group>"; };
+		128FC4AF2B5E307D003E3B53 /* SelectAppColorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectAppColorView.swift; sourceTree = "<group>"; };
 		310D77694CE249A028E5BF92 /* Pods-LinkMark.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LinkMark.release.xcconfig"; path = "Target Support Files/Pods-LinkMark/Pods-LinkMark.release.xcconfig"; sourceTree = "<group>"; };
 		4BAE40D35CA5E1D19DF82288 /* Pods_LinkMark.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LinkMark.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC133F7F981F41DD71F089FA /* Pods-LinkMark.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LinkMark.debug.xcconfig"; path = "Target Support Files/Pods-LinkMark/Pods-LinkMark.debug.xcconfig"; sourceTree = "<group>"; };
@@ -349,6 +351,7 @@
 			children = (
 				128FC4822B5B9396003E3B53 /* SettingView.swift */,
 				128FC4AB2B5E2481003E3B53 /* SelectBrowserView.swift */,
+				128FC4AF2B5E307D003E3B53 /* SelectAppColorView.swift */,
 			);
 			path = Setting;
 			sourceTree = "<group>";
@@ -574,6 +577,7 @@
 				128FC47A2B5AB718003E3B53 /* ScreenPath.swift in Sources */,
 				12746ACD2B58FC81009D1473 /* InputView.swift in Sources */,
 				12746AD02B594922009D1473 /* CustomNotifyDialogView.swift in Sources */,
+				128FC4B02B5E307D003E3B53 /* SelectAppColorView.swift in Sources */,
 				1222B9892B47B14900803C59 /* CoreDataRepository.swift in Sources */,
 				128FC4982B5B9F65003E3B53 /* AppLockInputView.swift in Sources */,
 				12746ACB2B58FBAA009D1473 /* SectionTitleView.swift in Sources */,

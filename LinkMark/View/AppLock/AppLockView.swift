@@ -67,7 +67,7 @@ struct AppLockView: View {
 
             Spacer()
 
-            NumberKeyboardView(password: $password)
+            NumberKeyboardView(password: $password, color: rootEnvironment.appColor)
                 .ignoresSafeArea(.all)
         }.alert(L10n.appLockFailedPassword, isPresented: $viewModel.isShowFailureAlert) {
             Button("OK") {}
@@ -81,6 +81,8 @@ struct AppLockView: View {
 
 struct NumberKeyboardView: View {
     @Binding var password: [String]
+    
+    public var color: Color = .exRed
 
     private var height: CGFloat {
         DeviceSizeManager.isSESize ? 60 : 80
@@ -89,63 +91,63 @@ struct NumberKeyboardView: View {
     var body: some View {
         VStack(spacing: 0) {
             HStack(spacing: 0) {
-                NumberButton(number: "1", password: $password)
+                NumberButton(number: "1", password: $password, color: color)
 
                 Rectangle()
                     .frame(width: 1, height: height)
 
-                NumberButton(number: "2", password: $password)
+                NumberButton(number: "2", password: $password, color: color)
 
                 Rectangle()
                     .frame(width: 1, height: height)
 
-                NumberButton(number: "3", password: $password)
+                NumberButton(number: "3", password: $password, color: color)
             }
 
             Rectangle()
                 .frame(width: DeviceSizeManager.deviceWidth, height: 1)
 
             HStack(spacing: 0) {
-                NumberButton(number: "4", password: $password)
+                NumberButton(number: "4", password: $password, color: color)
 
                 Rectangle()
                     .frame(width: 1, height: height)
 
-                NumberButton(number: "5", password: $password)
+                NumberButton(number: "5", password: $password, color: color)
 
                 Rectangle()
                     .frame(width: 1, height: height)
 
-                NumberButton(number: "6", password: $password)
+                NumberButton(number: "6", password: $password, color: color)
             }
 
             Rectangle()
                 .frame(width: DeviceSizeManager.deviceWidth, height: 1)
 
             HStack(spacing: 0) {
-                NumberButton(number: "7", password: $password)
+                NumberButton(number: "7", password: $password, color: color)
 
                 Rectangle()
                     .frame(width: 1, height: height)
 
-                NumberButton(number: "8", password: $password)
+                NumberButton(number: "8", password: $password, color: color)
 
                 Rectangle()
                     .frame(width: 1, height: height)
 
-                NumberButton(number: "9", password: $password)
+                NumberButton(number: "9", password: $password, color: color)
             }
 
             Rectangle()
                 .frame(width: DeviceSizeManager.deviceWidth, height: 1)
 
             HStack(spacing: 0) {
-                NumberButton(number: "-", password: $password)
+                NumberButton(number: "-", password: $password, color: color)
 
                 Rectangle()
                     .frame(width: 1, height: height)
 
-                NumberButton(number: "0", password: $password)
+                NumberButton(number: "0", password: $password, color: color)
 
                 Rectangle()
                     .frame(width: 1, height: height)
@@ -155,7 +157,7 @@ struct NumberKeyboardView: View {
                 } label: {
                     Image(systemName: "delete.backward")
                         .frame(width: DeviceSizeManager.deviceWidth / 3, height: height)
-                        .background(.exRed)
+                        .background(color)
                 }
             }
         }.foregroundStyle(.white)
@@ -182,6 +184,7 @@ struct DisplayPasswordView: View {
 struct NumberButton: View {
     public let number: String
     @Binding var password: [String]
+    public var color: Color = .exRed
 
     private var height: CGFloat {
         DeviceSizeManager.isSESize ? 60 : 80
@@ -195,7 +198,7 @@ struct NumberButton: View {
         } label: {
             Text(number)
                 .frame(width: DeviceSizeManager.deviceWidth / 3, height: height)
-                .background(.exRed)
+                .background(color)
         }
     }
 }
