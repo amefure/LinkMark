@@ -75,7 +75,7 @@ struct CategoryListView: View {
                             
                             NavigationLink(value: ScreenPath.locatorList(category: category)) {
                                 HStack {
-                                    CategoryColor.getColor(category.wrappedColor)
+                                    AppThemaColor.getColor(category.wrappedColor)
                                         .frame(width: categoryRowColorSize, height: categoryRowColorSize)
                                         .clipShape(RoundedRectangle(cornerRadius: categoryRowColorSize))
                                     Text(category.wrappedName)

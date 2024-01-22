@@ -36,14 +36,14 @@ struct SelectAppColorView: View {
                 .padding(.top, 10)
                 .font(.caption)
             
-            List(CategoryColor.allCases, id: \.self) { color in
+            List(AppThemaColor.allCases, id: \.self) { color in
                 Button {
                     rootEnvironment.setAppColor(color: color)
                     rootEnvironment.changeAppColor(color: color)
                 } label: {
                     HStack {
                         
-                        CategoryColor.getColor(color.rawValue)
+                        AppThemaColor.getColor(color.rawValue)
                             .frame(width: categoryRowColorSize, height: categoryRowColorSize)
                             .clipShape(RoundedRectangle(cornerRadius: categoryRowColorSize))
                        
@@ -51,7 +51,7 @@ struct SelectAppColorView: View {
                         
                         Spacer()
                         
-                        if rootEnvironment.appColor == CategoryColor.getColor(color.rawValue) {
+                        if rootEnvironment.appColor == AppThemaColor.getColor(color.rawValue) {
                             Image(systemName: "checkmark")
                                 .foregroundStyle(.exText)
                         }

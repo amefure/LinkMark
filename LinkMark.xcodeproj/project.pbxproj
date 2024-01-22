@@ -37,7 +37,7 @@
 		1274ED3F2B4EE3B000D1A926 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1274ED3E2B4EE3B000D1A926 /* RootView.swift */; };
 		1274ED432B4EE45B00D1A926 /* LocatorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1274ED422B4EE45B00D1A926 /* LocatorViewModel.swift */; };
 		1274ED452B4FB91800D1A926 /* CategoryInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1274ED442B4FB91800D1A926 /* CategoryInputView.swift */; };
-		1274ED472B4FBB2E00D1A926 /* CategoryColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1274ED462B4FBB2E00D1A926 /* CategoryColor.swift */; };
+		1274ED472B4FBB2E00D1A926 /* AppThemaColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1274ED462B4FBB2E00D1A926 /* AppThemaColor.swift */; };
 		128FC4762B5AAC4A003E3B53 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128FC4752B5AAC4A003E3B53 /* HeaderView.swift */; };
 		128FC4782B5AB609003E3B53 /* ControlWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128FC4772B5AB609003E3B53 /* ControlWebView.swift */; };
 		128FC47A2B5AB718003E3B53 /* ScreenPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128FC4792B5AB718003E3B53 /* ScreenPath.swift */; };
@@ -98,7 +98,7 @@
 		1274ED3E2B4EE3B000D1A926 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		1274ED422B4EE45B00D1A926 /* LocatorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocatorViewModel.swift; sourceTree = "<group>"; };
 		1274ED442B4FB91800D1A926 /* CategoryInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryInputView.swift; sourceTree = "<group>"; };
-		1274ED462B4FBB2E00D1A926 /* CategoryColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryColor.swift; sourceTree = "<group>"; };
+		1274ED462B4FBB2E00D1A926 /* AppThemaColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppThemaColor.swift; sourceTree = "<group>"; };
 		128FC4752B5AAC4A003E3B53 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		128FC4772B5AB609003E3B53 /* ControlWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlWebView.swift; sourceTree = "<group>"; };
 		128FC4792B5AB718003E3B53 /* ScreenPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenPath.swift; sourceTree = "<group>"; };
@@ -297,7 +297,7 @@
 			children = (
 				1274ED312B4EC09600D1A926 /* Category+CoreDataClass.swift */,
 				1274ED332B4EC09E00D1A926 /* Locator+CoreDataClass.swift */,
-				1274ED462B4FBB2E00D1A926 /* CategoryColor.swift */,
+				1274ED462B4FBB2E00D1A926 /* AppThemaColor.swift */,
 				1222B9692B46F8CB00803C59 /* LinkMark.xcdatamodeld */,
 			);
 			name = CoreData;
@@ -563,7 +563,7 @@
 				12746ADA2B5A2A8A009D1473 /* ExString.swift in Sources */,
 				1222B9852B46FADF00803C59 /* Strings.swift in Sources */,
 				128FC4A02B5BF283003E3B53 /* AdsConfig.swift in Sources */,
-				1274ED472B4FBB2E00D1A926 /* CategoryColor.swift in Sources */,
+				1274ED472B4FBB2E00D1A926 /* AppThemaColor.swift in Sources */,
 				12746AD42B596D48009D1473 /* UICustomWebView.swift in Sources */,
 				128FC4762B5AAC4A003E3B53 /* HeaderView.swift in Sources */,
 				1274ED3F2B4EE3B000D1A926 /* RootView.swift in Sources */,

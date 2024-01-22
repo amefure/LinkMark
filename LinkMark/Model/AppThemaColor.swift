@@ -1,5 +1,5 @@
 //
-//  CategoryColor.swift
+//  AppThemaColor.swift
 //  LinkMark
 //
 //  Created by t&a on 2024/01/11.
@@ -8,7 +8,7 @@
 import UIKit
 import SwiftUI
 
-enum CategoryColor: String, CaseIterable {
+enum AppThemaColor: String, CaseIterable {
     case red
     case yellow
     case green

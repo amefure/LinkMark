@@ -39,7 +39,7 @@ struct LocatorListView: View {
                     Text(category.wrappedName)
                         .foregroundStyle(.exText)
                         .frame(width: 150, height: 40)
-                        .background(CategoryColor.getColor(category.wrappedColor))
+                        .background(AppThemaColor.getColor(category.wrappedColor))
                         .clipShape(RoundedRectangle(cornerRadius: 20))
                     
                     HStack {
@@ -125,7 +125,7 @@ struct LocatorListView: View {
                     .foregroundStyle(.white)
                     .fontWeight(.bold)
                     .frame(width: 55, height: 55)
-                    .background(CategoryColor.getColor(category.wrappedColor))
+                    .background(AppThemaColor.getColor(category.wrappedColor))
                     .clipShape(RoundedRectangle(cornerRadius: 55))
                     .shadow(color: .exText, radius: 2, x: 1, y: 1)
             }.offset(x: -30, y: -30)

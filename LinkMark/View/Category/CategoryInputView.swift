@@ -18,7 +18,7 @@ struct CategoryInputView: View {
     
     // MARK: - Input
     @State private var name = ""
-    @State private var selectColor: CategoryColor = .red
+    @State private var selectColor: AppThemaColor = .red
     
     // MARK: - View
     @State private var showFailedDialog = false
@@ -59,11 +59,11 @@ struct CategoryInputView: View {
             
             
             HStack(spacing: 15) {
-                ForEach(CategoryColor.allCases, id: \.self) { color in
+                ForEach(AppThemaColor.allCases, id: \.self) { color in
                     Button {
                         selectColor = color
                     } label: {
-                        CategoryColor.getColor(color.rawValue)
+                        AppThemaColor.getColor(color.rawValue)
                             .frame(width: 50, height: 50)
                             .clipShape(RoundedRectangle(cornerRadius: 50))
                             .overlay {
@@ -102,7 +102,7 @@ struct CategoryInputView: View {
             ).onAppear {
                 if let category = category {
                     name = category.wrappedName
-                    selectColor = CategoryColor(rawValue: category.wrappedColor) ?? .red
+                    selectColor = AppThemaColor(rawValue: category.wrappedColor) ?? .red
                 }
             }
     }

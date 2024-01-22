@@ -131,18 +131,18 @@ extension RootEnvironment {
     }
     
     /// アプリカラーを取得
-    public func getAppColor() -> CategoryColor {
+    public func getAppColor() -> AppThemaColor {
         let color = userDefaultsRepository.getStringData(key: UserDefaultsKey.APP_COLOR)
-        return CategoryColor(rawValue: color) ?? CategoryColor.red
+        return AppThemaColor(rawValue: color) ?? AppThemaColor.red
     }
 
     /// アプリカラーを登録
-    public func setAppColor(color: CategoryColor) {
+    public func setAppColor(color: AppThemaColor) {
         userDefaultsRepository.setStringData(key: UserDefaultsKey.APP_COLOR, value: color.rawValue)
     }
     
     /// アプリカラーを反映
-    public func changeAppColor(color: CategoryColor) {
-        appColor = CategoryColor.getColor(color.rawValue)
+    public func changeAppColor(color: AppThemaColor) {
+        appColor = AppThemaColor.getColor(color.rawValue)
     }
 }
