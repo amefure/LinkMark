@@ -26,6 +26,16 @@ struct CategoryListView: View {
     // MARK: - Combine
     @State private var cancellables: Set<AnyCancellable> = []
     
+    // MARK: - Size & Padding
+    /// カテゴリ行の右カラーアイコンサイズ
+    private var categoryRowColorSize: CGFloat {
+        if DeviceSizeManager.isSESize {
+            return 25
+        } else {
+            return 40
+        }
+    }
+    
     var body: some View {
         ZStack(alignment: .bottomTrailing) {
             
@@ -58,7 +68,7 @@ struct CategoryListView: View {
                 }
                 
                 if viewModel.categorys.count == 0 {
-                    FoundationImageView(title: "NO DATA", msg: L10n.categoryNoData)
+                    FoundationImageView(title: "", msg: L10n.categoryNoData)
                 } else {
                     List {
                         ForEach(viewModel.categorys) { category in
@@ -66,8 +76,8 @@ struct CategoryListView: View {
                             NavigationLink(value: ScreenPath.locatorList(category: category)) {
                                 HStack {
                                     CategoryColor.getColor(category.wrappedColor)
-                                        .frame(width: 40, height: 40)
-                                        .clipShape(RoundedRectangle(cornerRadius: 40))
+                                        .frame(width: categoryRowColorSize, height: categoryRowColorSize)
+                                        .clipShape(RoundedRectangle(cornerRadius: categoryRowColorSize))
                                     Text(category.wrappedName)
                                         .foregroundStyle(.exText)
                                     

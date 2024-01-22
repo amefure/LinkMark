@@ -41,6 +41,17 @@ class SettingViewModel: ObservableObject {
         keyChainRepository.delete()
     }
     
+    /// ブラウザを取得
+    public func getSelectBrowser() -> BrowserConfig {
+        let browser = userDefaultsRepository.getStringData(key: UserDefaultsKey.SELECT_BROWSER)
+        return BrowserConfig(rawValue: browser) ?? BrowserConfig.safari
+    }
+
+    /// ブラウザを登録
+    public func setSelectBrowser(browser: BrowserConfig) {
+        userDefaultsRepository.setStringData(key: UserDefaultsKey.SELECT_BROWSER, value: browser.rawValue)
+    }
+    
     // MARK: - Share Logic
 
     /// アプリシェアロジック

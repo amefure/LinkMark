@@ -57,6 +57,9 @@
 		128FC4A42B5CB608003E3B53 /* ReachabilityUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128FC4A32B5CB608003E3B53 /* ReachabilityUtility.swift */; };
 		128FC4A62B5CBA9F003E3B53 /* FoundationImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128FC4A52B5CBA9F003E3B53 /* FoundationImageView.swift */; };
 		128FC4A82B5D0198003E3B53 /* ExUIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128FC4A72B5D0198003E3B53 /* ExUIApplication.swift */; };
+		128FC4AA2B5E243E003E3B53 /* BrowserConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128FC4A92B5E243E003E3B53 /* BrowserConfig.swift */; };
+		128FC4AC2B5E2481003E3B53 /* SelectBrowserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128FC4AB2B5E2481003E3B53 /* SelectBrowserView.swift */; };
+		128FC4AE2B5E2BFD003E3B53 /* ControlWebViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128FC4AD2B5E2BFD003E3B53 /* ControlWebViewModel.swift */; };
 		7F2BEE17A18D4463FA94A011 /* Pods_LinkMark.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BAE40D35CA5E1D19DF82288 /* Pods_LinkMark.framework */; };
 /* End PBXBuildFile section */
 
@@ -114,6 +117,9 @@
 		128FC4A32B5CB608003E3B53 /* ReachabilityUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReachabilityUtility.swift; sourceTree = "<group>"; };
 		128FC4A52B5CBA9F003E3B53 /* FoundationImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoundationImageView.swift; sourceTree = "<group>"; };
 		128FC4A72B5D0198003E3B53 /* ExUIApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExUIApplication.swift; sourceTree = "<group>"; };
+		128FC4A92B5E243E003E3B53 /* BrowserConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowserConfig.swift; sourceTree = "<group>"; };
+		128FC4AB2B5E2481003E3B53 /* SelectBrowserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectBrowserView.swift; sourceTree = "<group>"; };
+		128FC4AD2B5E2BFD003E3B53 /* ControlWebViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlWebViewModel.swift; sourceTree = "<group>"; };
 		310D77694CE249A028E5BF92 /* Pods-LinkMark.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LinkMark.release.xcconfig"; path = "Target Support Files/Pods-LinkMark/Pods-LinkMark.release.xcconfig"; sourceTree = "<group>"; };
 		4BAE40D35CA5E1D19DF82288 /* Pods_LinkMark.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LinkMark.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC133F7F981F41DD71F089FA /* Pods-LinkMark.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LinkMark.debug.xcconfig"; path = "Target Support Files/Pods-LinkMark/Pods-LinkMark.debug.xcconfig"; sourceTree = "<group>"; };
@@ -204,6 +210,7 @@
 			isa = PBXGroup;
 			children = (
 				12746AD72B5A2006009D1473 /* RootEnvironment.swift */,
+				128FC4AD2B5E2BFD003E3B53 /* ControlWebViewModel.swift */,
 				128FC4912B5B9E0C003E3B53 /* SettingViewModel.swift */,
 				1274ED3A2B4EC8AC00D1A926 /* CategoryViewModel.swift */,
 				1274ED422B4EE45B00D1A926 /* LocatorViewModel.swift */,
@@ -341,6 +348,7 @@
 			isa = PBXGroup;
 			children = (
 				128FC4822B5B9396003E3B53 /* SettingView.swift */,
+				128FC4AB2B5E2481003E3B53 /* SelectBrowserView.swift */,
 			);
 			path = Setting;
 			sourceTree = "<group>";
@@ -387,6 +395,7 @@
 			children = (
 				128FC49F2B5BF283003E3B53 /* AdsConfig.swift */,
 				128FC4A12B5CAFC1003E3B53 /* UrlLinkConfig.swift */,
+				128FC4A92B5E243E003E3B53 /* BrowserConfig.swift */,
 			);
 			name = Config;
 			sourceTree = "<group>";
@@ -541,6 +550,7 @@
 				128FC4922B5B9E0C003E3B53 /* SettingViewModel.swift in Sources */,
 				1274ED452B4FB91800D1A926 /* CategoryInputView.swift in Sources */,
 				1274ED322B4EC09600D1A926 /* Category+CoreDataClass.swift in Sources */,
+				128FC4AE2B5E2BFD003E3B53 /* ControlWebViewModel.swift in Sources */,
 				1274ED362B4EC47900D1A926 /* CategoryListView.swift in Sources */,
 				1222B9842B46FADF00803C59 /* Assets.swift in Sources */,
 				1274ED3B2B4EC8AC00D1A926 /* CategoryViewModel.swift in Sources */,
@@ -568,6 +578,8 @@
 				128FC4982B5B9F65003E3B53 /* AppLockInputView.swift in Sources */,
 				12746ACB2B58FBAA009D1473 /* SectionTitleView.swift in Sources */,
 				128FC48A2B5B9C64003E3B53 /* BiometricAuthRepository.swift in Sources */,
+				128FC4AA2B5E243E003E3B53 /* BrowserConfig.swift in Sources */,
+				128FC4AC2B5E2481003E3B53 /* SelectBrowserView.swift in Sources */,
 				128FC4A82B5D0198003E3B53 /* ExUIApplication.swift in Sources */,
 				128FC48C2B5B9C78003E3B53 /* KeyChainRepository.swift in Sources */,
 				128FC48E2B5B9CD6003E3B53 /* DeviceSizeManager.swift in Sources */,

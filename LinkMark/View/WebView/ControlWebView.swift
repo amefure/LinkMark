@@ -10,6 +10,7 @@ import SwiftUI
 // Swift UIでWebViewを操作するための枠View
 struct ControlWebView: View {
     
+    private let viewModel = ControlWebViewModel()
     // MARK: - Receive
     public var url: URL
     private let uICustomWebView: UICustomWebView!
@@ -61,7 +62,8 @@ struct ControlWebView: View {
                 
                 
                 Button {
-                    uICustomWebView.openBrowser()
+                    let browser = viewModel.getSelectBrowser()
+                    uICustomWebView.openBrowser(browser: browser)
                 } label: {
                     Image(systemName: "network")
                         .font(.system(size: 18))

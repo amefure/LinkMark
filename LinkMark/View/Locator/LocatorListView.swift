@@ -62,7 +62,7 @@ struct LocatorListView: View {
                 }
                 
                 if viewModel.locators.count == 0 {
-                    FoundationImageView(title: "NO DATA", msg: L10n.locatorNoData)
+                    FoundationImageView(title: "", msg: L10n.locatorNoData)
                 } else {
                     
                     List {

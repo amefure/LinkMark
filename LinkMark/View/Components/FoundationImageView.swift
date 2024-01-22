@@ -17,11 +17,14 @@ struct FoundationImageView: View {
             
             Spacer()
             
-            Text(title)
-                .font(.title)
-                .opacity(0.7)
+            if !title.isEmpty {
+                Text(title)
+                    .font(.title)
+                    .opacity(0.7)
+                
+                Spacer()
+            }
             
-            Spacer()
             
             Text(msg)
             

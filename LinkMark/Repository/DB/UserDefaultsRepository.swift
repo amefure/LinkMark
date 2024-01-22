@@ -8,8 +8,10 @@
 import UIKit
 
 class UserDefaultsKey {
-    /// 容量制限
+    /// インタースティシャル広告の表示カウント
     static let COUNT_INTERSTITIAL = "CountInterstitial"
+    /// 規定ブラウザ
+    static let SELECT_BROWSER = "SELECT_BROWSER"
 }
 
 /// UserDefaultsの基底クラス

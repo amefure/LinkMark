@@ -78,6 +78,8 @@ internal enum L10n {
   internal static let locatorInputValidationUrl = L10n.tr("Localizable", "locator_input_validation_url", fallback: "・有効なリンクを入力してください。")
   /// Linkを登録してね♪
   internal static let locatorNoData = L10n.tr("Localizable", "locator_no_data", fallback: "Linkを登録してね♪")
+  /// 起動するブラウザを変更する
+  internal static let settingSectionAppBrowser = L10n.tr("Localizable", "setting_section_app_browser", fallback: "起動するブラウザを変更する")
   /// ・アプリにパスワードを設定してロックをかけることができます。
   internal static let settingSectionAppDesc = L10n.tr("Localizable", "setting_section_app_desc", fallback: "・アプリにパスワードを設定してロックをかけることができます。")
   /// アプリをロックする

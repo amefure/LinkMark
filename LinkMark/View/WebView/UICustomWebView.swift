@@ -71,13 +71,30 @@ extension UICustomWebView {
         webView.goForward()
     }
     
-    public func openBrowser(){
+    public func openBrowser(browser: BrowserConfig){
         guard let url = webView.url else { return }
-//        let url2 = URL(string: "googlechrome://tech.amefure.com/")
-//        if UIApplication.shared.canOpenURL(url2!) {
-//            UIApplication.shared.open(url2!)
-//        }
-        UIApplication.shared.open(url)
+        switch browser {
+            
+        case .safari:
+            // Safariで起動する
+            guard UIApplication.shared.canOpenURL(url) else { return }
+            UIApplication.shared.open(url)
+        case .chrome:
+            // Chromeで起動する
+            // URL内の「http」→ 「googlechrome」に置換
+            // URL内の「https」→ 「googlechromes」に置換
+            let urlString = url.absoluteString
+            let pattern = "http"
+            let with = "googlechrome"
+            
+            guard let firstMatchRange = urlString.range(of: pattern) else { return }
+
+            let replacedString = urlString.replacingOccurrences(of: pattern, with: with, options: [], range: firstMatchRange)
+            
+            guard let chromeUrl = URL(string: replacedString) else { return }
+            guard UIApplication.shared.canOpenURL(chromeUrl) else { return }
+            UIApplication.shared.open(chromeUrl)
+        }
     }
     
     public func reload(){

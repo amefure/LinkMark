@@ -18,6 +18,7 @@ struct SettingView: View {
     @State private var isLock: Bool = false
     @State private var isDaysLaterFlag: Bool = false
     @State private var isAgeMonthFlag: Bool = false
+    @State private var show: Bool = false
     
     // MARK: - Environment
     @Environment(\.dismiss) var dismiss
@@ -37,6 +38,24 @@ struct SettingView: View {
                 Section(header: Text(L10n.settingSectionAppTitle),
                         footer: Text(L10n.settingSectionAppDesc))
                 {
+                    
+                    HStack {
+                        Image(systemName: "network")
+                            
+                        Button {
+                            show = true
+                        } label: {
+                            Text(L10n.settingSectionAppBrowser)
+                        }
+                        
+                        Spacer()
+                        
+                        Text(viewModel.getSelectBrowser().rawValue)
+                        
+                    }.sheet(isPresented: $show, content: {
+                        SelectBrowserView()
+                    })
+                    .foregroundStyle(.white)
 
                     HStack {
                         Image(systemName: "lock.iphone")

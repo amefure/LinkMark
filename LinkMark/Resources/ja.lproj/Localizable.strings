@@ -39,6 +39,7 @@
 
 
 "setting_section_app_title" = "アプリ設定";
+"setting_section_app_browser" = "起動するブラウザを変更する";
 "setting_section_app_desc" = "・アプリにパスワードを設定してロックをかけることができます。";
 "setting_section_app_lock" = "アプリをロックする";
 
