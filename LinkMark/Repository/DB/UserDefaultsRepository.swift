@@ -18,7 +18,6 @@ class UserDefaultsKey {
 
 /// UserDefaultsの基底クラス
 class UserDefaultsRepository {
-    static let sheard = UserDefaultsRepository()
 
     private let userDefaults = UserDefaults.standard
 
