@@ -30,6 +30,7 @@
 		121777DB2B63EE7900557902 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1222B9832B46FADF00803C59 /* Strings.swift */; };
 		121777DE2B64CE3700557902 /* ShareViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121777DD2B64CE3700557902 /* ShareViewModel.swift */; };
 		121777DF2B64DB8200557902 /* EXCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12746ADF2B5A588D009D1473 /* EXCollection.swift */; };
+		121777E12B64EFF900557902 /* ExURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121777E02B64EFF900557902 /* ExURL.swift */; };
 		1222B95F2B46F8CA00803C59 /* LinkMarkApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1222B95E2B46F8CA00803C59 /* LinkMarkApp.swift */; };
 		1222B9632B46F8CB00803C59 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1222B9622B46F8CB00803C59 /* Images.xcassets */; };
 		1222B9662B46F8CB00803C59 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1222B9652B46F8CB00803C59 /* Preview Assets.xcassets */; };
@@ -121,6 +122,7 @@
 		121777C92B63ECF100557902 /* AppGroupsKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppGroupsKey.swift; sourceTree = "<group>"; };
 		121777CC2B63ED0400557902 /* UserDefaultsKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsKey.swift; sourceTree = "<group>"; };
 		121777DD2B64CE3700557902 /* ShareViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewModel.swift; sourceTree = "<group>"; };
+		121777E02B64EFF900557902 /* ExURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExURL.swift; sourceTree = "<group>"; };
 		1222B95B2B46F8CA00803C59 /* LinkMark.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LinkMark.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1222B95E2B46F8CA00803C59 /* LinkMarkApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkMarkApp.swift; sourceTree = "<group>"; };
 		1222B9622B46F8CB00803C59 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -326,6 +328,7 @@
 				12746ADF2B5A588D009D1473 /* EXCollection.swift */,
 				128FC4A32B5CB608003E3B53 /* ReachabilityUtility.swift */,
 				128FC4A72B5D0198003E3B53 /* ExUIApplication.swift */,
+				121777E02B64EFF900557902 /* ExURL.swift */,
 			);
 			path = "Extension&Utility";
 			sourceTree = "<group>";
@@ -701,6 +704,7 @@
 				12746ADE2B5A2B23009D1473 /* CategoryRepository.swift in Sources */,
 				1222B96B2B46F8CB00803C59 /* LinkMark.xcdatamodeld in Sources */,
 				12746AE02B5A588D009D1473 /* EXCollection.swift in Sources */,
+				121777E12B64EFF900557902 /* ExURL.swift in Sources */,
 				128FC4882B5B9C4C003E3B53 /* AppLockViewModel.swift in Sources */,
 				128FC4862B5B9C26003E3B53 /* AppLockView.swift in Sources */,
 				1274ED392B4EC87C00D1A926 /* RepositoryDependency.swift in Sources */,

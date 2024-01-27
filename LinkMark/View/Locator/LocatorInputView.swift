@@ -25,11 +25,13 @@ struct LocatorInputView: View {
     @State private var showValidationEmptyFlag = false
     @State private var showValidationUrlFlag = false
     @State private var showSuccessDialog = false
+    @State private var showFailedDialog = false
+    @State private var showFailedGetTitleDialog = false
     
     // MARK: - Environment
     @Environment(\.dismiss) var dismiss
     
-    /// URLのバリデーション
+    /// URLのバリデーション&キャスト
     private func validationGetUrl(url: String) -> URL? {
         guard let nsurl = NSURL(string: url) else {
             return nil
@@ -38,6 +40,21 @@ struct LocatorInputView: View {
            return nil
        }
         return nsurl as URL
+    }
+    
+    /// 登録時バリデーションメッセージ
+    private var failedDialogMessage: String {
+        var msg = ""
+        if showValidationEmptyFlag {
+            msg = L10n.locatorInputValidationTitle
+        }
+        if showValidationUrlFlag {
+            if showValidationEmptyFlag {
+                msg += "\n"
+            }
+            msg += L10n.locatorInputValidationUrl
+        }
+        return msg
     }
     
     
@@ -57,13 +74,17 @@ struct LocatorInputView: View {
                     if title.isEmpty {
                         showValidationEmptyFlag = true
                     }
-            
+                    
                     guard let url = validationGetUrl(url: urlStr) else {
                         showValidationUrlFlag = true
+                        showFailedDialog = true
                         return
                     }
                     
-                    guard !showValidationEmptyFlag && !showValidationUrlFlag  else { return }
+                    guard !showValidationEmptyFlag || !showValidationUrlFlag else {
+                        showFailedDialog = true
+                        return
+                    }
                     
                     
                     if let locator = locator {
@@ -80,21 +101,40 @@ struct LocatorInputView: View {
             
             ZStack {
                 SectionTitleView(title: "Title")
-                if showValidationEmptyFlag {
-                    Text(L10n.locatorInputValidationTitle)
-                        .foregroundStyle(.red)
+                
+                HStack {
+                    Spacer()
+                    Button {
+                        Task {
+                            showValidationUrlFlag = false
+                            guard let url = validationGetUrl(url: urlStr) else {
+                                showValidationUrlFlag = true
+                                showFailedDialog = true
+                                return
+                            }
+                            do {
+                                title = try await URL.fetchMetadataTitle(url: url)
+                                if title.isEmpty {
+                                    showFailedGetTitleDialog = true
+                                }
+                            } catch {
+                                showFailedGetTitleDialog = true
+                            }
+                        }
+                    } label: {
+                        Text(L10n.locatorInputGetTitleButton)
+                            .foregroundStyle(.white)
+                            .frame(width: 130, height: 30)
+                            .background(AppThemaColor.getColor(category.wrappedColor))
+                            .clipShape(RoundedRectangle(cornerRadius: 20))
+                            .shadow(color: .exText, radius: 2, x: 1, y: 1)
+                    }.padding(.trailing)
                 }
             }
            
             InputView(placeholder: L10n.locatorInputPlaceholderTitle, value: $title)
             
-            ZStack {
-                SectionTitleView(title: "Link")
-                if showValidationUrlFlag {
-                    Text(L10n.locatorInputValidationUrl)
-                        .foregroundStyle(.red)
-                }  
-            }
+            SectionTitleView(title: "Link")
             
             InputView(placeholder: L10n.locatorInputPlaceholderUrl, value: $urlStr)
             
@@ -117,7 +157,24 @@ struct LocatorInputView: View {
                 negativeButtonTitle: "",
                 positiveAction: { dismiss() },
                 negativeAction: {}
-            ).onAppear {
+            ).dialog(
+                isPresented: $showFailedDialog,
+                title: L10n.dialogTitle,
+                message: failedDialogMessage,
+                positiveButtonTitle:  L10n.dialogButtonOk,
+                negativeButtonTitle: "",
+                positiveAction: { showFailedDialog = false},
+                negativeAction: {}
+            ).dialog(
+                isPresented: $showFailedGetTitleDialog,
+                title: L10n.dialogTitle,
+                message: L10n.locatorInputFailedGetTitleMsg,
+                positiveButtonTitle:  L10n.dialogButtonOk,
+                negativeButtonTitle: "",
+                positiveAction: { showFailedGetTitleDialog = false},
+                negativeAction: {}
+            )
+            .onAppear {
                 if let locator = locator {
                     title = locator.wrappedTitle
                     urlStr = locator.url?.absoluteString ?? ""

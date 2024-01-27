@@ -22,6 +22,8 @@
 
 "locator_input_validation_title" = "・Title is required.";
 "locator_input_validation_url" = "・Please enter a valid link.";
+"locator_input_get_title_button" = "Retrieved from Link";
+"locator_input_failed_get_title_msg" = "Could not get title.";
 
 "dialog_title" = "Notice";
 

@@ -78,6 +78,10 @@ internal enum L10n {
   }
   /// カテゴリ名は必須入力です。
   internal static let dialogValidationCategory = L10n.tr("Localizable", "dialog_validation_category", fallback: "カテゴリ名は必須入力です。")
+  /// タイトルを取得できませんでした。
+  internal static let locatorInputFailedGetTitleMsg = L10n.tr("Localizable", "locator_input_failed_get_title_msg", fallback: "タイトルを取得できませんでした。")
+  /// Linkから取得
+  internal static let locatorInputGetTitleButton = L10n.tr("Localizable", "locator_input_get_title_button", fallback: "Linkから取得")
   /// リンクタイトル
   internal static let locatorInputPlaceholderTitle = L10n.tr("Localizable", "locator_input_placeholder_title", fallback: "リンクタイトル")
   /// https://XXX.com/

@@ -22,6 +22,8 @@
 
 "locator_input_validation_title" = "・タイトルは必須入力です。";
 "locator_input_validation_url" = "・有効なリンクを入力してください。";
+"locator_input_get_title_button" = "Linkから取得";
+"locator_input_failed_get_title_msg" = "タイトルを取得できませんでした。";
 
 "dialog_title" = "お知らせ";
 

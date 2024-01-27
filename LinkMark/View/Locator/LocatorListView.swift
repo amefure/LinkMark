@@ -37,8 +37,8 @@ struct LocatorListView: View {
                     SectionTitleView(title: "Link")
                     
                     Text(category.wrappedName)
-                        .foregroundStyle(.exText)
-                        .frame(width: 150, height: 40)
+                        .foregroundStyle(.white)
+                        .frame(width: 130, height: 40)
                         .background(AppThemaColor.getColor(category.wrappedColor))
                         .clipShape(RoundedRectangle(cornerRadius: 20))
                     
