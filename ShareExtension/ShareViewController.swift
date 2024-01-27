@@ -26,7 +26,7 @@ class ShareViewController: SLComposeServiceViewController {
         // 上部ボタンの文言
         guard let controller = navigationController.viewControllers.first else { return }
         guard let rightBarButtonItem = controller.navigationItem.rightBarButtonItem else { return }
-        rightBarButtonItem.title = "保存"
+        rightBarButtonItem.title = L10n.shareExtenstionSheetSave
     }
     
     override func isContentValid() -> Bool {
@@ -74,7 +74,7 @@ class ShareViewController: SLComposeServiceViewController {
         item.value = category.wrappedName
         item.tapHandler = {
             // ピッカー位置調整用
-            let title = "カテゴリ選択"
+            let title = L10n.shareExtenstionAlertTitle
             let message = "\n\n\n\n\n\n\n\n"
             // アラートコントローラーの作成
             let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
@@ -90,7 +90,7 @@ class ShareViewController: SLComposeServiceViewController {
 
 
             // アクションの追加（"OK"ボタンを押したときの処理）
-            let okAction = UIAlertAction(title: "決定", style: .default) { _ in
+            let okAction = UIAlertAction(title: L10n.shareExtenstionAlertDecision, style: .default) { _ in
                 // ピッカーで選択された値を取得するなどの処理を追加
 
                 // 例: 選択されたカテゴリーを取得

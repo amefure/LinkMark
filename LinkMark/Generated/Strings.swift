@@ -112,6 +112,12 @@ internal enum L10n {
   internal static let settingSectionLinkReview = L10n.tr("Localizable", "setting_section_link_review", fallback: "アプリをレビューする")
   /// 利用規約とプライバシーポリシー
   internal static let settingSectionLinkTerms = L10n.tr("Localizable", "setting_section_link_terms", fallback: "利用規約とプライバシーポリシー")
+  /// 決定
+  internal static let shareExtenstionAlertDecision = L10n.tr("Localizable", "share_extenstion_alert_decision", fallback: "決定")
+  /// カテゴリ選択
+  internal static let shareExtenstionAlertTitle = L10n.tr("Localizable", "share_extenstion_alert_title", fallback: "カテゴリ選択")
+  /// 保存
+  internal static let shareExtenstionSheetSave = L10n.tr("Localizable", "share_extenstion_sheet_save", fallback: "保存")
   /// ネットワークに接続されていません。
   /// 通信環境の整った場所でご利用ください。
   internal static let webviewNetworkUnavailable = L10n.tr("Localizable", "webview_network_unavailable", fallback: "ネットワークに接続されていません。\n通信環境の整った場所でご利用ください。")

@@ -10,8 +10,6 @@
 		121777B52B62856E00557902 /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121777B42B62856E00557902 /* ShareViewController.swift */; };
 		121777B82B62856E00557902 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 121777B62B62856E00557902 /* MainInterface.storyboard */; };
 		121777BC2B62856E00557902 /* ShareExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 121777B22B62856E00557902 /* ShareExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		121777C42B63E97600557902 /* AppGroupsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121777C32B63E97600557902 /* AppGroupsRepository.swift */; };
-		121777C52B63E97600557902 /* AppGroupsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121777C32B63E97600557902 /* AppGroupsRepository.swift */; };
 		121777C62B63EB0B00557902 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1222B9802B46FAAC00803C59 /* Colors.xcassets */; };
 		121777CA2B63ECF100557902 /* AppGroupsKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121777C92B63ECF100557902 /* AppGroupsKey.swift */; };
 		121777CB2B63ECF100557902 /* AppGroupsKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121777C92B63ECF100557902 /* AppGroupsKey.swift */; };
@@ -120,7 +118,6 @@
 		121777B92B62856E00557902 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		121777C12B6285FD00557902 /* LinkMark.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LinkMark.entitlements; sourceTree = "<group>"; };
 		121777C22B62875000557902 /* ShareExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ShareExtension.entitlements; sourceTree = "<group>"; };
-		121777C32B63E97600557902 /* AppGroupsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppGroupsRepository.swift; sourceTree = "<group>"; };
 		121777C92B63ECF100557902 /* AppGroupsKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppGroupsKey.swift; sourceTree = "<group>"; };
 		121777CC2B63ED0400557902 /* UserDefaultsKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsKey.swift; sourceTree = "<group>"; };
 		121777DD2B64CE3700557902 /* ShareViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewModel.swift; sourceTree = "<group>"; };
@@ -479,7 +476,6 @@
 				1222B9882B47B14900803C59 /* CoreDataRepository.swift */,
 				128FC4932B5B9E34003E3B53 /* UserDefaultsRepository.swift */,
 				128FC48B2B5B9C78003E3B53 /* KeyChainRepository.swift */,
-				121777C32B63E97600557902 /* AppGroupsRepository.swift */,
 			);
 			path = DB;
 			sourceTree = "<group>";
@@ -687,7 +683,6 @@
 				121777DB2B63EE7900557902 /* Strings.swift in Sources */,
 				121777D62B63EE4E00557902 /* BiometricAuthRepository.swift in Sources */,
 				121777D52B63EE4C00557902 /* LocatorRepository.swift in Sources */,
-				121777C52B63E97600557902 /* AppGroupsRepository.swift in Sources */,
 				121777CF2B63EE0F00557902 /* LinkMark.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -704,7 +699,6 @@
 				1274ED432B4EE45B00D1A926 /* LocatorViewModel.swift in Sources */,
 				128FC49B2B5B9F7B003E3B53 /* AppLockInputViewModel.swift in Sources */,
 				12746ADE2B5A2B23009D1473 /* CategoryRepository.swift in Sources */,
-				121777C42B63E97600557902 /* AppGroupsRepository.swift in Sources */,
 				1222B96B2B46F8CB00803C59 /* LinkMark.xcdatamodeld in Sources */,
 				12746AE02B5A588D009D1473 /* EXCollection.swift in Sources */,
 				128FC4882B5B9C4C003E3B53 /* AppLockViewModel.swift in Sources */,

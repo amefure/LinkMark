@@ -64,3 +64,8 @@
 "app_thema_color_green" = "ミントグリーン";
 "app_thema_color_blue" = "スカイブルー";
 "app_thema_color_purple" = "ラベンダー";
+
+"share_extenstion_sheet_save" = "保存";
+"share_extenstion_alert_title" = "カテゴリ選択";
+"share_extenstion_alert_decision" = "決定";
+
