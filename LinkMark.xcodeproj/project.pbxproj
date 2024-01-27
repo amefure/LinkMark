@@ -17,6 +17,21 @@
 		121777CB2B63ECF100557902 /* AppGroupsKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121777C92B63ECF100557902 /* AppGroupsKey.swift */; };
 		121777CD2B63ED0400557902 /* UserDefaultsKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121777CC2B63ED0400557902 /* UserDefaultsKey.swift */; };
 		121777CE2B63ED0400557902 /* UserDefaultsKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121777CC2B63ED0400557902 /* UserDefaultsKey.swift */; };
+		121777CF2B63EE0F00557902 /* LinkMark.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1222B9692B46F8CB00803C59 /* LinkMark.xcdatamodeld */; };
+		121777D02B63EE1700557902 /* Category+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1274ED312B4EC09600D1A926 /* Category+CoreDataClass.swift */; };
+		121777D12B63EE1900557902 /* Locator+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1274ED332B4EC09E00D1A926 /* Locator+CoreDataClass.swift */; };
+		121777D22B63EE3100557902 /* RepositoryDependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1274ED382B4EC87C00D1A926 /* RepositoryDependency.swift */; };
+		121777D32B63EE3400557902 /* CategoryRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12746ADD2B5A2B23009D1473 /* CategoryRepository.swift */; };
+		121777D42B63EE3900557902 /* CoreDataRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1222B9882B47B14900803C59 /* CoreDataRepository.swift */; };
+		121777D52B63EE4C00557902 /* LocatorRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12746ADB2B5A2B11009D1473 /* LocatorRepository.swift */; };
+		121777D62B63EE4E00557902 /* BiometricAuthRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128FC4892B5B9C64003E3B53 /* BiometricAuthRepository.swift */; };
+		121777D72B63EE5200557902 /* KeyChainRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128FC48B2B5B9C78003E3B53 /* KeyChainRepository.swift */; };
+		121777D82B63EE5400557902 /* UserDefaultsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128FC4932B5B9E34003E3B53 /* UserDefaultsRepository.swift */; };
+		121777D92B63EE6B00557902 /* AppThemaColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1274ED462B4FBB2E00D1A926 /* AppThemaColor.swift */; };
+		121777DA2B63EE7700557902 /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1222B9822B46FADF00803C59 /* Assets.swift */; };
+		121777DB2B63EE7900557902 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1222B9832B46FADF00803C59 /* Strings.swift */; };
+		121777DE2B64CE3700557902 /* ShareViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121777DD2B64CE3700557902 /* ShareViewModel.swift */; };
+		121777DF2B64DB8200557902 /* EXCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12746ADF2B5A588D009D1473 /* EXCollection.swift */; };
 		1222B95F2B46F8CA00803C59 /* LinkMarkApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1222B95E2B46F8CA00803C59 /* LinkMarkApp.swift */; };
 		1222B9632B46F8CB00803C59 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1222B9622B46F8CB00803C59 /* Images.xcassets */; };
 		1222B9662B46F8CB00803C59 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1222B9652B46F8CB00803C59 /* Preview Assets.xcassets */; };
@@ -108,6 +123,7 @@
 		121777C32B63E97600557902 /* AppGroupsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppGroupsRepository.swift; sourceTree = "<group>"; };
 		121777C92B63ECF100557902 /* AppGroupsKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppGroupsKey.swift; sourceTree = "<group>"; };
 		121777CC2B63ED0400557902 /* UserDefaultsKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsKey.swift; sourceTree = "<group>"; };
+		121777DD2B64CE3700557902 /* ShareViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewModel.swift; sourceTree = "<group>"; };
 		1222B95B2B46F8CA00803C59 /* LinkMark.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LinkMark.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1222B95E2B46F8CA00803C59 /* LinkMarkApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkMarkApp.swift; sourceTree = "<group>"; };
 		1222B9622B46F8CB00803C59 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -194,6 +210,7 @@
 			children = (
 				121777C22B62875000557902 /* ShareExtension.entitlements */,
 				121777B42B62856E00557902 /* ShareViewController.swift */,
+				121777DC2B64CE1C00557902 /* ViewModel */,
 				121777B62B62856E00557902 /* MainInterface.storyboard */,
 				121777B92B62856E00557902 /* Info.plist */,
 			);
@@ -207,6 +224,14 @@
 				121777CC2B63ED0400557902 /* UserDefaultsKey.swift */,
 			);
 			name = Key;
+			sourceTree = "<group>";
+		};
+		121777DC2B64CE1C00557902 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				121777DD2B64CE3700557902 /* ShareViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		1222B9522B46F8CA00803C59 = {
@@ -645,10 +670,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				121777D42B63EE3900557902 /* CoreDataRepository.swift in Sources */,
+				121777D12B63EE1900557902 /* Locator+CoreDataClass.swift in Sources */,
 				121777CE2B63ED0400557902 /* UserDefaultsKey.swift in Sources */,
+				121777D02B63EE1700557902 /* Category+CoreDataClass.swift in Sources */,
+				121777D82B63EE5400557902 /* UserDefaultsRepository.swift in Sources */,
+				121777DF2B64DB8200557902 /* EXCollection.swift in Sources */,
 				121777CB2B63ECF100557902 /* AppGroupsKey.swift in Sources */,
+				121777DE2B64CE3700557902 /* ShareViewModel.swift in Sources */,
+				121777D22B63EE3100557902 /* RepositoryDependency.swift in Sources */,
 				121777B52B62856E00557902 /* ShareViewController.swift in Sources */,
+				121777D92B63EE6B00557902 /* AppThemaColor.swift in Sources */,
+				121777D72B63EE5200557902 /* KeyChainRepository.swift in Sources */,
+				121777DA2B63EE7700557902 /* Assets.swift in Sources */,
+				121777D32B63EE3400557902 /* CategoryRepository.swift in Sources */,
+				121777DB2B63EE7900557902 /* Strings.swift in Sources */,
+				121777D62B63EE4E00557902 /* BiometricAuthRepository.swift in Sources */,
+				121777D52B63EE4C00557902 /* LocatorRepository.swift in Sources */,
 				121777C52B63E97600557902 /* AppGroupsRepository.swift in Sources */,
+				121777CF2B63EE0F00557902 /* LinkMark.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

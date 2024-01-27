@@ -15,6 +15,17 @@ class CoreDataRepository {
     ///
     private static var persistenceController: NSPersistentContainer = {
         let container = NSPersistentContainer(name: CoreDataRepository.persistentName)
+        
+        // AppGroupsコンテナ領域にファイルを保存する
+        guard let fileContainer = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: AppGroupsKey.GROUP_NAME) else {
+            fatalError("共有ファイルの取得失敗.")
+        }
+        let storeURL = fileContainer.appendingPathComponent("\(CoreDataRepository.persistentName).sqlite")
+        
+        
+        let storeDescription = NSPersistentStoreDescription(url: storeURL)
+        container.persistentStoreDescriptions = [storeDescription]
+        
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
             if let error = error as NSError? {
                 fatalError("Unresolved error \(error), \(error.userInfo)")
@@ -35,11 +46,6 @@ extension CoreDataRepository {
     /// 新規作成
     static func entity<T: NSManagedObject>() -> T {
         let entityDescription = NSEntityDescription.entity(forEntityName: String(describing: T.self), in: context)!
-        return T(entity: entityDescription, insertInto: nil)
-    }
-    
-    static func entity<T: NSManagedObject>(in context3 : NSManagedObjectContext) -> T {
-        let entityDescription = NSEntityDescription.entity(forEntityName: String(describing: T.self), in: context3)!
         return T(entity: entityDescription, insertInto: nil)
     }
     
@@ -95,11 +101,6 @@ extension CoreDataRepository {
     /// 追加処理
     static func insert(_ object: NSManagedObject) {
         context.insert(object)
-    }
-    
-    /// 更新処理
-    static func update(categoryId: String) {
-    
     }
     
     /// 削除処理
