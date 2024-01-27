@@ -45,20 +45,18 @@ class ShareViewController: SLComposeServiceViewController {
         guard let extensionItem = self.extensionContext?.inputItems.first as? NSExtensionItem else { return }
         // 入力アイテムの中からattachments：[NSItemProvider]内にある最初のアタッチメントを取得
         guard let itemProvider = extensionItem.attachments?.first as? NSItemProvider else { return }
+        let identifier = UTType.url.identifier
         // 「public.url」タイプのデータがあるかどうか確認
-        if itemProvider.hasItemConformingToTypeIdentifier(UTType.url.identifier) {
+        if itemProvider.hasItemConformingToTypeIdentifier(identifier) {
             // 非同期でURLを読み込む
-            itemProvider.loadItem(forTypeIdentifier: UTType.url.identifier, options: nil, completionHandler: { [weak self] (url, error) in
+            itemProvider.loadItem(forTypeIdentifier: identifier, options: nil, completionHandler: { [weak self] (url, error) in
                 guard let self = self else { return }
                 // URLを取得
                 if let url = url as? URL, let category = self.selectedCategory {
                     // Core Dataに保存する
                     self.viewModel.addLocator(categoryId: category.wrappedId, title: title, url: url, memo: "")
                     
-                    // メインスレッドで成功を通知しないとクラッシュする
-                    DispatchQueue.main.async {
-                        self.extensionContext?.completeRequest(returningItems: [], completionHandler: nil)
-                    }
+                    self.extensionContext?.completeRequest(returningItems: [], completionHandler: nil)
                 }
             })
         }
